@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{cda88272-0f2c-478b-88f7-037e974519fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public">
+      <UniqueIdentifier>{20e6f39b-cf1a-4e83-8267-217dc02ad3bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service">
+      <UniqueIdentifier>{097c75c6-e8f9-47f9-a0ea-87b95045c3c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service\Log">
+      <UniqueIdentifier>{ef8db144-47f6-4642-a26c-c32b688964ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\ThreadPool">
+      <UniqueIdentifier>{f95573ec-be7b-4584-bd41-65f8a44863d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{513c4846-dacd-4d8c-ace2-9c393f942ffc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\EngineMainFrame">
+      <UniqueIdentifier>{74c9ac63-3e6a-4a32-a995-45aaec737925}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engine\MyEngine.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Service\LogReport\LogReport.cpp">
+      <Filter>Service\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\ThreadPool\ThreadPool.cpp">
+      <Filter>Engine\ThreadPool</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine\MyEngine.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\PublicInclude.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\PublicEnum.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Service\LogReport\LogReport.h">
+      <Filter>Service\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\ThreadPool\ThreadPool.h">
+      <Filter>Engine\ThreadPool</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
