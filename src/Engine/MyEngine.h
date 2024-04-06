@@ -9,6 +9,7 @@ public:
 
     ErrorState Init(int minThread,int maxThread);
     bool Init_ThreadPool(int min,int max);
+    void GetThreadNum(int &aliveNum,int &busyNum);
 private:
     MyEngine();
     MyEngine(const MyEngine& manager);

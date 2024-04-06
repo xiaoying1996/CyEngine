@@ -5,7 +5,7 @@ std::mutex MyEngine::m_Mutex;
 
 void TestFunction(void* arg)
 {
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 100; i++)
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         std::cout << "ThreadID:" << std::this_thread::get_id() << " :  function....." << std::endl;
@@ -72,10 +72,21 @@ bool MyEngine::Init_ThreadPool(int min, int max)
     if (m_pool == nullptr)
     {
         m_pool = new ThreadPool(min,max);
-        for (int i = 0; i < max; ++i)
+        for (int i = 0; i < max; i++)
         {
             m_pool->Add(TestFunction, (void*)5);
         }
     }
     return true;
+}
+
+void MyEngine::GetThreadNum(int& aliveNum, int& busyNum)
+{
+    aliveNum = 0;
+    busyNum = 0;
+    if (m_pool != nullptr)
+    {
+        aliveNum = m_pool->AliveNum();
+        busyNum = m_pool->BusyNum();
+    }
 }

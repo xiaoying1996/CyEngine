@@ -79,14 +79,14 @@ void ThreadPool::manager(void* arg)
 	ThreadPool* pool = static_cast<ThreadPool*>(arg);
 	while (!pool->m_shutDowm)
 	{
-		std::this_thread::sleep_for(std::chrono::seconds(3));
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 		std::unique_lock<std::mutex> locker(pool->m_mutex);
 		int queuesize = pool->m_taskQueue.size();
 		int livenum = pool->m_liveNum;
 		int busynum = pool->m_busyNum;
 		locker.unlock();
 
-		if (queuesize > livenum && livenum < pool->m_maxNum)
+		if (queuesize>0&&livenum < pool->m_maxNum)
 		{
 			locker.lock();
 			int count = 0;
@@ -102,10 +102,11 @@ void ThreadPool::manager(void* arg)
 			}
 			locker.unlock();
 		}
-		if (busynum * 2 < livenum && livenum > pool->m_minNum)
+		if (livenum>busynum && livenum > pool->m_minNum)
 		{
 			locker.lock();
-			pool->m_exitNum = NUMBER;
+			if(pool->m_exitNum==0)
+				pool->m_exitNum = 1;
 			locker.unlock();
 			for (int i = 0; i < NUMBER; ++i)
 			{

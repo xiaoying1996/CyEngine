@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>EngineController</string>
@@ -266,7 +278,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>当前线程</string>
+     <string>繁忙线程</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -279,7 +291,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>繁忙线程</string>
+     <string>存活线程</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="CurrentEdit">
@@ -308,14 +320,27 @@
      <string>0</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="StopBtn">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>70</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>停止</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
-     <height>26</height>
+     <width>800</width>
+     <height>30</height>
     </rect>
    </property>
   </widget>

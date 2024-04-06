@@ -2,6 +2,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include <QMessageBox>
+#include <QTimer>
 #include "ui_EngineController.h"
 #include "../../../Engine/MyEngine.h"
 #include "../../../Public/PublicInclude.h"
@@ -16,9 +17,12 @@ public:
 
 public slots:
     void on_StartBtn_clicked();
+    void on_StopBtn_clicked();
     void slot_ThreadModeChanged(QString str);
+    void slot_update();
 
 private:
     Ui::EngineControllerClass ui;
     MyEngine *engine = nullptr;
+    QTimer* timer = nullptr;
 };
