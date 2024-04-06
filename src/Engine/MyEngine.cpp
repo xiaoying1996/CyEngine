@@ -5,7 +5,7 @@ std::mutex MyEngine::m_Mutex;
 
 void TestFunction(void* arg)
 {
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 10; i++)
     {
         std::this_thread::sleep_for(std::chrono::seconds(1));
         std::cout << "ThreadID:" << std::this_thread::get_id() << " :  function....." << std::endl;
@@ -38,6 +38,7 @@ void MyEngine::deleteInstance()
 
 MyEngine::MyEngine()
 {
+    m_pool = nullptr;
 }
 
 MyEngine::MyEngine(const MyEngine& manager)
@@ -53,6 +54,7 @@ MyEngine::~MyEngine()
         delete m_pool;
         m_pool = nullptr;
     }
+    m_MyEngine = nullptr;
 }
 
 ErrorState MyEngine::Init(int minThread, int maxThread)

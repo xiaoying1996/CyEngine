@@ -22,7 +22,7 @@ void EngineController::on_StartBtn_clicked()
     QString threadMode = ui.ThreadModePoolBox->currentText();
     if (threadMode == QString::fromLocal8Bit("µ¥Ïß³Ì"))
     {
-        ErrorState err = engine->Init(1, 1);
+        ErrorState err = engine->GetInstance()->Init(1, 1);
         _LOG->PrintError(err);
         ui.StartBtn->setDisabled(true);
         ui.StopBtn->setDisabled(false);
@@ -35,13 +35,16 @@ void EngineController::on_StartBtn_clicked()
             QMessageBox::information(this, "Info", "MinThread Num More Than MaxThread Num", QMessageBox::Close);
         }
         else {
-            ErrorState err = engine->Init(min, max);
+            ErrorState err = engine->GetInstance()->Init(min, max);
             _LOG->PrintError(err);
         }
         ui.StartBtn->setDisabled(true);
         ui.StopBtn->setDisabled(false);
     }
-    timer = new QTimer(this);
+    if (timer == nullptr)
+    {
+        timer = new QTimer(this);
+    }
     timer->start(1000);
     connect(timer, SIGNAL(timeout()), this, SLOT(slot_update()));
 }
