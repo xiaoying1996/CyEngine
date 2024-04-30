@@ -5,8 +5,15 @@
 class HumanBase:public ModelBase {
 public:
 	HumanBase();
+	virtual ~HumanBase();
+	virtual void Init();
+	virtual void ReadScenario();
+	virtual void Run();
+	virtual void PostEvent();
+	virtual void ReceiveEvent();
+	virtual void Destory();
 private:
-	double _runSpeed;
+	double _runSpeed = 0;
 };
 
 #endif // !_MODEL_BASE_

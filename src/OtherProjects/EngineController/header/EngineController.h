@@ -7,6 +7,7 @@
 #include "../../../Engine/MyEngine.h"
 #include "../../../Public/PublicInclude.h"
 #include "../../../Service/LogReport/LogReport.h"
+#include "../../../Models//Human//People/People.h"
 
 class EngineController : public QMainWindow
 {
@@ -18,6 +19,7 @@ public:
 public slots:
     void on_StartBtn_clicked();
     void on_StopBtn_clicked();
+    void on_TestBtn_clicked();
     void slot_ThreadModeChanged(QString str);
     void slot_update();
 

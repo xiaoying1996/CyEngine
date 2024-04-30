@@ -8,6 +8,7 @@
 #include <vector>
 #include <condition_variable>
 #include <stdlib.h>
+#include <Windows.h>
 #include "PublicEnum.h"
 
 #endif // !_PUBLIC_DEF_

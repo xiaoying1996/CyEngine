@@ -64,6 +64,26 @@ void EngineController::on_StopBtn_clicked()
     ui.CurrentEdit->setText(QString::number(0));
 }
 
+void EngineController::on_TestBtn_clicked()
+{
+    //≤‚ ‘people
+    HINSTANCE hDll = LoadLibrary(L"Peopled.dll");
+    if (hDll == NULL)
+    {
+        std::cout << "Load dll failed!";
+        return ;
+    }
+    using functionPtr = People*(*)();
+    functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
+    if (addFunction == NULL)
+    {
+        std::cout << "cannot find target function!";
+        return ;
+    }
+
+    ModelBase*model =  addFunction();
+}
+
 void EngineController::slot_ThreadModeChanged(QString str)
 {
     if (str == QString::fromLocal8Bit("µ•œﬂ≥Ã"))
