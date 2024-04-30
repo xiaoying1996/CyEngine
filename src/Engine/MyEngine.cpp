@@ -66,7 +66,7 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
         return THREADPOOLERR;
     }
 
-    return NOERROR;
+    return NERROR;
 }
 
 bool MyEngine::Init_ThreadPool(int min, int max)

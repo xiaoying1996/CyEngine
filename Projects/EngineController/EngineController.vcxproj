@@ -10,11 +10,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\main.cpp" />
+    <ClCompile Include="EngineController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="EngineController.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="EngineController.ui" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0BEB5CF5-701A-4722-A270-AF69E8C5F575}</ProjectGuid>
+    <ProjectGuid>{B816131D-98F7-46A2-9BA7-2A6A3921AB4D}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -54,12 +63,22 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutDir>$(SolutionDir)build\\EngineController\$(PlatForm)</OutDir>
-    <IntDir>$(SolutionDir)build\\EngineController\$(PlatForm)</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Release</AdditionalLibraryDirectories>
+      <AdditionalDependencies>CyEngine.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>CyEngined.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -74,7 +93,7 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -91,19 +110,6 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <QtRcc Include="EngineController.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\EngineController.cpp" />
-    <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="..\..\src\OtherProjects\EngineController\header\EngineController.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="..\..\src\OtherProjects\EngineController\ui\EngineController.ui" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

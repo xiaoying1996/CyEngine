@@ -1,0 +1,7 @@
+﻿  Reading Qt configuration (D:/Program/qt/5.9.9/msvc2017_64/bin/qmake)
+  CyEngine.lib(MyEngine.obj) : 找到 MSIL .netmodule 或使用 /GL 编译的模块；正在使用 /LTCG 重新启动链接；将 /LTCG 添加到链接命令行以改进链接器性能
+  正在生成代码
+  已完成代码的生成
+  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Release\EngineController.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

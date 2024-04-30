@@ -3,7 +3,7 @@
 
 enum ErrorState
 {
-	NOERROR = 1,
+	NERROR = 1,
 	ELSEERROR,
 	THREADPOOLERR,
 };

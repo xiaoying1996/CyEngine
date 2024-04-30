@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\chen\Pro\CPP\CyEngine\dll\Debug\Peopled.dll</FullPath>
+      <FullPath>D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\Peopled.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

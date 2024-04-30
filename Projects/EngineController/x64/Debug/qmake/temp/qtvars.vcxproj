@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\chen\Pro\CPP\CyEngine\Projects\EngineController\x64\Debug\qmake\temp;D:\Program\qt\5.9.9\msvc2017_64\include;D:\Program\qt\5.9.9\msvc2017_64\include\QtWidgets;D:\Program\qt\5.9.9\msvc2017_64\include\QtGui;D:\Program\qt\5.9.9\msvc2017_64\include\QtANGLE;D:\Program\qt\5.9.9\msvc2017_64\include\QtCore;D:\chen\Pro\CPP\CyEngine\Projects\EngineController\x64\Debug\qmake\temp;D:\Program\qt\5.9.9\msvc2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\EngineController\x64\Debug\qmake\temp;D:\Program\qt\5.9.9\msvc2017_64\include;D:\Program\qt\5.9.9\msvc2017_64\include\QtWidgets;D:\Program\qt\5.9.9\msvc2017_64\include\QtGui;D:\Program\qt\5.9.9\msvc2017_64\include\QtANGLE;D:\Program\qt\5.9.9\msvc2017_64\include\QtCore;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\EngineController\x64\Debug\qmake\temp;D:\Program\qt\5.9.9\msvc2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>

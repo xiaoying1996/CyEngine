@@ -23,25 +23,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="EngineController.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
+    <QtMoc Include="EngineController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\EngineController.cpp">
+    <ClCompile Include="EngineController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\..\src\OtherProjects\EngineController\header\EngineController.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="..\..\src\OtherProjects\EngineController\ui\EngineController.ui">
+    <QtUic Include="EngineController.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
