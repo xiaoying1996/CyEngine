@@ -3,6 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QMessageBox>
 #include <QTimer>
+#include <QFileDialog>
 #include "ui_EngineController.h"
 #include "Engine/MyEngine.h"
 #include "Public/PublicInclude.h"
@@ -20,6 +21,7 @@ public slots:
     void on_StartBtn_clicked();
     void on_StopBtn_clicked();
     void on_TestBtn_clicked();
+    void on_ReadScenarioBtn_clicked();
     void slot_ThreadModeChanged(QString str);
     void slot_update();
 

@@ -1,3 +1,6 @@
+#ifndef _LOGREPORT_
+#define _LOGREPORT_
+
 #include "../../Public/PublicInclude.h"
 
 #define _LOG LogReport::GetInstance()
@@ -21,3 +24,5 @@ private:
     static LogReport* m_LogReport;
     static std::mutex m_Mutex;
 };
+
+#endif // !_LOGREPORT_

@@ -346,6 +346,19 @@
      <string>测试</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="ReadScenarioBtn">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>112</width>
+      <height>34</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>读取想定</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

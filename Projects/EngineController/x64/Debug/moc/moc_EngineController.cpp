@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_EngineController_t {
-    QByteArrayData data[8];
-    char stringdata0[115];
+    QByteArrayData data[9];
+    char stringdata0[142];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,13 +36,15 @@ QT_MOC_LITERAL(1, 17, 19), // "on_StartBtn_clicked"
 QT_MOC_LITERAL(2, 37, 0), // ""
 QT_MOC_LITERAL(3, 38, 18), // "on_StopBtn_clicked"
 QT_MOC_LITERAL(4, 57, 18), // "on_TestBtn_clicked"
-QT_MOC_LITERAL(5, 76, 22), // "slot_ThreadModeChanged"
-QT_MOC_LITERAL(6, 99, 3), // "str"
-QT_MOC_LITERAL(7, 103, 11) // "slot_update"
+QT_MOC_LITERAL(5, 76, 26), // "on_ReadScenarioBtn_clicked"
+QT_MOC_LITERAL(6, 103, 22), // "slot_ThreadModeChanged"
+QT_MOC_LITERAL(7, 126, 3), // "str"
+QT_MOC_LITERAL(8, 130, 11) // "slot_update"
 
     },
     "EngineController\0on_StartBtn_clicked\0"
     "\0on_StopBtn_clicked\0on_TestBtn_clicked\0"
+    "on_ReadScenarioBtn_clicked\0"
     "slot_ThreadModeChanged\0str\0slot_update"
 };
 #undef QT_MOC_LITERAL
@@ -53,7 +55,7 @@ static const uint qt_meta_data_EngineController[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -61,17 +63,19 @@ static const uint qt_meta_data_EngineController[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   39,    2, 0x0a /* Public */,
-       3,    0,   40,    2, 0x0a /* Public */,
-       4,    0,   41,    2, 0x0a /* Public */,
-       5,    1,   42,    2, 0x0a /* Public */,
-       7,    0,   45,    2, 0x0a /* Public */,
+       1,    0,   44,    2, 0x0a /* Public */,
+       3,    0,   45,    2, 0x0a /* Public */,
+       4,    0,   46,    2, 0x0a /* Public */,
+       5,    0,   47,    2, 0x0a /* Public */,
+       6,    1,   48,    2, 0x0a /* Public */,
+       8,    0,   51,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    6,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    7,
     QMetaType::Void,
 
        0        // eod
@@ -86,8 +90,9 @@ void EngineController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 0: _t->on_StartBtn_clicked(); break;
         case 1: _t->on_StopBtn_clicked(); break;
         case 2: _t->on_TestBtn_clicked(); break;
-        case 3: _t->slot_ThreadModeChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 4: _t->slot_update(); break;
+        case 3: _t->on_ReadScenarioBtn_clicked(); break;
+        case 4: _t->slot_ThreadModeChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 5: _t->slot_update(); break;
         default: ;
         }
     }
@@ -118,13 +123,13 @@ int EngineController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 5)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

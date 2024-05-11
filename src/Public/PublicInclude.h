@@ -10,6 +10,8 @@
 #include <stdlib.h>
 #include <Windows.h>
 #include "PublicEnum.h"
+#include "../tinyxml/tinyxml.h"
+#include "../tinyxml/tinystr.h"
 
 #endif // !_PUBLIC_DEF_
 

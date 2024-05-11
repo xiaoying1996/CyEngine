@@ -84,6 +84,17 @@ void EngineController::on_TestBtn_clicked()
     ModelBase*model =  addFunction();
 }
 
+void EngineController::on_ReadScenarioBtn_clicked()
+{
+    QString FilePath = QFileDialog::getOpenFileName(this, QString::fromLocal8Bit("选择想定文件"), "./", "Scenarios(*.xml)");
+    if (engine == nullptr)
+    {
+        engine = MyEngine::GetInstance();
+    }
+    std::string errStr;
+    MyEngine::GetInstance()->ReadScenario(FilePath.toLocal8Bit().data(), errStr);
+}
+
 void EngineController::slot_ThreadModeChanged(QString str)
 {
     if (str == QString::fromLocal8Bit("单线程"))

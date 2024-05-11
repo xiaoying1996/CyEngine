@@ -8,5 +8,10 @@ enum ErrorState
 	THREADPOOLERR,
 };
 
+enum ModelType
+{
+	M_PEOPLE = 1,
+};
+
 #endif // !_PUBLIC_ENUM
 

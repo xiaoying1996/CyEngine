@@ -69,6 +69,85 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
     return NERROR;
 }
 
+bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
+{
+    errStr = "no error";
+    _LOG->GetInstance()->PrintError("Read Scenario File: " + filename);
+    TiXmlDocument* xmlDocument = new TiXmlDocument();
+    if (!xmlDocument->LoadFile(filename.c_str())) //没有test.xml文件
+    {
+        std::string err = xmlDocument->ErrorDesc();
+        _LOG->PrintError("read XML file: " + err);
+
+        delete xmlDocument;
+        return false;
+    }
+    TiXmlElement* rootElement = xmlDocument->FirstChildElement("scenario");
+    if (rootElement == nullptr) //节点不存在
+    {
+        delete xmlDocument;
+        return false;
+    }
+    if (rootElement)
+    {
+        TiXmlElement* modelsElement = rootElement->FirstChildElement("Models");
+        {
+            if (modelsElement)
+            {
+                TiXmlElement* humanElement = nullptr;
+                for (TiXmlElement* childElement = modelsElement->FirstChildElement();
+                    childElement != nullptr; childElement = childElement->NextSiblingElement())
+                {
+                    std::string str =  childElement->Value();
+                    if (str == "Human")
+                    {
+                        humanElement = childElement;
+                        for (TiXmlElement* unitElement = humanElement->FirstChildElement("unit");
+                            unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
+                        {
+                            for (TiXmlElement* valElement = unitElement->FirstChildElement();
+                                valElement != nullptr; valElement = valElement->NextSiblingElement())
+                            {
+                                std::string key = valElement->Value();
+                                if (key == "type")
+                                {
+                                    int i = 0;
+                                }
+                                if (key == "id")
+                                {
+                                    int i = 0;
+                                }
+                                if (key == "position")
+                                {
+                                    for (TiXmlElement* posElement = valElement->FirstChildElement();
+                                        posElement != nullptr; posElement = posElement->NextSiblingElement())
+                                    {
+                                        if (key == "lon")
+                                        {
+                                            int i = 0;
+                                        }
+                                        if (key == "lat")
+                                        {
+                                            int i = 0;
+                                        }
+                                        if (key == "alt")
+                                        {
+                                            int i = 0;
+                                        }
+                                    }
+                                }
+                            }
+
+                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return true;
+}
+
 bool MyEngine::Init_ThreadPool(int min, int max)
 {
     if (m_pool == nullptr)

@@ -1,6 +1,7 @@
 #ifndef _MODEL_BASE_
 #define _MODEL_BASE_
 #include "PublicStruct.h"
+#include "../../Public/PublicEnum.h"
 
 class ModelBase {
 public:
@@ -14,6 +15,8 @@ public:
 	virtual void Destory();
 
 private:
+	int id;
+	ModelType type;
 	Model_Position _pos;
 	Model_Shape _shape;
 };

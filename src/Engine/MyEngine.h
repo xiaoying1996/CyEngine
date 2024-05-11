@@ -1,4 +1,5 @@
 #include "../Public/PublicInclude.h"
+#include "../Service/LogReport/LogReport.h"
 #include "ThreadPool/ThreadPool.h"
 
 class MyEngine {
@@ -8,6 +9,7 @@ public:
     static void deleteInstance();
 
     ErrorState Init(int minThread,int maxThread);
+    bool ReadScenario(std::string filename,std::string &errStr);
     bool Init_ThreadPool(int min,int max);
     void GetThreadNum(int &aliveNum,int &busyNum);
 private:

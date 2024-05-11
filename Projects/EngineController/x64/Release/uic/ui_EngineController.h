@@ -43,6 +43,7 @@ public:
     QLineEdit *AliveEdit;
     QPushButton *StopBtn;
     QPushButton *TestBtn;
+    QPushButton *ReadScenarioBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -95,6 +96,9 @@ public:
         TestBtn = new QPushButton(centralWidget);
         TestBtn->setObjectName(QStringLiteral("TestBtn"));
         TestBtn->setGeometry(QRect(660, 400, 112, 34));
+        ReadScenarioBtn = new QPushButton(centralWidget);
+        ReadScenarioBtn->setObjectName(QStringLiteral("ReadScenarioBtn"));
+        ReadScenarioBtn->setGeometry(QRect(20, 200, 112, 34));
         EngineControllerClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(EngineControllerClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -166,6 +170,7 @@ public:
         AliveEdit->setText(QApplication::translate("EngineControllerClass", "0", Q_NULLPTR));
         StopBtn->setText(QApplication::translate("EngineControllerClass", "\345\201\234\346\255\242", Q_NULLPTR));
         TestBtn->setText(QApplication::translate("EngineControllerClass", "\346\265\213\350\257\225", Q_NULLPTR));
+        ReadScenarioBtn->setText(QApplication::translate("EngineControllerClass", "\350\257\273\345\217\226\346\203\263\345\256\232", Q_NULLPTR));
     } // retranslateUi
 
 };
