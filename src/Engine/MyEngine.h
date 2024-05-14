@@ -1,6 +1,8 @@
 #include "../Public/PublicInclude.h"
 #include "../Service/LogReport/LogReport.h"
 #include "ThreadPool/ThreadPool.h"
+#include <iostream>
+#include <windows.h>
 
 class MyEngine {
 public:

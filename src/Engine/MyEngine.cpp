@@ -105,17 +105,20 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                         for (TiXmlElement* unitElement = humanElement->FirstChildElement("unit");
                             unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
                         {
+                            int id;
+                            std::string type;
+                            Model_Position pos;
                             for (TiXmlElement* valElement = unitElement->FirstChildElement();
                                 valElement != nullptr; valElement = valElement->NextSiblingElement())
                             {
                                 std::string key = valElement->Value();
                                 if (key == "type")
                                 {
-                                    int i = 0;
+                                    type = valElement->FirstChild()->Value();
                                 }
                                 if (key == "id")
                                 {
-                                    int i = 0;
+                                    id = atoi(valElement->FirstChild()->Value());
                                 }
                                 if (key == "position")
                                 {
@@ -124,21 +127,40 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                     {
                                         if (key == "lon")
                                         {
-                                            int i = 0;
+                                            pos._lon = atoi(valElement->FirstChild()->Value());
                                         }
                                         if (key == "lat")
                                         {
-                                            int i = 0;
+                                            pos._lat = atoi(valElement->FirstChild()->Value());
                                         }
                                         if (key == "alt")
                                         {
-                                            int i = 0;
+                                            pos._alt = atoi(valElement->FirstChild()->Value());
                                         }
                                     }
                                 }
                             }
-
-                           
+                            HINSTANCE hDll;
+                            #if _DEBUG
+                                hDll = LoadLibrary(L"dll\\Debug\\Peopled.dll");
+                            #endif
+                            #if NDEBUG
+                                hDll = LoadLibrary(L"dll\Debug\People.dll");
+                            #endif
+                            if (hDll == NULL)
+                            {
+                                std::cout << "Load dll failed!";
+                                return -1;
+                            }
+                            using functionPtr = ModelBase*(*)();
+                            functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
+                            if (addFunction == NULL)
+                            {
+                                std::cout << "cannot find target function!";
+                                return -1;
+                            }
+                            ModelBase* model = addFunction();
+                            int i = 0;
                         }
                     }
                 }
