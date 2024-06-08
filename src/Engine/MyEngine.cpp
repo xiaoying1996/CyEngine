@@ -39,6 +39,7 @@ void MyEngine::deleteInstance()
 MyEngine::MyEngine()
 {
     m_pool = nullptr;
+    m_modelManager = new ModelManager();
 }
 
 MyEngine::MyEngine(const MyEngine& manager)
@@ -53,6 +54,12 @@ MyEngine::~MyEngine()
     {
         delete m_pool;
         m_pool = nullptr;
+    }
+    //销毁模型管理器
+    if (m_modelManager)
+    {
+        delete m_modelManager;
+        m_modelManager = nullptr;
     }
     m_MyEngine = nullptr;
 }
@@ -142,7 +149,8 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             }
                             HINSTANCE hDll;
                             #if _DEBUG
-                                hDll = LoadLibrary(L"dll\\Debug\\Peopled.dll");
+                                std::string dllPath = "dll\\Debug\\" + type + "d.dll";
+                                hDll = LoadLibrary(stringToLPCWSTR(dllPath));
                             #endif
                             #if NDEBUG
                                 hDll = LoadLibrary(L"dll\Debug\People.dll");

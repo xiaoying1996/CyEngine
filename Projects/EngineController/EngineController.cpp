@@ -66,22 +66,22 @@ void EngineController::on_StopBtn_clicked()
 
 void EngineController::on_TestBtn_clicked()
 {
-    //≤‚ ‘people
-    HINSTANCE hDll = LoadLibrary(L"Peopled.dll");
-    if (hDll == NULL)
-    {
-        std::cout << "Load dll failed!";
-        return ;
-    }
-    using functionPtr = People*(*)();
-    functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
-    if (addFunction == NULL)
-    {
-        std::cout << "cannot find target function!";
-        return ;
-    }
+    ////≤‚ ‘people
+    //HINSTANCE hDll = LoadLibrary(L"Peopled.dll");
+    //if (hDll == NULL)
+    //{
+    //    std::cout << "Load dll failed!";
+    //    return ;
+    //}
+    //using functionPtr = People*(*)();
+    //functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
+    //if (addFunction == NULL)
+    //{
+    //    std::cout << "cannot find target function!";
+    //    return ;
+    //}
 
-    ModelBase*model =  addFunction();
+    //ModelBase*model =  addFunction();
 }
 
 void EngineController::on_ReadScenarioBtn_clicked()

@@ -1,8 +1,11 @@
 #include "../Public/PublicInclude.h"
 #include "../Service/LogReport/LogReport.h"
 #include "ThreadPool/ThreadPool.h"
+#include "ModelManager.h"
 #include <iostream>
 #include <windows.h>
+#include <cstdlib>
+#include <string>
 
 class MyEngine {
 public:
@@ -23,4 +26,5 @@ private:
     static MyEngine* m_MyEngine;
     static std::mutex m_Mutex;
     ThreadPool* m_pool = nullptr;
+    bool m_isScenarioRead;
 };

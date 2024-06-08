@@ -53,6 +53,12 @@
     <ClCompile Include="src\tinyxml\tinyxmlparser.cpp">
       <Filter>Service\XML</Filter>
     </ClCompile>
+    <ClCompile Include="src\Public\PublicTools.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\ModelManager.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\MyEngine.h">
@@ -75,6 +81,12 @@
     </ClInclude>
     <ClInclude Include="src\tinyxml\tinyxml.h">
       <Filter>Service\XML</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Public\PublicTools.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine\ModelManager.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
