@@ -1,6 +1,8 @@
 #ifndef _MODEL_MANAGER
 #define _MODEL_MANAGER
 
+#define MM ModelManager::GetInstance()
+
 #include <list>
 #include <vector>
 #include "../Public/PublicInclude.h"

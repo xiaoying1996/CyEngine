@@ -1,9 +1,33 @@
 #include "ModelManager.h"
 
 ModelManager* ModelManager::m_ModelManager = nullptr;
+std::mutex ModelManager::m_Mutex;
 
 ModelManager::ModelManager()
 {
+}
+
+ModelManager* ModelManager::GetInstance()
+{
+    if (m_ModelManager == nullptr)
+    {
+        std::unique_lock<std::mutex> lock(m_Mutex);
+        if (m_ModelManager == nullptr)
+        {
+            m_ModelManager = new (std::nothrow) ModelManager();
+        }
+    }
+    return m_ModelManager;
+}
+
+void ModelManager::deleteInstance()
+{
+    std::unique_lock<std::mutex> lock(m_Mutex);
+    if (m_ModelManager)
+    {
+        delete m_ModelManager;
+        m_ModelManager = nullptr;
+    }
 }
 
 ModelManager::~ModelManager()

@@ -39,7 +39,7 @@ void MyEngine::deleteInstance()
 MyEngine::MyEngine()
 {
     m_pool = nullptr;
-    m_modelManager = new ModelManager();
+    m_isScenarioRead = false;
 }
 
 MyEngine::MyEngine(const MyEngine& manager)
@@ -56,11 +56,7 @@ MyEngine::~MyEngine()
         m_pool = nullptr;
     }
     //销毁模型管理器
-    if (m_modelManager)
-    {
-        delete m_modelManager;
-        m_modelManager = nullptr;
-    }
+    ModelManager::deleteInstance();
     m_MyEngine = nullptr;
 }
 
@@ -74,6 +70,15 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
     }
 
     return NERROR;
+}
+
+bool MyEngine::GetScenarioReadStu()
+{
+    bool ret;
+    m_Mutex.lock();
+    ret = m_isScenarioRead;
+    m_Mutex.unlock();
+    return m_isScenarioRead;
 }
 
 bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
@@ -112,7 +117,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                         for (TiXmlElement* unitElement = humanElement->FirstChildElement("unit");
                             unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
                         {
-                            int id;
+                            int id = 0;
                             std::string type;
                             Model_Position pos;
                             for (TiXmlElement* valElement = unitElement->FirstChildElement();
@@ -168,13 +173,17 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
-                            int i = 0;
+                            model->SetID(id);
+                            MM->AppendModel(model);
                         }
                     }
                 }
             }
         }
     }
+    m_Mutex.lock();
+    m_isScenarioRead = true;
+    m_Mutex.unlock();
     return true;
 }
 

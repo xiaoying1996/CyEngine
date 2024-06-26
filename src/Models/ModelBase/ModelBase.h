@@ -14,6 +14,8 @@ public:
 	virtual void ReceiveEvent();
 	virtual void Destory();
 
+	void SetID(int id);
+
 private:
 	int id;
 	ModelType type;
