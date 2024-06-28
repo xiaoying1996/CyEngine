@@ -9,9 +9,9 @@ People::~People()
 	HumanBase::~HumanBase();
 }
 
-void People::Init()
+void People::Init(TiXmlElement* unitElement)
 {
-	HumanBase::Init();
+	HumanBase::Init(unitElement);
 }
 
 void People::ReadScenario()

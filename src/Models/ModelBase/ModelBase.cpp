@@ -8,8 +8,9 @@ ModelBase::~ModelBase()
 {
 }
 
-void ModelBase::Init()
+void ModelBase::Init(TiXmlElement* unitElement)
 {
+	int i = 0;
 }
 
 void ModelBase::ReadScenario()

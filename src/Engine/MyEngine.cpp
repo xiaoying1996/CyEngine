@@ -173,6 +173,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
+                            model->Init(unitElement);
                             model->SetID(id);
                             MM->AppendModel(model);
                         }

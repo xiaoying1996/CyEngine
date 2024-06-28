@@ -7,6 +7,7 @@
             <unit>
                 <type>People</type>
                 <id>1</id>
+                <name>群众-1</name>
                 <position>
                     <lon>115.0000</lon>
                     <lat>31.0000</lat>

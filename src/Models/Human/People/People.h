@@ -7,7 +7,7 @@ class People :public HumanBase {
 public:
 	People();
 	virtual ~People();
-	virtual void Init();
+	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
 	virtual void Run();
 	virtual void PostEvent();

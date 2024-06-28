@@ -10,9 +10,9 @@ HumanBase::~HumanBase()
 	ModelBase::~ModelBase();
 }
 
-void HumanBase::Init()
+void HumanBase::Init(TiXmlElement* unitElement)
 {
-	ModelBase::Init();
+	ModelBase::Init(unitElement);
 }
 
 void HumanBase::ReadScenario()

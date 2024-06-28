@@ -6,7 +6,7 @@ class HumanBase:public ModelBase {
 public:
 	HumanBase();
 	virtual ~HumanBase();
-	virtual void Init();
+	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
 	virtual void Run();
 	virtual void PostEvent();

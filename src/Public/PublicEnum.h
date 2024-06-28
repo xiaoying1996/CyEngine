@@ -1,5 +1,7 @@
 #ifndef _PUBLIC_ENUM
 #define _PUBLIC_ENUM
+#include <string>
+#include <map>
 
 enum ErrorState
 {
