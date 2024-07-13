@@ -1,9 +1,9 @@
 #ifndef _MODEL_BASE_
 #define _MODEL_BASE_
 #include "PublicStruct.h"
+#include "../../Public/PublicInclude.h"
 #include "../../Public/PublicEnum.h"
-#include "../../tinyxml/tinyxml.h"
-#include "../../tinyxml/tinystr.h"
+#include "Tools/XML_Utils/XML_Utils.h"
 
 class ModelBase {
 public:
@@ -19,8 +19,11 @@ public:
 	void SetID(int id);
 
 private:
-	int id;
-	ModelType type;
+	bool _isInit;
+	bool _isReadScenario;
+
+	int _id;
+	ModelType _type;
 	Model_Position _pos;
 	Model_Shape _shape;
 };

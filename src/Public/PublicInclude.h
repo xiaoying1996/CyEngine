@@ -13,8 +13,7 @@
 #include "PublicTools.h"
 #include "../Models/ModelBase/PublicStruct.h"
 #include "../Models/ModelBase/ModelBase.h"
-#include "../tinyxml/tinyxml.h"
-#include "../tinyxml/tinystr.h"
+#include "Tools/XML_Utils/XML_Utils.h"
 
 #endif // !_PUBLIC_DEF_
 

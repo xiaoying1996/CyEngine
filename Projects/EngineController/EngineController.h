@@ -29,4 +29,6 @@ private:
     Ui::EngineControllerClass ui;
     MyEngine *engine = nullptr;
     QTimer* timer = nullptr;
+
+    bool m_isEngineReadScenario;
 };

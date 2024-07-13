@@ -10,7 +10,10 @@ EngineController::EngineController(QWidget *parent)
     ui.MaxThreadBox->hide();
     ui.MinThreadBox->hide();
     ui.StopBtn->setDisabled(true);
+    ui.StartBtn->setDisabled(true);
     connect(ui.ThreadModePoolBox, SIGNAL(currentIndexChanged(QString)),this, SLOT(slot_ThreadModeChanged(QString)));
+
+    m_isEngineReadScenario = false;
 }
 
 void EngineController::on_StartBtn_clicked()
@@ -122,4 +125,12 @@ void EngineController::slot_update()
     }
     ui.AliveEdit->setText(QString::number(alive));
     ui.CurrentEdit->setText(QString::number(busy));
+    if (!m_isEngineReadScenario)
+    {
+        m_isEngineReadScenario = MyEngine::GetInstance()->GetScenarioReadStu();
+        if (m_isEngineReadScenario)
+        {
+            ui.StartBtn->setDisabled(false);
+        }
+    }
 }

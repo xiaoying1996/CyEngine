@@ -119,39 +119,9 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                         {
                             int id = 0;
                             std::string type;
-                            Model_Position pos;
-                            for (TiXmlElement* valElement = unitElement->FirstChildElement();
-                                valElement != nullptr; valElement = valElement->NextSiblingElement())
-                            {
-                                std::string key = valElement->Value();
-                                if (key == "type")
-                                {
-                                    type = valElement->FirstChild()->Value();
-                                }
-                                if (key == "id")
-                                {
-                                    id = atoi(valElement->FirstChild()->Value());
-                                }
-                                if (key == "position")
-                                {
-                                    for (TiXmlElement* posElement = valElement->FirstChildElement();
-                                        posElement != nullptr; posElement = posElement->NextSiblingElement())
-                                    {
-                                        if (key == "lon")
-                                        {
-                                            pos._lon = atoi(valElement->FirstChild()->Value());
-                                        }
-                                        if (key == "lat")
-                                        {
-                                            pos._lat = atoi(valElement->FirstChild()->Value());
-                                        }
-                                        if (key == "alt")
-                                        {
-                                            pos._alt = atoi(valElement->FirstChild()->Value());
-                                        }
-                                    }
-                                }
-                            }
+                            GetTypeFromTiXmlElement(type, unitElement);
+                            GetIDFromTiXmlElement(id, unitElement);
+                      
                             HINSTANCE hDll;
                             #if _DEBUG
                                 std::string dllPath = "dll\\Debug\\" + type + "d.dll";
@@ -174,6 +144,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             }
                             ModelBase* model = addFunction();
                             model->Init(unitElement);
+                            model->ReadScenario();
                             model->SetID(id);
                             MM->AppendModel(model);
                         }

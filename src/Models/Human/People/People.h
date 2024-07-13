@@ -2,6 +2,7 @@
 #define _PEOPLE_
 
 #include "../../ModelBase/HumanBase.h"
+#include "Tools/XML_Utils/XML_Utils.h"
 
 class People :public HumanBase {
 public:
