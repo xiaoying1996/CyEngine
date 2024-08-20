@@ -2,6 +2,7 @@
 
 MyEngine* MyEngine::m_MyEngine = nullptr;
 std::mutex MyEngine::m_Mutex;
+std::mutex MyEngine::m_Mutex_Advance;
 
 void TestFunction(void* arg)
 {
@@ -12,6 +13,11 @@ void TestFunction(void* arg)
     }
 }
 
+void TimeAdvanceManager(void* arg)
+{
+    //在这里设置时间就绪，条件时间状态为处理完成，处理完成设置是模型处理线程处理完模型相关函数后判断待处理的模型为空，并将所有模型放入了处理完毕列表
+    //设置时间就绪时，同样要将处理完的模型放进待处理列表
+}
 
 MyEngine* MyEngine::GetInstance()
 {
@@ -62,6 +68,8 @@ MyEngine::~MyEngine()
 
 ErrorState MyEngine::Init(int minThread, int maxThread)
 {
+    //将实体放入待处理列表，设置时间状态为就绪
+
     //初始化线程池
     ErrorState err;
     if (!Init_ThreadPool(minThread, maxThread))
@@ -181,4 +189,14 @@ void MyEngine::GetThreadNum(int& aliveNum, int& busyNum)
         aliveNum = m_pool->AliveNum();
         busyNum = m_pool->BusyNum();
     }
+}
+
+void MyEngine::SetAdvanceStu(TimeAdvanceStu stu)
+{
+
+}
+
+TimeAdvanceStu MyEngine::GetAdvanceStu()
+{
+    return ADV_FINISH;
 }

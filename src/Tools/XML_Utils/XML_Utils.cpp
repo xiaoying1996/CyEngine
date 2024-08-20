@@ -3,7 +3,7 @@
 void GetTypeFromTiXmlElement(std::string& type, TiXmlElement* unitElement)
 {
     for (TiXmlElement* valElement = unitElement->FirstChildElement();
-                              valElement != nullptr; valElement = unitElement->NextSiblingElement())
+                              valElement != nullptr; valElement = valElement->NextSiblingElement())
         {
             std::string key = valElement->Value();
             if (key == "type")
@@ -16,7 +16,7 @@ void GetTypeFromTiXmlElement(std::string& type, TiXmlElement* unitElement)
 void GetIDFromTiXmlElement(int &id, TiXmlElement* unitElement)
 {
     for (TiXmlElement* valElement = unitElement->FirstChildElement();
-        valElement != nullptr; valElement = unitElement->NextSiblingElement())
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
     {
         std::string key = valElement->Value();
         if (key == "id")

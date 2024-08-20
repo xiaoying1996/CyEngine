@@ -24,11 +24,14 @@ public slots:
     void on_ReadScenarioBtn_clicked();
     void slot_ThreadModeChanged(QString str);
     void slot_update();
+    void slot_CheckEngineStatus();
 
 private:
     Ui::EngineControllerClass ui;
     MyEngine *engine = nullptr;
     QTimer* timer = nullptr;
+    QTimer* timer2 = nullptr;
 
+    EngineStatus m_EngineStu;
     bool m_isEngineReadScenario;
 };

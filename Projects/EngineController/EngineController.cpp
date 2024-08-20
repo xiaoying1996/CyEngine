@@ -13,6 +13,11 @@ EngineController::EngineController(QWidget *parent)
     ui.StartBtn->setDisabled(true);
     connect(ui.ThreadModePoolBox, SIGNAL(currentIndexChanged(QString)),this, SLOT(slot_ThreadModeChanged(QString)));
 
+    m_EngineStu = EN_NOSTU;
+    timer2 = new QTimer(this);
+    connect(timer2, SIGNAL(timeout()), this, SLOT(slot_CheckEngineStatus()));
+    timer2->start(1000);
+
     m_isEngineReadScenario = false;
 }
 
@@ -125,12 +130,17 @@ void EngineController::slot_update()
     }
     ui.AliveEdit->setText(QString::number(alive));
     ui.CurrentEdit->setText(QString::number(busy));
+}
+
+void EngineController::slot_CheckEngineStatus()
+{
     if (!m_isEngineReadScenario)
     {
         m_isEngineReadScenario = MyEngine::GetInstance()->GetScenarioReadStu();
         if (m_isEngineReadScenario)
         {
             ui.StartBtn->setDisabled(false);
+            m_EngineStu = EN_READSEC;
         }
     }
 }

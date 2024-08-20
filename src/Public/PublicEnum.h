@@ -15,5 +15,19 @@ enum ModelType
 	M_PEOPLE = 1,
 };
 
+//引擎状态枚举
+enum EngineStatus
+{
+	EN_NOSTU = 0,
+	EN_READSEC,
+};
+
+//时间推进状态
+enum TimeAdvanceStu
+{
+	ADV_FINISH = 0,
+	ADV_READY ,
+	ADV_RUNNING,
+};
 #endif // !_PUBLIC_ENUM
 

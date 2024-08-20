@@ -14,6 +14,46 @@
                     <alt>15.0000</alt>
                 </position>
             </unit>
+            <unit>
+                <type>People</type>
+                <id>2</id>
+                <name>群众-2</name>
+                <position>
+                    <lon>115.00001</lon>
+                    <lat>31.0000</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>People</type>
+                <id>3</id>
+                <name>群众-3</name>
+                <position>
+                    <lon>115.00002</lon>
+                    <lat>31.0000</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>People</type>
+                <id>4</id>
+                <name>群众-4</name>
+                <position>s
+                    <lon>115.00003</lon>
+                    <lat>31.0000</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>People</type>
+                <id>5</id>
+                <name>群众-5</name>
+                <position>
+                    <lon>115.00004</lon>
+                    <lat>31.0000</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
         </Human>
     </Models>
 

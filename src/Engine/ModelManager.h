@@ -24,7 +24,7 @@ private:
 	static ModelManager* m_ModelManager;
 	static mutex m_Mutex;
 	static mutex m_Data_Mutex;
-	vector<ModelBase*> m_model_Vec;
+	vector<ModelBase*> m_model_Vec;	//当前环境中存在的所有实体
 };
 
 #endif // !_MODEL_MANAGER

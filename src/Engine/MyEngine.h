@@ -17,7 +17,9 @@ public:
     bool GetScenarioReadStu();
     bool ReadScenario(std::string filename,std::string &errStr);
     bool Init_ThreadPool(int min,int max);
+    TimeAdvanceStu GetAdvanceStu();
     void GetThreadNum(int &aliveNum,int &busyNum);
+    void SetAdvanceStu(TimeAdvanceStu stu);
 
 private:
     MyEngine();
@@ -27,6 +29,8 @@ private:
 private:
     static MyEngine* m_MyEngine;
     static std::mutex m_Mutex;
+    static std::mutex m_Mutex_Advance;
     ThreadPool* m_pool = nullptr;
     bool m_isScenarioRead;
+    TimeAdvanceStu m_canAdvance;
 };
