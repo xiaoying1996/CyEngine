@@ -43,6 +43,18 @@ void ModelManager::AppendModel(ModelBase* model)
 	m_Mutex.unlock();
 }
 
+void ModelManager::AddModelToRunningVec(ModelBase* model)
+{
+    m_Mutex.lock();
+    m_model_Running_Vec.push_back(model);
+    m_Mutex.unlock();
+}
+
+void ModelManager::MoveModelFromRunningToFinish()
+{
+
+}
+
 void ModelManager::SetAllModelToReadyVec()
 {
     m_Mutex.lock();
@@ -62,4 +74,23 @@ ModelBase* ModelManager::GetModelForRunn()
         m_model_ReadyRun_Vec.erase(m_model_ReadyRun_Vec.begin());
     }
     m_Mutex.unlock();
+    return model;
+}
+
+bool ModelManager::Is_model_Finish_Vec_Empty()
+{
+    bool b;
+    m_Mutex.lock();
+    b = m_model_Finish_Vec.empty();
+    m_Mutex.unlock();
+    return b;
+}
+
+bool ModelManager::Is_model_Running_Vec_Empty()
+{
+    bool b;
+    m_Mutex.lock();
+    b = m_model_Running_Vec.empty();
+    m_Mutex.unlock();
+    return b;
 }

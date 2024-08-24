@@ -23,11 +23,17 @@ void ModelRunner(void* arg)
         ModelBase* model = ModelManager::GetInstance()->GetModelForRunn();
         if (model == nullptr)//ReadyVec已经为空了
         {
-            //判断RunningVec是否为空，若为空，将时间状态设置未结束
+            //判断RunningVec是否为空，若为空，将时间状态设置为结束
+            if (ModelManager::GetInstance()->Is_model_Running_Vec_Empty())
+            {
+                MyEngine::GetInstance()->SetAdvanceStu(ADV_FINISH);
+            }
         }
         else//拿到了要运行的模型，1.将其放入RunningVec 2.执行运行任务
         {
-
+            ModelManager::GetInstance()->AddModelToRunningVec(model);
+            model->ReceiveEvent();
+            model->Run();
         }
     }
 }
@@ -231,10 +237,16 @@ void MyEngine::GetThreadNum(int& aliveNum, int& busyNum)
 
 void MyEngine::SetAdvanceStu(TimeAdvanceStu stu)
 {
-
+    m_Mutex.lock();
+    m_canAdvance = stu;
+    m_Mutex.unlock();
 }
 
 TimeAdvanceStu MyEngine::GetAdvanceStu()
 {
-    return ADV_FINISH;
+    TimeAdvanceStu stu;
+    m_Mutex.lock();
+    stu = m_canAdvance;
+    m_Mutex.unlock();
+    return stu;
 }

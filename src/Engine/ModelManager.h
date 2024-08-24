@@ -17,6 +17,10 @@ public:
 
 	void AppendModel(ModelBase* model);
 	void SetAllModelToReadyVec();
+	void AddModelToRunningVec(ModelBase * model);
+
+	bool Is_model_Finish_Vec_Empty();
+	bool Is_model_Running_Vec_Empty();
 
 	ModelBase* GetModelForRunn();
 private:
