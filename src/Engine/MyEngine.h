@@ -20,6 +20,7 @@ public:
     TimeAdvanceStu GetAdvanceStu();
     void GetThreadNum(int &aliveNum,int &busyNum);
     void SetAdvanceStu(TimeAdvanceStu stu);
+    void SetLogStu(bool stu);
 
 private:
     MyEngine();
@@ -31,6 +32,7 @@ private:
     static std::mutex m_Mutex;
     static std::mutex m_Mutex_Advance;
     ThreadPool* m_pool = nullptr;
+    thread* m_TimeAdvancer_Thread = nullptr;
     bool m_isScenarioRead;
     TimeAdvanceStu m_canAdvance;
 };

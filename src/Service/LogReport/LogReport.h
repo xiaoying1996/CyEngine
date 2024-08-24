@@ -12,6 +12,7 @@ public:
 
     void PrintError(ErrorState err);
     void PrintError(std::string errStr);
+    void SetLogStu(bool stu);
 
 private:
     LogReport();
@@ -23,6 +24,9 @@ private:
 private:
     static LogReport* m_LogReport;
     static std::mutex m_Mutex;
+    std::string m_logPath;
+    bool m_log_Stu;//lon×´Ì¬£¬Ä¬ÈÏ¹Ø±Õ
+
 };
 
 #endif // !_LOGREPORT_

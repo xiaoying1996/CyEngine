@@ -60,6 +60,7 @@ void TimeAdvanceManager(void* arg)
             _LOG->PrintError("时间管理线程，当前时间未达到就绪状态，还有模型未执行完毕，等待下一个脉冲");
         }
     }
+    int i = 1;
 }
 
 MyEngine* MyEngine::GetInstance()
@@ -87,6 +88,7 @@ void MyEngine::deleteInstance()
 
 MyEngine::MyEngine()
 {
+    _LOG->PrintError("引擎执行构造");
     m_pool = nullptr;
     m_isScenarioRead = false;
 }
@@ -104,6 +106,8 @@ MyEngine::~MyEngine()
         delete m_pool;
         m_pool = nullptr;
     }
+    //等待时间管理线程结束
+    m_TimeAdvancer_Thread->join();
     //销毁模型管理器
     ModelManager::deleteInstance();
     m_MyEngine = nullptr;
@@ -116,7 +120,8 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
     m_canAdvance = ADV_READY;
 
     //开启时间线程
-    thread t(TimeAdvanceManager,this);
+    m_TimeAdvancer_Thread = new thread(TimeAdvanceManager, this);
+    m_TimeAdvancer_Thread->detach();
 
     //初始化线程池
     ErrorState err;
@@ -244,6 +249,11 @@ void MyEngine::SetAdvanceStu(TimeAdvanceStu stu)
     m_Mutex.lock();
     m_canAdvance = stu;
     m_Mutex.unlock();
+}
+
+void MyEngine::SetLogStu(bool stu)
+{
+    _LOG->SetLogStu(stu);
 }
 
 TimeAdvanceStu MyEngine::GetAdvanceStu()
