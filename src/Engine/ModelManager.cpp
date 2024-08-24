@@ -50,16 +50,45 @@ void ModelManager::AddModelToRunningVec(ModelBase* model)
     m_Mutex.unlock();
 }
 
-void ModelManager::MoveModelFromRunningToFinish()
+void ModelManager::MoveModelFromRunningToFinish(ModelBase* model)
 {
+    m_Mutex.lock();
+    for (auto iter = m_model_Running_Vec.begin(); iter != m_model_Running_Vec.end(); iter++)
+    {
+        if (model == *iter)
+        {
+            m_model_Running_Vec.erase(iter);
+            break;
+        }
+    }
+    m_model_Finish_Vec.push_back(model);
+    m_Mutex.unlock();
+}
 
+void ModelManager::MoveAllModelsFromFinishToReady()
+{
+    m_Mutex.lock();
+    if (m_model_ReadyRun_Vec.size())
+    {
+        _LOG->PrintError("模型管理器: 预处理列表还存在模型，无法重置Ready");
+    }
+    if (m_model_Running_Vec.size())
+    {
+        _LOG->PrintError("模型管理器: 正在处理列表还存在模型，无法重置Ready");
+    }
+    if (m_model_Finish_Vec.size())
+    {
+        m_model_ReadyRun_Vec = m_model_Finish_Vec;
+        m_model_Finish_Vec.clear();
+    }
+    m_Mutex.unlock();
 }
 
 void ModelManager::SetAllModelToReadyVec()
 {
     m_Mutex.lock();
     m_model_ReadyRun_Vec.clear();
-    m_model_Vec = m_model_ReadyRun_Vec;
+    m_model_ReadyRun_Vec = m_model_Vec;
     m_Mutex.unlock();
     _LOG->PrintError("已将环境中所有模型置于就绪态");
 }

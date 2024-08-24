@@ -34,6 +34,8 @@ void ModelRunner(void* arg)
             ModelManager::GetInstance()->AddModelToRunningVec(model);
             model->ReceiveEvent();
             model->Run();
+            //执行结束后，将其从RunningVec转移到FinishVec
+            ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
         }
     }
 }
@@ -49,7 +51,9 @@ void TimeAdvanceManager(void* arg)
         {
             int i = 0;
             //1.将所有已完成容器里面的模型放入ReadyVec中
+            ModelManager::GetInstance()->MoveAllModelsFromFinishToReady();
             //2.将时间状态设置为Ready
+            MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
         }
         else
         {
