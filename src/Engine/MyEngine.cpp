@@ -4,12 +4,31 @@ MyEngine* MyEngine::m_MyEngine = nullptr;
 std::mutex MyEngine::m_Mutex;
 std::mutex MyEngine::m_Mutex_Advance;
 
-void TestFunction(void* arg)
+void ModelRunner(void* arg)
 {
-    for (int i = 0; i < 10; i++)
+    while (true)
     {
-        std::this_thread::sleep_for(std::chrono::seconds(1));
-        std::cout << "ThreadID:" << std::this_thread::get_id() << " :  function....." << std::endl;
+        if (MyEngine::GetInstance()->GetAdvanceStu() == ADV_FINISH)
+        {
+            continue;
+        }
+        if (MyEngine::GetInstance()->GetAdvanceStu() == ADV_READY)
+        {
+            MyEngine::GetInstance()->SetAdvanceStu(ADV_RUNNING);
+        }
+        //走到这就证明时间状态未RUNNING，执行以下工作
+        /*
+        1.从ReadyVec中读取一个model，将其移到RunningVec中
+        */
+        ModelBase* model = ModelManager::GetInstance()->GetModelForRunn();
+        if (model == nullptr)//ReadyVec已经为空了
+        {
+            //判断RunningVec是否为空，若为空，将时间状态设置未结束
+        }
+        else//拿到了要运行的模型，1.将其放入RunningVec 2.执行运行任务
+        {
+
+        }
     }
 }
 
@@ -17,6 +36,20 @@ void TimeAdvanceManager(void* arg)
 {
     //在这里设置时间就绪，条件时间状态为处理完成，处理完成设置是模型处理线程处理完模型相关函数后判断待处理的模型为空，并将所有模型放入了处理完毕列表
     //设置时间就绪时，同样要将处理完的模型放进待处理列表
+    while (true)
+    {
+        Sleep(100);
+        if (MyEngine::GetInstance()->GetAdvanceStu() == ADV_FINISH)
+        {
+            int i = 0;
+            //1.将所有已完成容器里面的模型放入ReadyVec中
+            //2.将时间状态设置为Ready
+        }
+        else
+        {
+            _LOG->PrintError("时间管理线程，当前时间未达到就绪状态，还有模型未执行完毕，等待下一个脉冲");
+        }
+    }
 }
 
 MyEngine* MyEngine::GetInstance()
@@ -68,7 +101,12 @@ MyEngine::~MyEngine()
 
 ErrorState MyEngine::Init(int minThread, int maxThread)
 {
-    //将实体放入待处理列表，设置时间状态为就绪
+    //将实体放入待处理列表，设置时间状态为结束，等待时间线程开启
+    ModelManager::GetInstance()->SetAllModelToReadyVec();
+    m_canAdvance = ADV_READY;
+
+    //开启时间线程
+    thread t(TimeAdvanceManager,this);
 
     //初始化线程池
     ErrorState err;
@@ -174,7 +212,7 @@ bool MyEngine::Init_ThreadPool(int min, int max)
         m_pool = new ThreadPool(min,max);
         for (int i = 0; i < max; i++)
         {
-            m_pool->Add(TestFunction, (void*)5);
+            m_pool->Add(ModelRunner, (void*)5);//参数5，暂时没有用，先留着，后面有用的话就不要临时加
         }
     }
     return true;

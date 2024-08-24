@@ -1,6 +1,3 @@
-﻿  main.cpp
-  EngineController.cpp
-  moc_EngineController.cpp
-  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\EngineController.exe
+﻿  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\EngineController.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。

@@ -42,3 +42,24 @@ void ModelManager::AppendModel(ModelBase* model)
 	m_model_Vec.push_back(model);
 	m_Mutex.unlock();
 }
+
+void ModelManager::SetAllModelToReadyVec()
+{
+    m_Mutex.lock();
+    m_model_ReadyRun_Vec.clear();
+    m_model_Vec = m_model_ReadyRun_Vec;
+    m_Mutex.unlock();
+    _LOG->PrintError("已将环境中所有模型置于就绪态");
+}
+
+ModelBase* ModelManager::GetModelForRunn()
+{
+    ModelBase* model = nullptr;
+    m_Mutex.lock();
+    if (m_model_ReadyRun_Vec.size())
+    {
+        model = m_model_ReadyRun_Vec[0];
+        m_model_ReadyRun_Vec.erase(m_model_ReadyRun_Vec.begin());
+    }
+    m_Mutex.unlock();
+}
