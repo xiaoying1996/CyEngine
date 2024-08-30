@@ -1,6 +1,9 @@
 #ifndef _PUBLIC_STRUCT_
 #define _PUBLIC_STRUCT_
 
+#include <iostream>
+using namespace std;
+
 struct Model_Position {
 	double _lon;
 	double _lat;
@@ -31,6 +34,28 @@ struct Model_Shape {
 		_length = length;
 		_width = width;
 		_hight = hight;
+	}
+};
+
+struct Model_BasicInfo {
+	int _id;
+	int _type;
+	string _name;
+	Model_Position _pos;
+	Model_Shape _shape;
+	Model_BasicInfo() {
+		_id = 0;
+		_name = "";
+		_pos._lon = 0;_pos._lat = 0;_pos._alt = 0;
+		_shape._length = 0; _shape._width = 0; _shape._hight = 0;
+		_type = 0;
+	}
+	Model_BasicInfo(int id, int type,string name, Model_Position pos,Model_Shape shape) {
+		_id = id;
+		_name = name;
+		_pos = pos;
+		_shape = shape;
+		_type = type;
 	}
 };
 

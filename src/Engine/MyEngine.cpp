@@ -88,9 +88,16 @@ void MyEngine::deleteInstance()
 
 MyEngine::MyEngine()
 {
-    _LOG->PrintError("引擎执行构造");
+    #if _DEBUG
+        _LOG->PrintError("引擎执行构造");
+    #endif // NDEBUG
+
     m_pool = nullptr;
     m_isScenarioRead = false;
+
+    #if _DEBUG
+        _LOG->PrintError("引擎构造完成");
+    #endif // NDEBUG
 }
 
 MyEngine::MyEngine(const MyEngine& manager)
@@ -100,6 +107,9 @@ MyEngine::MyEngine(const MyEngine& manager)
 
 MyEngine::~MyEngine()
 {
+    #if _DEBUG
+        _LOG->PrintError("引擎开始析构");
+    #endif // NDEBUG
     //销毁线程池
     if (m_pool)
     {
@@ -111,18 +121,30 @@ MyEngine::~MyEngine()
     //销毁模型管理器
     ModelManager::deleteInstance();
     m_MyEngine = nullptr;
+    #if _DEBUG
+        _LOG->PrintError("引擎析构完成");
+    #endif // NDEBUG
 }
 
 ErrorState MyEngine::Init(int minThread, int maxThread)
 {
+#if _DEBUG
+    _LOG->PrintError("将读取的实体放入预处理列表");
+#endif // NDEBUG
     //将实体放入待处理列表，设置时间状态为结束，等待时间线程开启
     ModelManager::GetInstance()->SetAllModelToReadyVec();
     m_canAdvance = ADV_READY;
 
+#if _DEBUG
+    _LOG->PrintError("开启时间管理线程");
+#endif // NDEBUG
     //开启时间线程
     m_TimeAdvancer_Thread = new thread(TimeAdvanceManager, this);
     m_TimeAdvancer_Thread->detach();
 
+#if _DEBUG
+    _LOG->PrintError("初始化线程池，minThread=" + to_string(minThread) + ", maxThread =" + to_string(maxThread));
+#endif // NDEBUG
     //初始化线程池
     ErrorState err;
     if (!Init_ThreadPool(minThread, maxThread))
@@ -130,6 +152,9 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
         return THREADPOOLERR;
     }
 
+#if _DEBUG
+    _LOG->PrintError("引擎初始化完成");
+#endif // NDEBUG
     return NERROR;
 }
 
@@ -145,12 +170,17 @@ bool MyEngine::GetScenarioReadStu()
 bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
 {
     errStr = "no error";
+#if _DEBUG
     _LOG->GetInstance()->PrintError("Read Scenario File: " + filename);
+#endif // NDEBUG
+
     TiXmlDocument* xmlDocument = new TiXmlDocument();
     if (!xmlDocument->LoadFile(filename.c_str())) //没有test.xml文件
     {
         std::string err = xmlDocument->ErrorDesc();
-        _LOG->PrintError("read XML file: " + err);
+        #if _DEBUG
+                _LOG->GetInstance()->PrintError("Read Scenario err: " + err);
+        #endif // NDEBUG
 
         delete xmlDocument;
         return false;
@@ -207,6 +237,9 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
+                            Model_BasicInfo modelInfo;
+                            model->GetBasicInfo(modelInfo);
+                            _LOG->AddModelToLog(modelInfo);
                             MM->AppendModel(model);
                         }
                     }
@@ -214,6 +247,9 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
             }
         }
     }
+    #if _DEBUG
+        _LOG->GetInstance()->PrintError("读取想定成功");
+    #endif // NDEBUG
     m_Mutex.lock();
     m_isScenarioRead = true;
     m_Mutex.unlock();
@@ -230,6 +266,9 @@ bool MyEngine::Init_ThreadPool(int min, int max)
             m_pool->Add(ModelRunner, (void*)5);//参数5，暂时没有用，先留着，后面有用的话就不要临时加
         }
     }
+    #if _DEBUG
+        _LOG->GetInstance()->PrintError("初始化线程池成功");
+    #endif // NDEBUG
     return true;
 }
 

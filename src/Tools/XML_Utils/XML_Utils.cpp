@@ -54,3 +54,26 @@ void GetPositionFromTiXmlElement(std::vector<int>& pos, TiXmlElement* unitElemen
         }
     }
 }
+
+void GetNameFromTiXmlElement(std::string& name, TiXmlElement* unitElement)
+{
+    for (TiXmlElement* valElement = unitElement->FirstChildElement();
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "name")
+        {
+            name = valElement->FirstChild()->Value();
+            //name = name.
+        }
+    }
+}
+
+std::string UTF8ToString(const std::string& utf8Data)
+{
+    //先将UTF-8转换成Unicode
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
+    std::wstring wString = conv.from_bytes(utf8Data);
+    //在转换成string
+    return UnicodeToAscii(wString);
+}

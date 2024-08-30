@@ -17,15 +17,18 @@ public:
 	virtual void Destory();
 
 	void SetID(int id);
+	void GetBasicInfo(Model_BasicInfo &info);
 
 private:
 	bool _isInit;
 	bool _isReadScenario;
-
 	int _id;
-	ModelType _type;
 	Model_Position _pos;
 	Model_Shape _shape;
+	string _name;
+
+protected:
+	ModelType _type;
 };
 
 #endif // !_MODEL_BASE_

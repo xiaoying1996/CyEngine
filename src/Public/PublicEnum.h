@@ -12,6 +12,7 @@ enum ErrorState
 
 enum ModelType
 {
+	M_UNKNOW = 0,
 	M_PEOPLE = 1,
 };
 

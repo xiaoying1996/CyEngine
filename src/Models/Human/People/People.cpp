@@ -11,6 +11,7 @@ People::~People()
 
 void People::Init(TiXmlElement* unitElement)
 {
+	_type = M_PEOPLE;
 	HumanBase::Init(unitElement);
 }
 
