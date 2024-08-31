@@ -1,5 +1,25 @@
 #include "XML_Utils.h"
 
+std::string UnicodeToAscii(const std::wstring str)
+{
+    int	iTextLen = WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, NULL, 0, NULL, NULL);
+    std::vector<char> vecText(iTextLen, '\0');
+    ::WideCharToMultiByte(CP_ACP, 0, str.c_str(), -1, &(vecText[0]), iTextLen, NULL, NULL);
+
+    std::string strText = &(vecText[0]);
+
+    return strText;
+}
+
+std::string UTF8ToString(const std::string& utf8Data)
+{
+    //先将UTF-8转换成Unicode
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
+    std::wstring wString = conv.from_bytes(utf8Data);
+    //在转换成string
+    return UnicodeToAscii(wString);
+}
+
 void GetTypeFromTiXmlElement(std::string& type, TiXmlElement* unitElement)
 {
     for (TiXmlElement* valElement = unitElement->FirstChildElement();
@@ -64,16 +84,14 @@ void GetNameFromTiXmlElement(std::string& name, TiXmlElement* unitElement)
         if (key == "name")
         {
             name = valElement->FirstChild()->Value();
-            //name = name.
+            name = UTF8ToString(name);
         }
     }
 }
 
-std::string UTF8ToString(const std::string& utf8Data)
+time_t GetCurrentTimeMsec() 
 {
-    //先将UTF-8转换成Unicode
-    std::wstring_convert<std::codecvt_utf8<wchar_t>> conv;
-    std::wstring wString = conv.from_bytes(utf8Data);
-    //在转换成string
-    return UnicodeToAscii(wString);
+    auto time = chrono::time_point_cast<chrono::milliseconds>(chrono::system_clock::now());
+    time_t timestamp = time.time_since_epoch().count();
+    return timestamp;
 }

@@ -21,6 +21,8 @@ public:
     void GetThreadNum(int &aliveNum,int &busyNum);
     void SetAdvanceStu(TimeAdvanceStu stu);
     void SetLogStu(bool stu);
+    void BattleTimeAdvance();
+    double GetBattleTime();
 
 private:
     MyEngine();
@@ -34,5 +36,6 @@ private:
     ThreadPool* m_pool = nullptr;
     thread* m_TimeAdvancer_Thread = nullptr;
     bool m_isScenarioRead;
+    double m_battleTime;
     TimeAdvanceStu m_canAdvance;
 };

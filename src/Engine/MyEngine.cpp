@@ -6,15 +6,26 @@ std::mutex MyEngine::m_Mutex_Advance;
 
 void ModelRunner(void* arg)
 {
+    time_t tickStart;
+    time_t tickFinish;
+    bool isPrintTick = false;;
     while (true)
     {
         if (MyEngine::GetInstance()->GetAdvanceStu() == ADV_FINISH)
         {
+            if (!isPrintTick)
+            {
+                tickFinish = GetCurrentTimeMsec();
+                _LOG->PrintError("战斗时间:" + to_string(MyEngine::GetInstance()->GetBattleTime()) + "  该Tick耗时:" + to_string(tickFinish - tickStart));
+                isPrintTick = true;
+            }
             continue;
         }
         if (MyEngine::GetInstance()->GetAdvanceStu() == ADV_READY)
         {
             MyEngine::GetInstance()->SetAdvanceStu(ADV_RUNNING);
+            isPrintTick = false;
+            tickStart = GetCurrentTimeMsec();
         }
         //走到这就证明时间状态未RUNNING，执行以下工作
         /*
@@ -54,6 +65,7 @@ void TimeAdvanceManager(void* arg)
             ModelManager::GetInstance()->MoveAllModelsFromFinishToReady();
             //2.将时间状态设置为Ready
             MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
+            MyEngine::GetInstance()->BattleTimeAdvance();
         }
         else
         {
@@ -94,6 +106,7 @@ MyEngine::MyEngine()
 
     m_pool = nullptr;
     m_isScenarioRead = false;
+    m_battleTime = 0;
 
     #if _DEBUG
         _LOG->PrintError("引擎构造完成");
@@ -293,6 +306,22 @@ void MyEngine::SetAdvanceStu(TimeAdvanceStu stu)
 void MyEngine::SetLogStu(bool stu)
 {
     _LOG->SetLogStu(stu);
+}
+
+void MyEngine::BattleTimeAdvance()
+{
+    m_Mutex.lock();
+    m_battleTime += 0.1;
+    m_Mutex.unlock();
+}
+
+double MyEngine::GetBattleTime()
+{
+    double t;
+    m_Mutex.lock();
+    t = m_battleTime;
+    m_Mutex.unlock();
+    return t;
 }
 
 TimeAdvanceStu MyEngine::GetAdvanceStu()
