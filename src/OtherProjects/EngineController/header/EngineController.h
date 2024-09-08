@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _ENGINE_CONTROLLER_
+#define _ENGINE_CONTROLLER_
 
 #include <QtWidgets/QMainWindow>
 #include <QMessageBox>
@@ -8,6 +9,7 @@
 #include "../../../Public/PublicInclude.h"
 #include "../../../Service/LogReport/LogReport.h"
 #include "../../../Models//Human//People/People.h"
+#include <ui_EngineController.h>
 
 class EngineController : public QMainWindow
 {
@@ -28,3 +30,5 @@ private:
     MyEngine *engine = nullptr;
     QTimer* timer = nullptr;
 };
+
+#endif

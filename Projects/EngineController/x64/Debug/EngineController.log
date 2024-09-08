@@ -1,4 +1,4 @@
 ﻿  main.cpp
-D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\EngineController\header\EngineController.h(27,5): error C2653: “Ui”: 不是类或命名空间名称
-D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\EngineController\header\EngineController.h(27,31): error C3646: “ui”: 未知重写说明符
-D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\EngineController\header\EngineController.h(27,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\EngineController.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
