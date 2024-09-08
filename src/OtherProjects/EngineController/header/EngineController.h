@@ -3,7 +3,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QMessageBox>
 #include <QTimer>
-#include "ui_EngineController.h"
+#include "../header/EngineController.h"
 #include "../../../Engine/MyEngine.h"
 #include "../../../Public/PublicInclude.h"
 #include "../../../Service/LogReport/LogReport.h"
