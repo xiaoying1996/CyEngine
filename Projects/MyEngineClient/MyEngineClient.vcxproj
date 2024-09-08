@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7AA68987-CD87-40E9-A00C-C4E727492BB2}</ProjectGuid>
+    <ProjectGuid>{6FEE7C23-C800-4F3E-9B4A-46DD71189AD7}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0</WindowsTargetPlatformVersion>
@@ -97,9 +97,11 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\main.cpp" />
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.cpp" />
+    <ClCompile Include="x64\Debug\moc\moc_MyEngineClient.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h" />
+    <ClInclude Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h" />
+    <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui" />

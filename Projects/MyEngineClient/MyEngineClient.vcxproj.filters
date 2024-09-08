@@ -34,11 +34,17 @@
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="x64\Debug\moc\moc_MyEngineClient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h">
+    <ClInclude Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h">
       <Filter>Header Files</Filter>
-    </QtMoc>
+    </ClInclude>
+    <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui">

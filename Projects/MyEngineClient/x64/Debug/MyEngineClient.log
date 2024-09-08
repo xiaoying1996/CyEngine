@@ -1,8 +1,4 @@
 ﻿  Reading Qt configuration (D:/Program/qt/5.9.9/msvc2017_64/bin/qmake)
-  uic ..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui
-  moc ..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h
-  main.cpp
-  MyEngineClient.cpp
   moc_MyEngineClient.cpp
   MyEngineClient.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\MyEngineClient.exe
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
