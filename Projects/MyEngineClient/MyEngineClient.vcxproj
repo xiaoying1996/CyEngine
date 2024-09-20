@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>5.9.9_msvc2017_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;network</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -63,6 +63,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)src\Tools\ProtoBuf;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotocd.lib;libprotobufd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -97,14 +106,27 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\main.cpp" />
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.cpp" />
-    <ClCompile Include="x64\Debug\moc\moc_MyEngineClient.cpp" />
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.cpp" />
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.cpp" />
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.cpp" />
+    <ClCompile Include="..\..\src\Tools\ProtoBuf\MyEngineMessage.pb.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h" />
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h" />
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.h" />
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.h" />
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.h" />
+    <ClInclude Include="..\..\src\Tools\ProtoBuf\MyEngineMessage.pb.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui" />
+    <QtUic Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.ui" />
+    <QtUic Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngineClient.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

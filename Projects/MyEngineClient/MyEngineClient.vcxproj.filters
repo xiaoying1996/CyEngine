@@ -34,15 +34,27 @@
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="x64\Debug\moc\moc_MyEngineClient.cpp">
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Tools\ProtoBuf\MyEngineMessage.pb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h">
+    <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h">
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Tools\ProtoBuf\MyEngineMessage.pb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,5 +62,30 @@
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+    <QtUic Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngineClient.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
