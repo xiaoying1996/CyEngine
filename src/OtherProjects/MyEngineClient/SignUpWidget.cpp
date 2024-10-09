@@ -12,11 +12,20 @@ SignUpWidget::SignUpWidget(QWidget *parent)
 	connect(ui.EmailEdit, SIGNAL(textChanged(QString)), this, SLOT(slot_CheckInfoFilled(QString)));
 	connect(ui.PasswordEdit, SIGNAL(textChanged(QString)), this, SLOT(slot_CheckInfoFilled(QString)));
 	connect(ui.Password2Edit, SIGNAL(textChanged(QString)), this, SLOT(slot_CheckInfoFilled(QString)));
+
+	m_inNameRepeat = false;
 }
 
 SignUpWidget::~SignUpWidget()
 {}
 
+void SignUpWidget::SetUserNameRepeatState(bool state)
+{
+	if (state == false)
+	{
+		m_inNameRepeat = true;
+	}
+}
 
 void SignUpWidget::slot_CheckInfoFilled(QString str)
 {
@@ -32,10 +41,11 @@ void SignUpWidget::slot_CheckInfoFilled(QString str)
 	message_name->set_name(ui.NameEdit->text().toStdString());
 	m.set_allocated_content1(message_name);
 	std::string msgStr;
-	if (m.SerializeToString(&msgStr));
-	qDebug() << QString::fromLocal8Bit("序列化后的str") << QString::fromStdString(msgStr) + "\n";
+	if (m.SerializeToString(&msgStr))
+		qDebug() << QString::fromLocal8Bit("序列化后的str") << QString::fromStdString(msgStr) + "\n";
+	m.clear_content1();
 	m.Clear();
-	delete message_name;
+	MyTcpClient::GetInstance()->SendMessage(msgStr);
 	//检查手机号码是否11位、是否都是数字
 
 	//检查email是否符合要求 字符使用范围、有@.

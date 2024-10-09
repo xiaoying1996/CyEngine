@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MyTcpClient_t {
-    QByteArrayData data[1];
-    char stringdata0[12];
+    QByteArrayData data[5];
+    char stringdata0[64];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,10 +31,15 @@ struct qt_meta_stringdata_MyTcpClient_t {
     )
 static const qt_meta_stringdata_MyTcpClient_t qt_meta_stringdata_MyTcpClient = {
     {
-QT_MOC_LITERAL(0, 0, 11) // "MyTcpClient"
+QT_MOC_LITERAL(0, 0, 11), // "MyTcpClient"
+QT_MOC_LITERAL(1, 12, 20), // "slot_connect_Success"
+QT_MOC_LITERAL(2, 33, 0), // ""
+QT_MOC_LITERAL(3, 34, 15), // "slot_disconnect"
+QT_MOC_LITERAL(4, 50, 13) // "slot_ReadData"
 
     },
-    "MyTcpClient"
+    "MyTcpClient\0slot_connect_Success\0\0"
+    "slot_disconnect\0slot_ReadData"
 };
 #undef QT_MOC_LITERAL
 
@@ -44,21 +49,38 @@ static const uint qt_meta_data_MyTcpClient[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
+ // slots: name, argc, parameters, tag, flags
+       1,    0,   29,    2, 0x0a /* Public */,
+       3,    0,   30,    2, 0x0a /* Public */,
+       4,    0,   31,    2, 0x0a /* Public */,
+
+ // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+
        0        // eod
 };
 
 void MyTcpClient::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
-    Q_UNUSED(_o);
-    Q_UNUSED(_id);
-    Q_UNUSED(_c);
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        MyTcpClient *_t = static_cast<MyTcpClient *>(_o);
+        Q_UNUSED(_t)
+        switch (_id) {
+        case 0: _t->slot_connect_Success(); break;
+        case 1: _t->slot_disconnect(); break;
+        case 2: _t->slot_ReadData(); break;
+        default: ;
+        }
+    }
     Q_UNUSED(_a);
 }
 
@@ -84,6 +106,17 @@ void *MyTcpClient::qt_metacast(const char *_clname)
 int MyTcpClient::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 3)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 3;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 3)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 3;
+    }
     return _id;
 }
 QT_WARNING_POP

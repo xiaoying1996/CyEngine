@@ -37,6 +37,9 @@ MyEngineClient::MyEngineClient(QWidget *parent)
 
     //初始化TCP客户端
     MyTcpClient::GetInstance();
+    m_timer = new QTimer(this);
+    connect(m_timer, SIGNAL(timeout()), this, SLOT(slot_ProcessTimeout()));
+    m_timer->start(100);
 }
 
 MyEngineClient::~MyEngineClient()
@@ -56,9 +59,38 @@ MyEngineClient::~MyEngineClient()
 
 void MyEngineClient::on_SignUpBtn_clicked()
 {
+    bool con;
+    MyTcpClient::GetInstance()->GetConnectState(con);
+    if (!con)
+    {
+        QMessageBox::information(this, QString::fromLocal8Bit("提示"), QString::fromLocal8Bit("未连接服务器"), QMessageBox::Close);
+        return;
+    }
     if (m_signup == nullptr)
     {
         m_signup = new SignUpWidget();
     }
     m_signup->show();
+}
+
+void MyEngineClient::slot_ProcessTimeout()
+{
+    QVector<std::string> strs;
+    MyTcpClient::GetInstance()->GetRetStrs(strs);
+    if (strs.size())
+    {
+        for (int i = 0; i < strs.size(); i++)
+        {
+            std::string str = strs[i];
+            MainMessage protoMsg;
+            protoMsg.ParseFromString(str);
+            MessageType type = protoMsg.type();
+            if (protoMsg.type() == MessageType::NAME_REPEAT_REPOST)//关于用户名是否重复的消息
+            {
+                Name_Repeat_Repost content = protoMsg.content2();
+                bool res = content.state();
+                m_signup->SetUserNameRepeatState(res);
+            }
+        }
+    }
 }

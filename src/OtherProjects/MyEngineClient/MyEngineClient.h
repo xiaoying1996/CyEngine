@@ -3,6 +3,8 @@
 #include <QtWidgets/QMainWindow>
 #include <QPixMap>
 #include <QMessageBox>
+#include <QTime>
+#include "MyEngineMessage.pb.h"
 #include "MyTcpClient.h"
 #include "PicPlayer.h"
 #include "SignUpWidget.h"
@@ -19,8 +21,11 @@ public:
 public slots:
     void on_SignUpBtn_clicked();
 
+    void slot_ProcessTimeout();
+
 private:
     Ui::MyEngineClientClass ui;
     PicPlayer* m_picPlayer = nullptr;
     SignUpWidget* m_signup = nullptr;
+    QTimer* m_timer = nullptr;
 };

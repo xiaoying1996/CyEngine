@@ -2,6 +2,7 @@
 
 MyTcpClient* MyTcpClient::m_MyTcpClient = nullptr;
 QMutex MyTcpClient::m_Mutex;
+QMutex MyTcpClient::m_Mutex_Str;
 
 MyTcpClient::MyTcpClient(QObject *parent)
 	: QObject(parent)
@@ -10,6 +11,9 @@ MyTcpClient::MyTcpClient(QObject *parent)
     if (m_MyTcpClient == nullptr)
     {
         m_TcpClient = new QTcpSocket(this);
+        connect(m_TcpClient, SIGNAL(connected()), this, SLOT(slot_connect_Success()));
+        connect(m_TcpClient,SIGNAL(readyRead()),this,SLOT(slot_ReadData()));
+        m_connectState = false;
         QFile file("data/config/TcpServer.config");
         if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         {
@@ -45,10 +49,6 @@ MyTcpClient::MyTcpClient(QObject *parent)
                 }
             }
             m_TcpClient->connectToHost(QHostAddress(m_IP),m_PORT);
-            if (m_TcpClient->error() != QNetworkReply::NoError)
-            {
-                QMessageBox::information(NULL,QString::fromLocal8Bit("提示"),QString::fromLocal8Bit("TCP服务器连接失败,错误码:") + QString::number(m_TcpClient->error()),QMessageBox::Yes);
-            }
         }
     }
 }
@@ -79,4 +79,47 @@ void MyTcpClient::deleteInstance()
         m_MyTcpClient = nullptr;
     }
     m_Mutex.unlock();
+}
+
+void MyTcpClient::GetConnectState(bool& state)
+{
+    m_Mutex.lock();
+    state = m_connectState;
+    m_Mutex.unlock();
+}
+
+void MyTcpClient::SendMessage(QString str)
+{
+    m_TcpClient->write(str.toLocal8Bit());
+}
+
+void MyTcpClient::SendMessage(std::string str)
+{
+    m_TcpClient->write(str.c_str());
+}
+
+void MyTcpClient::GetRetStrs(QVector<std::string>& strs)
+{
+    m_Mutex_Str.lock();
+    strs = m_retStrs;
+    m_retStrs.clear();
+    m_Mutex_Str.unlock();
+}
+
+void MyTcpClient::slot_connect_Success()
+{
+    m_connectState = true;
+}
+
+void MyTcpClient::slot_disconnect()
+{
+    m_connectState = false;
+}
+
+void MyTcpClient::slot_ReadData()
+{
+    std::string str = m_TcpClient->readAll().toStdString();
+    m_Mutex_Str.lock();
+    m_retStrs.push_back(str);
+    m_Mutex_Str.unlock();
 }
