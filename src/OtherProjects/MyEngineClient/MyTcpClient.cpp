@@ -96,6 +96,7 @@ void MyTcpClient::SendMessage(QString str)
 void MyTcpClient::SendMessage(std::string str)
 {
     m_TcpClient->write(str.c_str());
+    m_TcpClient->flush();
 }
 
 void MyTcpClient::GetRetStrs(QVector<std::string>& strs)

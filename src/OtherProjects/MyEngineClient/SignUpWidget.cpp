@@ -21,19 +21,38 @@ SignUpWidget::~SignUpWidget()
 
 void SignUpWidget::SetUserNameRepeatState(bool state)
 {
-	if (state == false)
+	if (state == true)
 	{
 		m_inNameRepeat = true;
+		ui.WarnLabel->setText(QString::fromLocal8Bit("用户名重复"));
+	}
+	else
+	{
+		ui.WarnLabel->clear();
 	}
 }
 
 void SignUpWidget::slot_CheckInfoFilled(QString str)
 {
-	//检查用户名是否重复、是否含有非法字符、最短最长
-	if (ui.NameEdit->text().contains("/") || ui.NameEdit->text().contains("\\") || ui.NameEdit->text().contains(" ") || ui.NameEdit->text().contains("-"))
+	//检查用户名是否重复、是否含有非法字符、最短最长、是否全是数字
+	if (ui.NameEdit->text().contains("/") || ui.NameEdit->text().contains("\\") || ui.NameEdit->text().contains(" ") || ui.NameEdit->text().contains("-") || ui.NameEdit->text().contains("."))
 	{
 		ui.WarnLabel->setText(QString::fromLocal8Bit("用户名中含有非法字符"));
 		return;
+	}
+	if (ui.NameEdit->text().length() > 16 || ui.NameEdit->text().length() < 3)
+	{
+		ui.WarnLabel->setText(QString::fromLocal8Bit("用户名长度不符合要求"));
+		return;
+	}
+	if (ui.NameEdit->text().contains(QRegExp("^\\d+$")))
+	{
+		ui.WarnLabel->setText(QString::fromLocal8Bit("用户名不能全是数字"));
+		return;
+	}
+	if (!m_inNameRepeat)
+	{
+		ui.WarnLabel->clear();
 	}
 	MainMessage m;
 	Name_Repeat_Check *message_name = new Name_Repeat_Check();
@@ -52,5 +71,5 @@ void SignUpWidget::slot_CheckInfoFilled(QString str)
 
 	//检查密码1和密码2是否含有非法字符，是否相等
 
-	ui.WarnLabel->clear();
+	//ui.WarnLabel->clear();
 }
