@@ -48,6 +48,60 @@ struct Name_Repeat_RepostDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Name_Repeat_RepostDefaultTypeInternal _Name_Repeat_Repost_default_instance_;
+PROTOBUF_CONSTEXPR Number_Repeat_Chexk::Number_Repeat_Chexk(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.number_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct Number_Repeat_ChexkDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Number_Repeat_ChexkDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Number_Repeat_ChexkDefaultTypeInternal() {}
+  union {
+    Number_Repeat_Chexk _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Number_Repeat_ChexkDefaultTypeInternal _Number_Repeat_Chexk_default_instance_;
+PROTOBUF_CONSTEXPR Number_Repeat_Repost::Number_Repeat_Repost(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.number_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.state_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct Number_Repeat_RepostDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Number_Repeat_RepostDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Number_Repeat_RepostDefaultTypeInternal() {}
+  union {
+    Number_Repeat_Repost _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Number_Repeat_RepostDefaultTypeInternal _Number_Repeat_Repost_default_instance_;
+PROTOBUF_CONSTEXPR Email_Repeat_Chexk::Email_Repeat_Chexk(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.email_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct Email_Repeat_ChexkDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Email_Repeat_ChexkDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Email_Repeat_ChexkDefaultTypeInternal() {}
+  union {
+    Email_Repeat_Chexk _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Email_Repeat_ChexkDefaultTypeInternal _Email_Repeat_Chexk_default_instance_;
+PROTOBUF_CONSTEXPR Email_Repeat_Repost::Email_Repeat_Repost(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.email_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.state_)*/false
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct Email_Repeat_RepostDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Email_Repeat_RepostDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Email_Repeat_RepostDefaultTypeInternal() {}
+  union {
+    Email_Repeat_Repost _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Email_Repeat_RepostDefaultTypeInternal _Email_Repeat_Repost_default_instance_;
 PROTOBUF_CONSTEXPR MainMessage::MainMessage(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.type_)*/0
@@ -64,7 +118,7 @@ struct MainMessageDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MainMessageDefaultTypeInternal _MainMessage_default_instance_;
 }  // namespace LoginMessage
-static ::_pb::Metadata file_level_metadata_MyEngineMessage_2eproto[3];
+static ::_pb::Metadata file_level_metadata_MyEngineMessage_2eproto[7];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_MyEngineMessage_2eproto[1];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_MyEngineMessage_2eproto = nullptr;
 
@@ -85,6 +139,36 @@ const uint32_t TableStruct_MyEngineMessage_2eproto::offsets[] PROTOBUF_SECTION_V
   PROTOBUF_FIELD_OFFSET(::LoginMessage::Name_Repeat_Repost, _impl_.name_),
   PROTOBUF_FIELD_OFFSET(::LoginMessage::Name_Repeat_Repost, _impl_.state_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Number_Repeat_Chexk, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Number_Repeat_Chexk, _impl_.number_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Number_Repeat_Repost, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Number_Repeat_Repost, _impl_.number_),
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Number_Repeat_Repost, _impl_.state_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Email_Repeat_Chexk, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Email_Repeat_Chexk, _impl_.email_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Email_Repeat_Repost, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Email_Repeat_Repost, _impl_.email_),
+  PROTOBUF_FIELD_OFFSET(::LoginMessage::Email_Repeat_Repost, _impl_.state_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::LoginMessage::MainMessage, _internal_metadata_),
   ~0u,  // no _extensions_
   PROTOBUF_FIELD_OFFSET(::LoginMessage::MainMessage, _impl_._oneof_case_[0]),
@@ -93,17 +177,29 @@ const uint32_t TableStruct_MyEngineMessage_2eproto::offsets[] PROTOBUF_SECTION_V
   PROTOBUF_FIELD_OFFSET(::LoginMessage::MainMessage, _impl_.type_),
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::LoginMessage::MainMessage, _impl_.content_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::LoginMessage::Name_Repeat_Check)},
   { 7, -1, -1, sizeof(::LoginMessage::Name_Repeat_Repost)},
-  { 15, -1, -1, sizeof(::LoginMessage::MainMessage)},
+  { 15, -1, -1, sizeof(::LoginMessage::Number_Repeat_Chexk)},
+  { 22, -1, -1, sizeof(::LoginMessage::Number_Repeat_Repost)},
+  { 30, -1, -1, sizeof(::LoginMessage::Email_Repeat_Chexk)},
+  { 37, -1, -1, sizeof(::LoginMessage::Email_Repeat_Repost)},
+  { 45, -1, -1, sizeof(::LoginMessage::MainMessage)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::LoginMessage::_Name_Repeat_Check_default_instance_._instance,
   &::LoginMessage::_Name_Repeat_Repost_default_instance_._instance,
+  &::LoginMessage::_Number_Repeat_Chexk_default_instance_._instance,
+  &::LoginMessage::_Number_Repeat_Repost_default_instance_._instance,
+  &::LoginMessage::_Email_Repeat_Chexk_default_instance_._instance,
+  &::LoginMessage::_Email_Repeat_Repost_default_instance_._instance,
   &::LoginMessage::_MainMessage_default_instance_._instance,
 };
 
@@ -111,19 +207,31 @@ const char descriptor_table_protodef_MyEngineMessage_2eproto[] PROTOBUF_SECTION_
   "\n\025MyEngineMessage.proto\022\014LoginMessage\"!\n"
   "\021Name_Repeat_Check\022\014\n\004name\030\001 \001(\014\"1\n\022Name"
   "_Repeat_Repost\022\014\n\004name\030\001 \001(\014\022\r\n\005state\030\002 "
-  "\001(\010\"\254\001\n\013MainMessage\022\'\n\004type\030\001 \001(\0162\031.Logi"
-  "nMessage.MessageType\0223\n\010content1\030\002 \001(\0132\037"
-  ".LoginMessage.Name_Repeat_CheckH\000\0224\n\010con"
-  "tent2\030\003 \001(\0132 .LoginMessage.Name_Repeat_R"
-  "epostH\000B\t\n\007content*<\n\013MessageType\022\025\n\021NAM"
-  "E_REPEAT_CHECK\020\000\022\026\n\022NAME_REPEAT_REPOST\020\001"
-  "b\006proto3"
+  "\001(\010\"%\n\023Number_Repeat_Chexk\022\016\n\006number\030\001 \001"
+  "(\014\"5\n\024Number_Repeat_Repost\022\016\n\006number\030\001 \001"
+  "(\014\022\r\n\005state\030\002 \001(\010\"#\n\022Email_Repeat_Chexk\022"
+  "\r\n\005email\030\001 \001(\014\"3\n\023Email_Repeat_Repost\022\r\n"
+  "\005email\030\001 \001(\014\022\r\n\005state\030\002 \001(\010\"\210\003\n\013MainMess"
+  "age\022\'\n\004type\030\001 \001(\0162\031.LoginMessage.Message"
+  "Type\0223\n\010content1\030\002 \001(\0132\037.LoginMessage.Na"
+  "me_Repeat_CheckH\000\0224\n\010content2\030\003 \001(\0132 .Lo"
+  "ginMessage.Name_Repeat_RepostH\000\0225\n\010conte"
+  "nt3\030\004 \001(\0132!.LoginMessage.Number_Repeat_C"
+  "hexkH\000\0226\n\010content4\030\005 \001(\0132\".LoginMessage."
+  "Number_Repeat_RepostH\000\0224\n\010content5\030\006 \001(\013"
+  "2 .LoginMessage.Email_Repeat_ChexkH\000\0225\n\010"
+  "content6\030\007 \001(\0132!.LoginMessage.Email_Repe"
+  "at_RepostH\000B\t\n\007content*\240\001\n\013MessageType\022\025"
+  "\n\021NAME_REPEAT_CHECK\020\000\022\026\n\022NAME_REPEAT_REP"
+  "OST\020\001\022\027\n\023NUMBER_REPEAT_CHECK\020\002\022\030\n\024NUMBER"
+  "_REPEAT_REPOST\020\003\022\026\n\022EMAIL_REPEAT_CHECK\020\004"
+  "\022\027\n\023EMAIL_REPEAT_REPOST\020\005b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_MyEngineMessage_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_MyEngineMessage_2eproto = {
-    false, false, 368, descriptor_table_protodef_MyEngineMessage_2eproto,
+    false, false, 873, descriptor_table_protodef_MyEngineMessage_2eproto,
     "MyEngineMessage.proto",
-    &descriptor_table_MyEngineMessage_2eproto_once, nullptr, 0, 3,
+    &descriptor_table_MyEngineMessage_2eproto_once, nullptr, 0, 7,
     schemas, file_default_instances, TableStruct_MyEngineMessage_2eproto::offsets,
     file_level_metadata_MyEngineMessage_2eproto, file_level_enum_descriptors_MyEngineMessage_2eproto,
     file_level_service_descriptors_MyEngineMessage_2eproto,
@@ -143,6 +251,10 @@ bool MessageType_IsValid(int value) {
   switch (value) {
     case 0:
     case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
       return true;
     default:
       return false;
@@ -575,10 +687,860 @@ void Name_Repeat_Repost::InternalSwap(Name_Repeat_Repost* other) {
 
 // ===================================================================
 
+class Number_Repeat_Chexk::_Internal {
+ public:
+};
+
+Number_Repeat_Chexk::Number_Repeat_Chexk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:LoginMessage.Number_Repeat_Chexk)
+}
+Number_Repeat_Chexk::Number_Repeat_Chexk(const Number_Repeat_Chexk& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Number_Repeat_Chexk* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.number_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_number().empty()) {
+    _this->_impl_.number_.Set(from._internal_number(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:LoginMessage.Number_Repeat_Chexk)
+}
+
+inline void Number_Repeat_Chexk::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.number_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Number_Repeat_Chexk::~Number_Repeat_Chexk() {
+  // @@protoc_insertion_point(destructor:LoginMessage.Number_Repeat_Chexk)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Number_Repeat_Chexk::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.number_.Destroy();
+}
+
+void Number_Repeat_Chexk::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Number_Repeat_Chexk::Clear() {
+// @@protoc_insertion_point(message_clear_start:LoginMessage.Number_Repeat_Chexk)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.number_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Number_Repeat_Chexk::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes number = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_number();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Number_Repeat_Chexk::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LoginMessage.Number_Repeat_Chexk)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes number = 1;
+  if (!this->_internal_number().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_number(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LoginMessage.Number_Repeat_Chexk)
+  return target;
+}
+
+size_t Number_Repeat_Chexk::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LoginMessage.Number_Repeat_Chexk)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes number = 1;
+  if (!this->_internal_number().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_number());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Number_Repeat_Chexk::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Number_Repeat_Chexk::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Number_Repeat_Chexk::GetClassData() const { return &_class_data_; }
+
+
+void Number_Repeat_Chexk::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Number_Repeat_Chexk*>(&to_msg);
+  auto& from = static_cast<const Number_Repeat_Chexk&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:LoginMessage.Number_Repeat_Chexk)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_number().empty()) {
+    _this->_internal_set_number(from._internal_number());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Number_Repeat_Chexk::CopyFrom(const Number_Repeat_Chexk& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LoginMessage.Number_Repeat_Chexk)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Number_Repeat_Chexk::IsInitialized() const {
+  return true;
+}
+
+void Number_Repeat_Chexk::InternalSwap(Number_Repeat_Chexk* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.number_, lhs_arena,
+      &other->_impl_.number_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Number_Repeat_Chexk::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_MyEngineMessage_2eproto_getter, &descriptor_table_MyEngineMessage_2eproto_once,
+      file_level_metadata_MyEngineMessage_2eproto[2]);
+}
+
+// ===================================================================
+
+class Number_Repeat_Repost::_Internal {
+ public:
+};
+
+Number_Repeat_Repost::Number_Repeat_Repost(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:LoginMessage.Number_Repeat_Repost)
+}
+Number_Repeat_Repost::Number_Repeat_Repost(const Number_Repeat_Repost& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Number_Repeat_Repost* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.number_){}
+    , decltype(_impl_.state_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_number().empty()) {
+    _this->_impl_.number_.Set(from._internal_number(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.state_ = from._impl_.state_;
+  // @@protoc_insertion_point(copy_constructor:LoginMessage.Number_Repeat_Repost)
+}
+
+inline void Number_Repeat_Repost::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.number_){}
+    , decltype(_impl_.state_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.number_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.number_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Number_Repeat_Repost::~Number_Repeat_Repost() {
+  // @@protoc_insertion_point(destructor:LoginMessage.Number_Repeat_Repost)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Number_Repeat_Repost::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.number_.Destroy();
+}
+
+void Number_Repeat_Repost::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Number_Repeat_Repost::Clear() {
+// @@protoc_insertion_point(message_clear_start:LoginMessage.Number_Repeat_Repost)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.number_.ClearToEmpty();
+  _impl_.state_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Number_Repeat_Repost::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes number = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_number();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool state = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.state_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Number_Repeat_Repost::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LoginMessage.Number_Repeat_Repost)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes number = 1;
+  if (!this->_internal_number().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_number(), target);
+  }
+
+  // bool state = 2;
+  if (this->_internal_state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_state(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LoginMessage.Number_Repeat_Repost)
+  return target;
+}
+
+size_t Number_Repeat_Repost::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LoginMessage.Number_Repeat_Repost)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes number = 1;
+  if (!this->_internal_number().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_number());
+  }
+
+  // bool state = 2;
+  if (this->_internal_state() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Number_Repeat_Repost::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Number_Repeat_Repost::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Number_Repeat_Repost::GetClassData() const { return &_class_data_; }
+
+
+void Number_Repeat_Repost::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Number_Repeat_Repost*>(&to_msg);
+  auto& from = static_cast<const Number_Repeat_Repost&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:LoginMessage.Number_Repeat_Repost)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_number().empty()) {
+    _this->_internal_set_number(from._internal_number());
+  }
+  if (from._internal_state() != 0) {
+    _this->_internal_set_state(from._internal_state());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Number_Repeat_Repost::CopyFrom(const Number_Repeat_Repost& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LoginMessage.Number_Repeat_Repost)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Number_Repeat_Repost::IsInitialized() const {
+  return true;
+}
+
+void Number_Repeat_Repost::InternalSwap(Number_Repeat_Repost* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.number_, lhs_arena,
+      &other->_impl_.number_, rhs_arena
+  );
+  swap(_impl_.state_, other->_impl_.state_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Number_Repeat_Repost::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_MyEngineMessage_2eproto_getter, &descriptor_table_MyEngineMessage_2eproto_once,
+      file_level_metadata_MyEngineMessage_2eproto[3]);
+}
+
+// ===================================================================
+
+class Email_Repeat_Chexk::_Internal {
+ public:
+};
+
+Email_Repeat_Chexk::Email_Repeat_Chexk(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:LoginMessage.Email_Repeat_Chexk)
+}
+Email_Repeat_Chexk::Email_Repeat_Chexk(const Email_Repeat_Chexk& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Email_Repeat_Chexk* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.email_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_email().empty()) {
+    _this->_impl_.email_.Set(from._internal_email(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:LoginMessage.Email_Repeat_Chexk)
+}
+
+inline void Email_Repeat_Chexk::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.email_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Email_Repeat_Chexk::~Email_Repeat_Chexk() {
+  // @@protoc_insertion_point(destructor:LoginMessage.Email_Repeat_Chexk)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Email_Repeat_Chexk::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.email_.Destroy();
+}
+
+void Email_Repeat_Chexk::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Email_Repeat_Chexk::Clear() {
+// @@protoc_insertion_point(message_clear_start:LoginMessage.Email_Repeat_Chexk)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.email_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Email_Repeat_Chexk::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes email = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_email();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Email_Repeat_Chexk::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LoginMessage.Email_Repeat_Chexk)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes email = 1;
+  if (!this->_internal_email().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_email(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LoginMessage.Email_Repeat_Chexk)
+  return target;
+}
+
+size_t Email_Repeat_Chexk::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LoginMessage.Email_Repeat_Chexk)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes email = 1;
+  if (!this->_internal_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_email());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Email_Repeat_Chexk::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Email_Repeat_Chexk::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Email_Repeat_Chexk::GetClassData() const { return &_class_data_; }
+
+
+void Email_Repeat_Chexk::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Email_Repeat_Chexk*>(&to_msg);
+  auto& from = static_cast<const Email_Repeat_Chexk&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:LoginMessage.Email_Repeat_Chexk)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_email().empty()) {
+    _this->_internal_set_email(from._internal_email());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Email_Repeat_Chexk::CopyFrom(const Email_Repeat_Chexk& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LoginMessage.Email_Repeat_Chexk)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Email_Repeat_Chexk::IsInitialized() const {
+  return true;
+}
+
+void Email_Repeat_Chexk::InternalSwap(Email_Repeat_Chexk* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.email_, lhs_arena,
+      &other->_impl_.email_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Email_Repeat_Chexk::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_MyEngineMessage_2eproto_getter, &descriptor_table_MyEngineMessage_2eproto_once,
+      file_level_metadata_MyEngineMessage_2eproto[4]);
+}
+
+// ===================================================================
+
+class Email_Repeat_Repost::_Internal {
+ public:
+};
+
+Email_Repeat_Repost::Email_Repeat_Repost(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:LoginMessage.Email_Repeat_Repost)
+}
+Email_Repeat_Repost::Email_Repeat_Repost(const Email_Repeat_Repost& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Email_Repeat_Repost* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.email_){}
+    , decltype(_impl_.state_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_email().empty()) {
+    _this->_impl_.email_.Set(from._internal_email(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.state_ = from._impl_.state_;
+  // @@protoc_insertion_point(copy_constructor:LoginMessage.Email_Repeat_Repost)
+}
+
+inline void Email_Repeat_Repost::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.email_){}
+    , decltype(_impl_.state_){false}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Email_Repeat_Repost::~Email_Repeat_Repost() {
+  // @@protoc_insertion_point(destructor:LoginMessage.Email_Repeat_Repost)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Email_Repeat_Repost::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.email_.Destroy();
+}
+
+void Email_Repeat_Repost::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Email_Repeat_Repost::Clear() {
+// @@protoc_insertion_point(message_clear_start:LoginMessage.Email_Repeat_Repost)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.email_.ClearToEmpty();
+  _impl_.state_ = false;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Email_Repeat_Repost::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // bytes email = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_email();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool state = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.state_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Email_Repeat_Repost::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:LoginMessage.Email_Repeat_Repost)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes email = 1;
+  if (!this->_internal_email().empty()) {
+    target = stream->WriteBytesMaybeAliased(
+        1, this->_internal_email(), target);
+  }
+
+  // bool state = 2;
+  if (this->_internal_state() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_state(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LoginMessage.Email_Repeat_Repost)
+  return target;
+}
+
+size_t Email_Repeat_Repost::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LoginMessage.Email_Repeat_Repost)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // bytes email = 1;
+  if (!this->_internal_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_email());
+  }
+
+  // bool state = 2;
+  if (this->_internal_state() != 0) {
+    total_size += 1 + 1;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Email_Repeat_Repost::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Email_Repeat_Repost::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Email_Repeat_Repost::GetClassData() const { return &_class_data_; }
+
+
+void Email_Repeat_Repost::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Email_Repeat_Repost*>(&to_msg);
+  auto& from = static_cast<const Email_Repeat_Repost&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:LoginMessage.Email_Repeat_Repost)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_email().empty()) {
+    _this->_internal_set_email(from._internal_email());
+  }
+  if (from._internal_state() != 0) {
+    _this->_internal_set_state(from._internal_state());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Email_Repeat_Repost::CopyFrom(const Email_Repeat_Repost& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LoginMessage.Email_Repeat_Repost)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Email_Repeat_Repost::IsInitialized() const {
+  return true;
+}
+
+void Email_Repeat_Repost::InternalSwap(Email_Repeat_Repost* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.email_, lhs_arena,
+      &other->_impl_.email_, rhs_arena
+  );
+  swap(_impl_.state_, other->_impl_.state_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Email_Repeat_Repost::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_MyEngineMessage_2eproto_getter, &descriptor_table_MyEngineMessage_2eproto_once,
+      file_level_metadata_MyEngineMessage_2eproto[5]);
+}
+
+// ===================================================================
+
 class MainMessage::_Internal {
  public:
   static const ::LoginMessage::Name_Repeat_Check& content1(const MainMessage* msg);
   static const ::LoginMessage::Name_Repeat_Repost& content2(const MainMessage* msg);
+  static const ::LoginMessage::Number_Repeat_Chexk& content3(const MainMessage* msg);
+  static const ::LoginMessage::Number_Repeat_Repost& content4(const MainMessage* msg);
+  static const ::LoginMessage::Email_Repeat_Chexk& content5(const MainMessage* msg);
+  static const ::LoginMessage::Email_Repeat_Repost& content6(const MainMessage* msg);
 };
 
 const ::LoginMessage::Name_Repeat_Check&
@@ -588,6 +1550,22 @@ MainMessage::_Internal::content1(const MainMessage* msg) {
 const ::LoginMessage::Name_Repeat_Repost&
 MainMessage::_Internal::content2(const MainMessage* msg) {
   return *msg->_impl_.content_.content2_;
+}
+const ::LoginMessage::Number_Repeat_Chexk&
+MainMessage::_Internal::content3(const MainMessage* msg) {
+  return *msg->_impl_.content_.content3_;
+}
+const ::LoginMessage::Number_Repeat_Repost&
+MainMessage::_Internal::content4(const MainMessage* msg) {
+  return *msg->_impl_.content_.content4_;
+}
+const ::LoginMessage::Email_Repeat_Chexk&
+MainMessage::_Internal::content5(const MainMessage* msg) {
+  return *msg->_impl_.content_.content5_;
+}
+const ::LoginMessage::Email_Repeat_Repost&
+MainMessage::_Internal::content6(const MainMessage* msg) {
+  return *msg->_impl_.content_.content6_;
 }
 void MainMessage::set_allocated_content1(::LoginMessage::Name_Repeat_Check* content1) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -619,6 +1597,66 @@ void MainMessage::set_allocated_content2(::LoginMessage::Name_Repeat_Repost* con
   }
   // @@protoc_insertion_point(field_set_allocated:LoginMessage.MainMessage.content2)
 }
+void MainMessage::set_allocated_content3(::LoginMessage::Number_Repeat_Chexk* content3) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_content();
+  if (content3) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(content3);
+    if (message_arena != submessage_arena) {
+      content3 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, content3, submessage_arena);
+    }
+    set_has_content3();
+    _impl_.content_.content3_ = content3;
+  }
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.MainMessage.content3)
+}
+void MainMessage::set_allocated_content4(::LoginMessage::Number_Repeat_Repost* content4) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_content();
+  if (content4) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(content4);
+    if (message_arena != submessage_arena) {
+      content4 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, content4, submessage_arena);
+    }
+    set_has_content4();
+    _impl_.content_.content4_ = content4;
+  }
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.MainMessage.content4)
+}
+void MainMessage::set_allocated_content5(::LoginMessage::Email_Repeat_Chexk* content5) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_content();
+  if (content5) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(content5);
+    if (message_arena != submessage_arena) {
+      content5 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, content5, submessage_arena);
+    }
+    set_has_content5();
+    _impl_.content_.content5_ = content5;
+  }
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.MainMessage.content5)
+}
+void MainMessage::set_allocated_content6(::LoginMessage::Email_Repeat_Repost* content6) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_content();
+  if (content6) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(content6);
+    if (message_arena != submessage_arena) {
+      content6 = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, content6, submessage_arena);
+    }
+    set_has_content6();
+    _impl_.content_.content6_ = content6;
+  }
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.MainMessage.content6)
+}
 MainMessage::MainMessage(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -646,6 +1684,26 @@ MainMessage::MainMessage(const MainMessage& from)
     case kContent2: {
       _this->_internal_mutable_content2()->::LoginMessage::Name_Repeat_Repost::MergeFrom(
           from._internal_content2());
+      break;
+    }
+    case kContent3: {
+      _this->_internal_mutable_content3()->::LoginMessage::Number_Repeat_Chexk::MergeFrom(
+          from._internal_content3());
+      break;
+    }
+    case kContent4: {
+      _this->_internal_mutable_content4()->::LoginMessage::Number_Repeat_Repost::MergeFrom(
+          from._internal_content4());
+      break;
+    }
+    case kContent5: {
+      _this->_internal_mutable_content5()->::LoginMessage::Email_Repeat_Chexk::MergeFrom(
+          from._internal_content5());
+      break;
+    }
+    case kContent6: {
+      _this->_internal_mutable_content6()->::LoginMessage::Email_Repeat_Repost::MergeFrom(
+          from._internal_content6());
       break;
     }
     case CONTENT_NOT_SET: {
@@ -703,6 +1761,30 @@ void MainMessage::clear_content() {
       }
       break;
     }
+    case kContent3: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.content_.content3_;
+      }
+      break;
+    }
+    case kContent4: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.content_.content4_;
+      }
+      break;
+    }
+    case kContent5: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.content_.content5_;
+      }
+      break;
+    }
+    case kContent6: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete _impl_.content_.content6_;
+      }
+      break;
+    }
     case CONTENT_NOT_SET: {
       break;
     }
@@ -749,6 +1831,38 @@ const char* MainMessage::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_content2(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .LoginMessage.Number_Repeat_Chexk content3 = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          ptr = ctx->ParseMessage(_internal_mutable_content3(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .LoginMessage.Number_Repeat_Repost content4 = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          ptr = ctx->ParseMessage(_internal_mutable_content4(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .LoginMessage.Email_Repeat_Chexk content5 = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_content5(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .LoginMessage.Email_Repeat_Repost content6 = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          ptr = ctx->ParseMessage(_internal_mutable_content6(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -803,6 +1917,34 @@ uint8_t* MainMessage::_InternalSerialize(
         _Internal::content2(this).GetCachedSize(), target, stream);
   }
 
+  // .LoginMessage.Number_Repeat_Chexk content3 = 4;
+  if (_internal_has_content3()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(4, _Internal::content3(this),
+        _Internal::content3(this).GetCachedSize(), target, stream);
+  }
+
+  // .LoginMessage.Number_Repeat_Repost content4 = 5;
+  if (_internal_has_content4()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(5, _Internal::content4(this),
+        _Internal::content4(this).GetCachedSize(), target, stream);
+  }
+
+  // .LoginMessage.Email_Repeat_Chexk content5 = 6;
+  if (_internal_has_content5()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(6, _Internal::content5(this),
+        _Internal::content5(this).GetCachedSize(), target, stream);
+  }
+
+  // .LoginMessage.Email_Repeat_Repost content6 = 7;
+  if (_internal_has_content6()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(7, _Internal::content6(this),
+        _Internal::content6(this).GetCachedSize(), target, stream);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -838,6 +1980,34 @@ size_t MainMessage::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.content_.content2_);
+      break;
+    }
+    // .LoginMessage.Number_Repeat_Chexk content3 = 4;
+    case kContent3: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.content_.content3_);
+      break;
+    }
+    // .LoginMessage.Number_Repeat_Repost content4 = 5;
+    case kContent4: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.content_.content4_);
+      break;
+    }
+    // .LoginMessage.Email_Repeat_Chexk content5 = 6;
+    case kContent5: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.content_.content5_);
+      break;
+    }
+    // .LoginMessage.Email_Repeat_Repost content6 = 7;
+    case kContent6: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.content_.content6_);
       break;
     }
     case CONTENT_NOT_SET: {
@@ -876,6 +2046,26 @@ void MainMessage::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
           from._internal_content2());
       break;
     }
+    case kContent3: {
+      _this->_internal_mutable_content3()->::LoginMessage::Number_Repeat_Chexk::MergeFrom(
+          from._internal_content3());
+      break;
+    }
+    case kContent4: {
+      _this->_internal_mutable_content4()->::LoginMessage::Number_Repeat_Repost::MergeFrom(
+          from._internal_content4());
+      break;
+    }
+    case kContent5: {
+      _this->_internal_mutable_content5()->::LoginMessage::Email_Repeat_Chexk::MergeFrom(
+          from._internal_content5());
+      break;
+    }
+    case kContent6: {
+      _this->_internal_mutable_content6()->::LoginMessage::Email_Repeat_Repost::MergeFrom(
+          from._internal_content6());
+      break;
+    }
     case CONTENT_NOT_SET: {
       break;
     }
@@ -905,7 +2095,7 @@ void MainMessage::InternalSwap(MainMessage* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata MainMessage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_MyEngineMessage_2eproto_getter, &descriptor_table_MyEngineMessage_2eproto_once,
-      file_level_metadata_MyEngineMessage_2eproto[2]);
+      file_level_metadata_MyEngineMessage_2eproto[6]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -918,6 +2108,22 @@ Arena::CreateMaybeMessage< ::LoginMessage::Name_Repeat_Check >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::LoginMessage::Name_Repeat_Repost*
 Arena::CreateMaybeMessage< ::LoginMessage::Name_Repeat_Repost >(Arena* arena) {
   return Arena::CreateMessageInternal< ::LoginMessage::Name_Repeat_Repost >(arena);
+}
+template<> PROTOBUF_NOINLINE ::LoginMessage::Number_Repeat_Chexk*
+Arena::CreateMaybeMessage< ::LoginMessage::Number_Repeat_Chexk >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::LoginMessage::Number_Repeat_Chexk >(arena);
+}
+template<> PROTOBUF_NOINLINE ::LoginMessage::Number_Repeat_Repost*
+Arena::CreateMaybeMessage< ::LoginMessage::Number_Repeat_Repost >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::LoginMessage::Number_Repeat_Repost >(arena);
+}
+template<> PROTOBUF_NOINLINE ::LoginMessage::Email_Repeat_Chexk*
+Arena::CreateMaybeMessage< ::LoginMessage::Email_Repeat_Chexk >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::LoginMessage::Email_Repeat_Chexk >(arena);
+}
+template<> PROTOBUF_NOINLINE ::LoginMessage::Email_Repeat_Repost*
+Arena::CreateMaybeMessage< ::LoginMessage::Email_Repeat_Repost >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::LoginMessage::Email_Repeat_Repost >(arena);
 }
 template<> PROTOBUF_NOINLINE ::LoginMessage::MainMessage*
 Arena::CreateMaybeMessage< ::LoginMessage::MainMessage >(Arena* arena) {

@@ -23,6 +23,8 @@ public:
     void setImageList(QStringList imageFileNameList);
     void addImage(QString imageFileName);
     void startPlay();
+    void stopPlay();
+    void startPlayAgain();
 
 private:
     void initChangeImageButton();

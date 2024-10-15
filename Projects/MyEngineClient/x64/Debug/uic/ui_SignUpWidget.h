@@ -40,6 +40,7 @@ public:
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLabel *WarnLabel;
+    QLabel *PixLabel;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *SignInWidgetClass)
@@ -98,6 +99,9 @@ public:
         WarnLabel = new QLabel(centralWidget);
         WarnLabel->setObjectName(QStringLiteral("WarnLabel"));
         WarnLabel->setGeometry(QRect(220, 680, 281, 20));
+        PixLabel = new QLabel(centralWidget);
+        PixLabel->setObjectName(QStringLiteral("PixLabel"));
+        PixLabel->setGeometry(QRect(90, 70, 331, 101));
         SignInWidgetClass->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(SignInWidgetClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -119,6 +123,7 @@ public:
         pushButton->setText(QApplication::translate("SignInWidgetClass", "\347\241\256\350\256\244", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("SignInWidgetClass", "\345\217\226\346\266\210", Q_NULLPTR));
         WarnLabel->setText(QString());
+        PixLabel->setText(QString());
     } // retranslateUi
 
 };

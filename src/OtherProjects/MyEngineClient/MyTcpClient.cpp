@@ -122,5 +122,6 @@ void MyTcpClient::slot_ReadData()
     std::string str = m_TcpClient->readAll().toStdString();
     m_Mutex_Str.lock();
     m_retStrs.push_back(str);
+    qDebug() << QString::fromLocal8Bit("从服务器收到数据:") << QString::fromStdString(str) << endl;
     m_Mutex_Str.unlock();
 }

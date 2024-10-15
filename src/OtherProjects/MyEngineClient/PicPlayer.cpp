@@ -76,6 +76,17 @@ void PicPlayer::startPlay()
         update();
     }
 }
+
+void PicPlayer::stopPlay()
+{
+    m_imageChangeTimer.stop();
+}
+
+void PicPlayer::startPlayAgain()
+{
+    m_imageChangeTimer.start(2000);
+}
+
 void PicPlayer::onImageChangeTimeout()
 {
     // 设置前后的图片;

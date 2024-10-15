@@ -40,6 +40,8 @@ MyEngineClient::MyEngineClient(QWidget *parent)
     m_timer = new QTimer(this);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(slot_ProcessTimeout()));
     m_timer->start(100);
+
+    ui.PasswordEdit->setEchoMode(QLineEdit::Password);
 }
 
 MyEngineClient::~MyEngineClient()
@@ -71,6 +73,7 @@ void MyEngineClient::on_SignUpBtn_clicked()
         m_signup = new SignUpWidget();
     }
     m_signup->show();
+    m_picPlayer->stopPlay();
 }
 
 void MyEngineClient::slot_ProcessTimeout()
@@ -90,6 +93,18 @@ void MyEngineClient::slot_ProcessTimeout()
                 Name_Repeat_Repost content = protoMsg.content2();
                 bool res = content.state();
                 m_signup->SetUserNameRepeatState(res);
+            }
+            if (protoMsg.type() == MessageType::NUMBER_REPEAT_REPOST)//关于手机号码是否重复
+            {
+                Number_Repeat_Repost content = protoMsg.content4();
+                bool res = content.state();
+                m_signup->SetNumberRepeatState(res);
+            }
+            if (protoMsg.type() == MessageType::EMAIL_REPEAT_REPOST)//关于手机号码是否重复
+            {
+                Email_Repeat_Repost content = protoMsg.content6();
+                bool res = content.state();
+                m_signup->SetEmailRepeatState(res);
             }
         }
     }
