@@ -23,14 +23,24 @@ public:
 	void SetUserNameRepeatState(bool state);
 	void SetNumberRepeatState(bool state);
 	void SetEmailRepeatState(bool state);
+	void SetErrorStr();
+	void ShowRegister(bool res);
+	bool CheckErr();
 
 public slots:
-	void slot_CheckInfoFilled(QString str);
+	void on_SureBtn_clicked();
+	void slot_CheckName(QString str);
+	void slot_CheckNumber(QString str);
+	void slot_CheckEmail(QString str);
+	void slot_CheckPassword(QString str);
 
 private:
 	Ui::SignInWidgetClass ui;
 	bool m_inNameRepeat;
 	bool m_inNumberRepeat;
 	bool m_inEmailRepeat;
-	bool m_infoRight;	//所有数据格式都合法
+	bool m_isNameRight;
+	bool m_isNumberRight;
+	bool m_isEmailRight;
+	bool m_isPasswordRight;
 };

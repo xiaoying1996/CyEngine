@@ -106,6 +106,12 @@ void MyEngineClient::slot_ProcessTimeout()
                 bool res = content.state();
                 m_signup->SetEmailRepeatState(res);
             }
+            if (protoMsg.type() == MessageType::REGISTER_REPOST)
+            {
+                Register_Repost content = protoMsg.content8();
+                bool res = content.state();
+                m_signup->ShowRegister(res);
+            }
         }
     }
 }

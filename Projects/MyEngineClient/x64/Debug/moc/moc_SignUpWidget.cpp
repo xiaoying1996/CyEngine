@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SignUpWidget_t {
-    QByteArrayData data[4];
-    char stringdata0[39];
+    QByteArrayData data[8];
+    char stringdata0[104];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,18 @@ struct qt_meta_stringdata_SignUpWidget_t {
 static const qt_meta_stringdata_SignUpWidget_t qt_meta_stringdata_SignUpWidget = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "SignUpWidget"
-QT_MOC_LITERAL(1, 13, 20), // "slot_CheckInfoFilled"
-QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 3) // "str"
+QT_MOC_LITERAL(1, 13, 18), // "on_SureBtn_clicked"
+QT_MOC_LITERAL(2, 32, 0), // ""
+QT_MOC_LITERAL(3, 33, 14), // "slot_CheckName"
+QT_MOC_LITERAL(4, 48, 3), // "str"
+QT_MOC_LITERAL(5, 52, 16), // "slot_CheckNumber"
+QT_MOC_LITERAL(6, 69, 15), // "slot_CheckEmail"
+QT_MOC_LITERAL(7, 85, 18) // "slot_CheckPassword"
 
     },
-    "SignUpWidget\0slot_CheckInfoFilled\0\0"
-    "str"
+    "SignUpWidget\0on_SureBtn_clicked\0\0"
+    "slot_CheckName\0str\0slot_CheckNumber\0"
+    "slot_CheckEmail\0slot_CheckPassword"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +53,7 @@ static const uint qt_meta_data_SignUpWidget[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,10 +61,18 @@ static const uint qt_meta_data_SignUpWidget[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x0a /* Public */,
+       1,    0,   39,    2, 0x0a /* Public */,
+       3,    1,   40,    2, 0x0a /* Public */,
+       5,    1,   43,    2, 0x0a /* Public */,
+       6,    1,   46,    2, 0x0a /* Public */,
+       7,    1,   49,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
+    QMetaType::Void, QMetaType::QString,    4,
 
        0        // eod
 };
@@ -70,7 +83,11 @@ void SignUpWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         SignUpWidget *_t = static_cast<SignUpWidget *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->slot_CheckInfoFilled((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 0: _t->on_SureBtn_clicked(); break;
+        case 1: _t->slot_CheckName((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 2: _t->slot_CheckNumber((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 3: _t->slot_CheckEmail((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 4: _t->slot_CheckPassword((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -101,13 +118,13 @@ int SignUpWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 5)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 5;
     }
     return _id;
 }

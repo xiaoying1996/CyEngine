@@ -11,13 +11,10 @@
     {
 #define PROTOBUF_NAMESPACE_CLOSE \
   }                              \
-  }
 
 
 #ifndef GOOGLE_PROTOBUF_INCLUDED_MyEngineMessage_2eproto
 #define GOOGLE_PROTOBUF_INCLUDED_MyEngineMessage_2eproto
-
-
 
 #include <limits>
 #include <string>
@@ -82,6 +79,12 @@ extern Number_Repeat_ChexkDefaultTypeInternal _Number_Repeat_Chexk_default_insta
 class Number_Repeat_Repost;
 struct Number_Repeat_RepostDefaultTypeInternal;
 extern Number_Repeat_RepostDefaultTypeInternal _Number_Repeat_Repost_default_instance_;
+class Register_Repost;
+struct Register_RepostDefaultTypeInternal;
+extern Register_RepostDefaultTypeInternal _Register_Repost_default_instance_;
+class Register_Request;
+struct Register_RequestDefaultTypeInternal;
+extern Register_RequestDefaultTypeInternal _Register_Request_default_instance_;
 }  // namespace LoginMessage
 PROTOBUF_NAMESPACE_OPEN
 template<> ::LoginMessage::Email_Repeat_Chexk* Arena::CreateMaybeMessage<::LoginMessage::Email_Repeat_Chexk>(Arena*);
@@ -91,6 +94,8 @@ template<> ::LoginMessage::Name_Repeat_Check* Arena::CreateMaybeMessage<::LoginM
 template<> ::LoginMessage::Name_Repeat_Repost* Arena::CreateMaybeMessage<::LoginMessage::Name_Repeat_Repost>(Arena*);
 template<> ::LoginMessage::Number_Repeat_Chexk* Arena::CreateMaybeMessage<::LoginMessage::Number_Repeat_Chexk>(Arena*);
 template<> ::LoginMessage::Number_Repeat_Repost* Arena::CreateMaybeMessage<::LoginMessage::Number_Repeat_Repost>(Arena*);
+template<> ::LoginMessage::Register_Repost* Arena::CreateMaybeMessage<::LoginMessage::Register_Repost>(Arena*);
+template<> ::LoginMessage::Register_Request* Arena::CreateMaybeMessage<::LoginMessage::Register_Request>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace LoginMessage {
 
@@ -101,12 +106,14 @@ enum MessageType : int {
   NUMBER_REPEAT_REPOST = 3,
   EMAIL_REPEAT_CHECK = 4,
   EMAIL_REPEAT_REPOST = 5,
+  REGISTER_REQUEST = 6,
+  REGISTER_REPOST = 7,
   MessageType_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   MessageType_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool MessageType_IsValid(int value);
 constexpr MessageType MessageType_MIN = NAME_REPEAT_CHECK;
-constexpr MessageType MessageType_MAX = EMAIL_REPEAT_REPOST;
+constexpr MessageType MessageType_MAX = REGISTER_REPOST;
 constexpr int MessageType_ARRAYSIZE = MessageType_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MessageType_descriptor();
@@ -1076,6 +1083,371 @@ class Email_Repeat_Repost final :
 };
 // -------------------------------------------------------------------
 
+class Register_Request final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:LoginMessage.Register_Request) */ {
+ public:
+  inline Register_Request() : Register_Request(nullptr) {}
+  ~Register_Request() override;
+  explicit PROTOBUF_CONSTEXPR Register_Request(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Register_Request(const Register_Request& from);
+  Register_Request(Register_Request&& from) noexcept
+    : Register_Request() {
+    *this = ::std::move(from);
+  }
+
+  inline Register_Request& operator=(const Register_Request& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Register_Request& operator=(Register_Request&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Register_Request& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Register_Request* internal_default_instance() {
+    return reinterpret_cast<const Register_Request*>(
+               &_Register_Request_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(Register_Request& a, Register_Request& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Register_Request* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Register_Request* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Register_Request* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Register_Request>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Register_Request& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Register_Request& from) {
+    Register_Request::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Register_Request* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "LoginMessage.Register_Request";
+  }
+  protected:
+  explicit Register_Request(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kNumberFieldNumber = 2,
+    kEmailFieldNumber = 3,
+    kPasswordFieldNumber = 4,
+  };
+  // bytes name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // bytes number = 2;
+  void clear_number();
+  const std::string& number() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_number(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_number();
+  PROTOBUF_NODISCARD std::string* release_number();
+  void set_allocated_number(std::string* number);
+  private:
+  const std::string& _internal_number() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_number(const std::string& value);
+  std::string* _internal_mutable_number();
+  public:
+
+  // bytes email = 3;
+  void clear_email();
+  const std::string& email() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email();
+  PROTOBUF_NODISCARD std::string* release_email();
+  void set_allocated_email(std::string* email);
+  private:
+  const std::string& _internal_email() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email(const std::string& value);
+  std::string* _internal_mutable_email();
+  public:
+
+  // bytes password = 4;
+  void clear_password();
+  const std::string& password() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_password(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_password();
+  PROTOBUF_NODISCARD std::string* release_password();
+  void set_allocated_password(std::string* password);
+  private:
+  const std::string& _internal_password() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_password(const std::string& value);
+  std::string* _internal_mutable_password();
+  public:
+
+  // @@protoc_insertion_point(class_scope:LoginMessage.Register_Request)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr number_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_MyEngineMessage_2eproto;
+};
+// -------------------------------------------------------------------
+
+class Register_Repost final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:LoginMessage.Register_Repost) */ {
+ public:
+  inline Register_Repost() : Register_Repost(nullptr) {}
+  ~Register_Repost() override;
+  explicit PROTOBUF_CONSTEXPR Register_Repost(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Register_Repost(const Register_Repost& from);
+  Register_Repost(Register_Repost&& from) noexcept
+    : Register_Repost() {
+    *this = ::std::move(from);
+  }
+
+  inline Register_Repost& operator=(const Register_Repost& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Register_Repost& operator=(Register_Repost&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Register_Repost& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Register_Repost* internal_default_instance() {
+    return reinterpret_cast<const Register_Repost*>(
+               &_Register_Repost_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(Register_Repost& a, Register_Repost& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Register_Repost* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Register_Repost* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Register_Repost* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Register_Repost>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Register_Repost& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Register_Repost& from) {
+    Register_Repost::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Register_Repost* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "LoginMessage.Register_Repost";
+  }
+  protected:
+  explicit Register_Repost(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kStateFieldNumber = 2,
+  };
+  // bytes name = 1;
+  void clear_name();
+  const std::string& name() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_name(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_name();
+  PROTOBUF_NODISCARD std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // bool state = 2;
+  void clear_state();
+  bool state() const;
+  void set_state(bool value);
+  private:
+  bool _internal_state() const;
+  void _internal_set_state(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:LoginMessage.Register_Repost)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+    bool state_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_MyEngineMessage_2eproto;
+};
+// -------------------------------------------------------------------
+
 class MainMessage final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:LoginMessage.MainMessage) */ {
  public:
@@ -1126,6 +1498,8 @@ class MainMessage final :
     kContent4 = 5,
     kContent5 = 6,
     kContent6 = 7,
+    kContent7 = 8,
+    kContent8 = 9,
     CONTENT_NOT_SET = 0,
   };
 
@@ -1134,7 +1508,7 @@ class MainMessage final :
                &_MainMessage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   friend void swap(MainMessage& a, MainMessage& b) {
     a.Swap(&b);
@@ -1214,6 +1588,8 @@ class MainMessage final :
     kContent4FieldNumber = 5,
     kContent5FieldNumber = 6,
     kContent6FieldNumber = 7,
+    kContent7FieldNumber = 8,
+    kContent8FieldNumber = 9,
   };
   // .LoginMessage.MessageType type = 1;
   void clear_type();
@@ -1332,6 +1708,42 @@ class MainMessage final :
       ::LoginMessage::Email_Repeat_Repost* content6);
   ::LoginMessage::Email_Repeat_Repost* unsafe_arena_release_content6();
 
+  // .LoginMessage.Register_Request content7 = 8;
+  bool has_content7() const;
+  private:
+  bool _internal_has_content7() const;
+  public:
+  void clear_content7();
+  const ::LoginMessage::Register_Request& content7() const;
+  PROTOBUF_NODISCARD ::LoginMessage::Register_Request* release_content7();
+  ::LoginMessage::Register_Request* mutable_content7();
+  void set_allocated_content7(::LoginMessage::Register_Request* content7);
+  private:
+  const ::LoginMessage::Register_Request& _internal_content7() const;
+  ::LoginMessage::Register_Request* _internal_mutable_content7();
+  public:
+  void unsafe_arena_set_allocated_content7(
+      ::LoginMessage::Register_Request* content7);
+  ::LoginMessage::Register_Request* unsafe_arena_release_content7();
+
+  // .LoginMessage.Register_Repost content8 = 9;
+  bool has_content8() const;
+  private:
+  bool _internal_has_content8() const;
+  public:
+  void clear_content8();
+  const ::LoginMessage::Register_Repost& content8() const;
+  PROTOBUF_NODISCARD ::LoginMessage::Register_Repost* release_content8();
+  ::LoginMessage::Register_Repost* mutable_content8();
+  void set_allocated_content8(::LoginMessage::Register_Repost* content8);
+  private:
+  const ::LoginMessage::Register_Repost& _internal_content8() const;
+  ::LoginMessage::Register_Repost* _internal_mutable_content8();
+  public:
+  void unsafe_arena_set_allocated_content8(
+      ::LoginMessage::Register_Repost* content8);
+  ::LoginMessage::Register_Repost* unsafe_arena_release_content8();
+
   void clear_content();
   ContentCase content_case() const;
   // @@protoc_insertion_point(class_scope:LoginMessage.MainMessage)
@@ -1343,6 +1755,8 @@ class MainMessage final :
   void set_has_content4();
   void set_has_content5();
   void set_has_content6();
+  void set_has_content7();
+  void set_has_content8();
 
   inline bool has_content() const;
   inline void clear_has_content();
@@ -1361,6 +1775,8 @@ class MainMessage final :
       ::LoginMessage::Number_Repeat_Repost* content4_;
       ::LoginMessage::Email_Repeat_Chexk* content5_;
       ::LoginMessage::Email_Repeat_Repost* content6_;
+      ::LoginMessage::Register_Request* content7_;
+      ::LoginMessage::Register_Repost* content8_;
     } content_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint32_t _oneof_case_[1];
@@ -1758,6 +2174,284 @@ inline void Email_Repeat_Repost::_internal_set_state(bool value) {
 inline void Email_Repeat_Repost::set_state(bool value) {
   _internal_set_state(value);
   // @@protoc_insertion_point(field_set:LoginMessage.Email_Repeat_Repost.state)
+}
+
+// -------------------------------------------------------------------
+
+// Register_Request
+
+// bytes name = 1;
+inline void Register_Request::clear_name() {
+  _impl_.name_.ClearToEmpty();
+}
+inline const std::string& Register_Request::name() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Request.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Register_Request::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Request.name)
+}
+inline std::string* Register_Request::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.Register_Request.name)
+  return _s;
+}
+inline const std::string& Register_Request::_internal_name() const {
+  return _impl_.name_.Get();
+}
+inline void Register_Request::_internal_set_name(const std::string& value) {
+  
+  _impl_.name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Register_Request::_internal_mutable_name() {
+  
+  return _impl_.name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Register_Request::release_name() {
+  // @@protoc_insertion_point(field_release:LoginMessage.Register_Request.name)
+  return _impl_.name_.Release();
+}
+inline void Register_Request::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.name_.SetAllocated(name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.Register_Request.name)
+}
+
+// bytes number = 2;
+inline void Register_Request::clear_number() {
+  _impl_.number_.ClearToEmpty();
+}
+inline const std::string& Register_Request::number() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Request.number)
+  return _internal_number();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Register_Request::set_number(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.number_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Request.number)
+}
+inline std::string* Register_Request::mutable_number() {
+  std::string* _s = _internal_mutable_number();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.Register_Request.number)
+  return _s;
+}
+inline const std::string& Register_Request::_internal_number() const {
+  return _impl_.number_.Get();
+}
+inline void Register_Request::_internal_set_number(const std::string& value) {
+  
+  _impl_.number_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Register_Request::_internal_mutable_number() {
+  
+  return _impl_.number_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Register_Request::release_number() {
+  // @@protoc_insertion_point(field_release:LoginMessage.Register_Request.number)
+  return _impl_.number_.Release();
+}
+inline void Register_Request::set_allocated_number(std::string* number) {
+  if (number != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.number_.SetAllocated(number, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.number_.IsDefault()) {
+    _impl_.number_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.Register_Request.number)
+}
+
+// bytes email = 3;
+inline void Register_Request::clear_email() {
+  _impl_.email_.ClearToEmpty();
+}
+inline const std::string& Register_Request::email() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Request.email)
+  return _internal_email();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Register_Request::set_email(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.email_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Request.email)
+}
+inline std::string* Register_Request::mutable_email() {
+  std::string* _s = _internal_mutable_email();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.Register_Request.email)
+  return _s;
+}
+inline const std::string& Register_Request::_internal_email() const {
+  return _impl_.email_.Get();
+}
+inline void Register_Request::_internal_set_email(const std::string& value) {
+  
+  _impl_.email_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Register_Request::_internal_mutable_email() {
+  
+  return _impl_.email_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Register_Request::release_email() {
+  // @@protoc_insertion_point(field_release:LoginMessage.Register_Request.email)
+  return _impl_.email_.Release();
+}
+inline void Register_Request::set_allocated_email(std::string* email) {
+  if (email != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.email_.SetAllocated(email, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.email_.IsDefault()) {
+    _impl_.email_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.Register_Request.email)
+}
+
+// bytes password = 4;
+inline void Register_Request::clear_password() {
+  _impl_.password_.ClearToEmpty();
+}
+inline const std::string& Register_Request::password() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Request.password)
+  return _internal_password();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Register_Request::set_password(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.password_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Request.password)
+}
+inline std::string* Register_Request::mutable_password() {
+  std::string* _s = _internal_mutable_password();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.Register_Request.password)
+  return _s;
+}
+inline const std::string& Register_Request::_internal_password() const {
+  return _impl_.password_.Get();
+}
+inline void Register_Request::_internal_set_password(const std::string& value) {
+  
+  _impl_.password_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Register_Request::_internal_mutable_password() {
+  
+  return _impl_.password_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Register_Request::release_password() {
+  // @@protoc_insertion_point(field_release:LoginMessage.Register_Request.password)
+  return _impl_.password_.Release();
+}
+inline void Register_Request::set_allocated_password(std::string* password) {
+  if (password != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.password_.SetAllocated(password, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.password_.IsDefault()) {
+    _impl_.password_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.Register_Request.password)
+}
+
+// -------------------------------------------------------------------
+
+// Register_Repost
+
+// bytes name = 1;
+inline void Register_Repost::clear_name() {
+  _impl_.name_.ClearToEmpty();
+}
+inline const std::string& Register_Repost::name() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Repost.name)
+  return _internal_name();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Register_Repost::set_name(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Repost.name)
+}
+inline std::string* Register_Repost::mutable_name() {
+  std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.Register_Repost.name)
+  return _s;
+}
+inline const std::string& Register_Repost::_internal_name() const {
+  return _impl_.name_.Get();
+}
+inline void Register_Repost::_internal_set_name(const std::string& value) {
+  
+  _impl_.name_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Register_Repost::_internal_mutable_name() {
+  
+  return _impl_.name_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Register_Repost::release_name() {
+  // @@protoc_insertion_point(field_release:LoginMessage.Register_Repost.name)
+  return _impl_.name_.Release();
+}
+inline void Register_Repost::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.name_.SetAllocated(name, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:LoginMessage.Register_Repost.name)
+}
+
+// bool state = 2;
+inline void Register_Repost::clear_state() {
+  _impl_.state_ = false;
+}
+inline bool Register_Repost::_internal_state() const {
+  return _impl_.state_;
+}
+inline bool Register_Repost::state() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.Register_Repost.state)
+  return _internal_state();
+}
+inline void Register_Repost::_internal_set_state(bool value) {
+  
+  _impl_.state_ = value;
+}
+inline void Register_Repost::set_state(bool value) {
+  _internal_set_state(value);
+  // @@protoc_insertion_point(field_set:LoginMessage.Register_Repost.state)
 }
 
 // -------------------------------------------------------------------
@@ -2228,6 +2922,154 @@ inline ::LoginMessage::Email_Repeat_Repost* MainMessage::mutable_content6() {
   return _msg;
 }
 
+// .LoginMessage.Register_Request content7 = 8;
+inline bool MainMessage::_internal_has_content7() const {
+  return content_case() == kContent7;
+}
+inline bool MainMessage::has_content7() const {
+  return _internal_has_content7();
+}
+inline void MainMessage::set_has_content7() {
+  _impl_._oneof_case_[0] = kContent7;
+}
+inline void MainMessage::clear_content7() {
+  if (_internal_has_content7()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.content_.content7_;
+    }
+    clear_has_content();
+  }
+}
+inline ::LoginMessage::Register_Request* MainMessage::release_content7() {
+  // @@protoc_insertion_point(field_release:LoginMessage.MainMessage.content7)
+  if (_internal_has_content7()) {
+    clear_has_content();
+    ::LoginMessage::Register_Request* temp = _impl_.content_.content7_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.content_.content7_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::LoginMessage::Register_Request& MainMessage::_internal_content7() const {
+  return _internal_has_content7()
+      ? *_impl_.content_.content7_
+      : reinterpret_cast< ::LoginMessage::Register_Request&>(::LoginMessage::_Register_Request_default_instance_);
+}
+inline const ::LoginMessage::Register_Request& MainMessage::content7() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.MainMessage.content7)
+  return _internal_content7();
+}
+inline ::LoginMessage::Register_Request* MainMessage::unsafe_arena_release_content7() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:LoginMessage.MainMessage.content7)
+  if (_internal_has_content7()) {
+    clear_has_content();
+    ::LoginMessage::Register_Request* temp = _impl_.content_.content7_;
+    _impl_.content_.content7_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void MainMessage::unsafe_arena_set_allocated_content7(::LoginMessage::Register_Request* content7) {
+  clear_content();
+  if (content7) {
+    set_has_content7();
+    _impl_.content_.content7_ = content7;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:LoginMessage.MainMessage.content7)
+}
+inline ::LoginMessage::Register_Request* MainMessage::_internal_mutable_content7() {
+  if (!_internal_has_content7()) {
+    clear_content();
+    set_has_content7();
+    _impl_.content_.content7_ = CreateMaybeMessage< ::LoginMessage::Register_Request >(GetArenaForAllocation());
+  }
+  return _impl_.content_.content7_;
+}
+inline ::LoginMessage::Register_Request* MainMessage::mutable_content7() {
+  ::LoginMessage::Register_Request* _msg = _internal_mutable_content7();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.MainMessage.content7)
+  return _msg;
+}
+
+// .LoginMessage.Register_Repost content8 = 9;
+inline bool MainMessage::_internal_has_content8() const {
+  return content_case() == kContent8;
+}
+inline bool MainMessage::has_content8() const {
+  return _internal_has_content8();
+}
+inline void MainMessage::set_has_content8() {
+  _impl_._oneof_case_[0] = kContent8;
+}
+inline void MainMessage::clear_content8() {
+  if (_internal_has_content8()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete _impl_.content_.content8_;
+    }
+    clear_has_content();
+  }
+}
+inline ::LoginMessage::Register_Repost* MainMessage::release_content8() {
+  // @@protoc_insertion_point(field_release:LoginMessage.MainMessage.content8)
+  if (_internal_has_content8()) {
+    clear_has_content();
+    ::LoginMessage::Register_Repost* temp = _impl_.content_.content8_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.content_.content8_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::LoginMessage::Register_Repost& MainMessage::_internal_content8() const {
+  return _internal_has_content8()
+      ? *_impl_.content_.content8_
+      : reinterpret_cast< ::LoginMessage::Register_Repost&>(::LoginMessage::_Register_Repost_default_instance_);
+}
+inline const ::LoginMessage::Register_Repost& MainMessage::content8() const {
+  // @@protoc_insertion_point(field_get:LoginMessage.MainMessage.content8)
+  return _internal_content8();
+}
+inline ::LoginMessage::Register_Repost* MainMessage::unsafe_arena_release_content8() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:LoginMessage.MainMessage.content8)
+  if (_internal_has_content8()) {
+    clear_has_content();
+    ::LoginMessage::Register_Repost* temp = _impl_.content_.content8_;
+    _impl_.content_.content8_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void MainMessage::unsafe_arena_set_allocated_content8(::LoginMessage::Register_Repost* content8) {
+  clear_content();
+  if (content8) {
+    set_has_content8();
+    _impl_.content_.content8_ = content8;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:LoginMessage.MainMessage.content8)
+}
+inline ::LoginMessage::Register_Repost* MainMessage::_internal_mutable_content8() {
+  if (!_internal_has_content8()) {
+    clear_content();
+    set_has_content8();
+    _impl_.content_.content8_ = CreateMaybeMessage< ::LoginMessage::Register_Repost >(GetArenaForAllocation());
+  }
+  return _impl_.content_.content8_;
+}
+inline ::LoginMessage::Register_Repost* MainMessage::mutable_content8() {
+  ::LoginMessage::Register_Repost* _msg = _internal_mutable_content8();
+  // @@protoc_insertion_point(field_mutable:LoginMessage.MainMessage.content8)
+  return _msg;
+}
+
 inline bool MainMessage::has_content() const {
   return content_case() != CONTENT_NOT_SET;
 }
@@ -2240,6 +3082,10 @@ inline MainMessage::ContentCase MainMessage::content_case() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -37,7 +37,7 @@ public:
     QLineEdit *EmailEdit;
     QLineEdit *PasswordEdit;
     QLineEdit *Password2Edit;
-    QPushButton *pushButton;
+    QPushButton *SureBtn;
     QPushButton *pushButton_2;
     QLabel *WarnLabel;
     QLabel *PixLabel;
@@ -90,9 +90,9 @@ public:
         Password2Edit = new QLineEdit(centralWidget);
         Password2Edit->setObjectName(QStringLiteral("Password2Edit"));
         Password2Edit->setGeometry(QRect(220, 520, 180, 30));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(120, 590, 100, 30));
+        SureBtn = new QPushButton(centralWidget);
+        SureBtn->setObjectName(QStringLiteral("SureBtn"));
+        SureBtn->setGeometry(QRect(120, 590, 100, 30));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setGeometry(QRect(270, 590, 100, 30));
@@ -120,7 +120,7 @@ public:
         label_3->setText(QApplication::translate("SignInWidgetClass", "\351\202\256\347\256\261", Q_NULLPTR));
         label_4->setText(QApplication::translate("SignInWidgetClass", "\345\257\206\347\240\201", Q_NULLPTR));
         label_5->setText(QApplication::translate("SignInWidgetClass", "\347\241\256\350\256\244\345\257\206\347\240\201", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("SignInWidgetClass", "\347\241\256\350\256\244", Q_NULLPTR));
+        SureBtn->setText(QApplication::translate("SignInWidgetClass", "\346\263\250\345\206\214", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("SignInWidgetClass", "\345\217\226\346\266\210", Q_NULLPTR));
         WarnLabel->setText(QString());
         PixLabel->setText(QString());
