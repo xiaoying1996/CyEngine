@@ -6,6 +6,7 @@
 #include <QDebug>
 #include <QString>
 #include <QThread>
+#include <QCloseEvent>
 #include "MyTcpClient.h"
 #include "MyEngineMessage.pb.h"
 #include "ui_SignUpWidget.h"
@@ -26,6 +27,11 @@ public:
 	void SetErrorStr();
 	void ShowRegister(bool res);
 	bool CheckErr();
+
+	void closeEvent(QCloseEvent *evt);
+
+signals:
+	void sig_closed();
 
 public slots:
 	void on_SureBtn_clicked();

@@ -104,6 +104,7 @@
     <QtRcc Include="MyEngineClient.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\HCLWidhet.cpp" />
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\main.cpp" />
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.cpp" />
     <ClCompile Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.cpp" />
@@ -116,11 +117,13 @@
     <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.h" />
     <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.h" />
     <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\MyTcpClient.h" />
+    <QtMoc Include="..\..\src\OtherProjects\MyEngineClient\HCLWidhet.h" />
     <ClInclude Include="..\..\src\Tools\ProtoBuf\MyEngineMessage.pb.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="x64\Debug\uic\ui_MyEngineClient.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="..\..\src\OtherProjects\MyEngineClient\HCLWidhet.ui" />
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\MyEngineClient.ui" />
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\PicPlayer.ui" />
     <QtUic Include="..\..\src\OtherProjects\MyEngineClient\SignUpWidget.ui" />

@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -35,6 +36,7 @@ public:
     QLineEdit *PasswordEdit;
     QPushButton *SignInBtn;
     QPushButton *SignUpBtn;
+    QCheckBox *RememberPasswordBox;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MyEngineClientClass)
@@ -59,22 +61,26 @@ public:
         AccountBox = new QComboBox(centralWidget);
         AccountBox->setObjectName(QStringLiteral("AccountBox"));
         AccountBox->setGeometry(QRect(230, 200, 180, 30));
+        AccountBox->setEditable(true);
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(25, -30, 301, 381));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(90, 260, 120, 30));
+        label_3->setGeometry(QRect(90, 290, 120, 30));
         label_3->setFont(font);
         PasswordEdit = new QLineEdit(centralWidget);
         PasswordEdit->setObjectName(QStringLiteral("PasswordEdit"));
-        PasswordEdit->setGeometry(QRect(230, 260, 180, 30));
+        PasswordEdit->setGeometry(QRect(230, 290, 180, 30));
         SignInBtn = new QPushButton(centralWidget);
         SignInBtn->setObjectName(QStringLiteral("SignInBtn"));
-        SignInBtn->setGeometry(QRect(100, 350, 120, 30));
+        SignInBtn->setGeometry(QRect(100, 380, 120, 30));
         SignUpBtn = new QPushButton(centralWidget);
         SignUpBtn->setObjectName(QStringLiteral("SignUpBtn"));
-        SignUpBtn->setGeometry(QRect(280, 350, 120, 30));
+        SignUpBtn->setGeometry(QRect(280, 380, 120, 30));
+        RememberPasswordBox = new QCheckBox(centralWidget);
+        RememberPasswordBox->setObjectName(QStringLiteral("RememberPasswordBox"));
+        RememberPasswordBox->setGeometry(QRect(300, 240, 107, 24));
         MyEngineClientClass->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MyEngineClientClass);
         statusBar->setObjectName(QStringLiteral("statusBar"));
@@ -93,6 +99,7 @@ public:
         label_3->setText(QApplication::translate("MyEngineClientClass", "\345\257\206\347\240\201", Q_NULLPTR));
         SignInBtn->setText(QApplication::translate("MyEngineClientClass", "\347\231\273\345\275\225", Q_NULLPTR));
         SignUpBtn->setText(QApplication::translate("MyEngineClientClass", "\346\263\250\345\206\214", Q_NULLPTR));
+        RememberPasswordBox->setText(QApplication::translate("MyEngineClientClass", "\350\256\260\344\275\217\345\257\206\347\240\201", Q_NULLPTR));
     } // retranslateUi
 
 };

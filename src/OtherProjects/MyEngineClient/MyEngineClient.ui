@@ -58,6 +58,9 @@
       <height>30</height>
      </rect>
     </property>
+    <property name="editable">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -76,7 +79,7 @@
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>260</y>
+      <y>290</y>
       <width>120</width>
       <height>30</height>
      </rect>
@@ -95,7 +98,7 @@
     <property name="geometry">
      <rect>
       <x>230</x>
-      <y>260</y>
+      <y>290</y>
       <width>180</width>
       <height>30</height>
      </rect>
@@ -105,7 +108,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>350</y>
+      <y>380</y>
       <width>120</width>
       <height>30</height>
      </rect>
@@ -118,13 +121,26 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>350</y>
+      <y>380</y>
       <width>120</width>
       <height>30</height>
      </rect>
     </property>
     <property name="text">
      <string>注册</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="RememberPasswordBox">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>240</y>
+      <width>107</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>记住密码</string>
     </property>
    </widget>
   </widget>

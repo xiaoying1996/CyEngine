@@ -73,7 +73,25 @@ void MyEngineClient::on_SignUpBtn_clicked()
         m_signup = new SignUpWidget();
     }
     m_signup->show();
+    connect(m_signup, SIGNAL(sig_closed()), this, SLOT(slot_SignUpCLosed()));
     m_picPlayer->stopPlay();
+    this->hide();
+}
+
+void MyEngineClient::on_SignInBtn_clicked()
+{
+    MainMessage m_Login;
+    Login_Request* message = new Login_Request();
+    m_Login.set_type(LOGIN_REQUEST);
+    message->set_name(ui.AccountBox->currentText().toStdString());
+    message->set_password(ui.PasswordEdit->text().toStdString());
+    m_Login.set_allocated_content9(message);
+    std::string msgStr = "";
+    if (m_Login.SerializeToString(&msgStr))
+        //qDebug() << QString::fromLocal8Bit("序列化后的str") << QString::fromStdString(msgStr) + "\n";
+        m_Login.clear_content9();
+    m_Login.Clear();
+    MyTcpClient::GetInstance()->SendMessage(msgStr);
 }
 
 void MyEngineClient::slot_ProcessTimeout()
@@ -112,6 +130,28 @@ void MyEngineClient::slot_ProcessTimeout()
                 bool res = content.state();
                 m_signup->ShowRegister(res);
             }
+            if (protoMsg.type() == MessageType::LOGIN_REPOST)
+            {
+                Login_Repost content = protoMsg.content10();
+                bool res = content.state();
+                if (res)
+                {
+                    if (m_HCL == nullptr)
+                    {
+                        m_HCL = new HCLWidhet();
+                        m_HCL->show();
+                        this->hide();
+                    }
+                }
+            }
         }
     }
+}
+
+void MyEngineClient::slot_SignUpCLosed()
+{
+    this->show();
+    m_signup->close();
+    delete m_signup;
+    m_signup = nullptr;
 }

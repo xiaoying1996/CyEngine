@@ -40,6 +40,7 @@ SignUpWidget::SignUpWidget(QWidget *parent)
 	//ui.label_2->setFixedSize(200, 40); //设置label大小
 	//ui.PixLabel->move(30,30);
 	ui.PixLabel->setScaledContents(true); //将pixmap图自适应填充到label
+	this->setWindowTitle(QString::fromLocal8Bit("注册"));
 }
 
 SignUpWidget::~SignUpWidget()
@@ -138,6 +139,11 @@ bool SignUpWidget::CheckErr()
 		return true;
 	}
 	return false;
+}
+
+void SignUpWidget::closeEvent(QCloseEvent* evt)
+{
+	emit sig_closed();
 }
 
 void SignUpWidget::on_SureBtn_clicked()
