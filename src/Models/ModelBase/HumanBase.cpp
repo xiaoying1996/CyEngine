@@ -20,19 +20,19 @@ void HumanBase::ReadScenario()
 	ModelBase::ReadScenario();
 }
 
-void HumanBase::Run()
-{
-	ModelBase::Run();
-}
-
 void HumanBase::PostEvent()
 {
 	ModelBase::PostEvent();
 }
 
-void HumanBase::ReceiveEvent()
+void HumanBase::ReceiveEvent(EventBase *event)
 {
-	ModelBase::ReceiveEvent();
+	ModelBase::ReceiveEvent(event);
+}
+
+void HumanBase::Run(double t)
+{
+	ModelBase::Run(t);
 }
 
 void HumanBase::Destory()

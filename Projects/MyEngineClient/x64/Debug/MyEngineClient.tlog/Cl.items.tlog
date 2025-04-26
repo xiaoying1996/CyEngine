@@ -5,9 +5,9 @@ D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\MyEngineClient\MyTcpClient.c
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\MyEngineClient\PicPlayer.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\PicPlayer.obj
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\OtherProjects\MyEngineClient\SignUpWidget.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\SignUpWidget.obj
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\Tools\ProtoBuf\MyEngineMessage.pb.cc;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\MyEngineMessage.pb.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\rcc\qrc_MyEngineClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qrc_MyEngineClient.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc\moc_MyEngineClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_MyEngineClient.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc\moc_PicPlayer.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_PicPlayer.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc\moc_SignUpWidget.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_SignUpWidget.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc\moc_MyTcpClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_MyTcpClient.obj
-D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc\moc_HCLWidhet.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_HCLWidhet.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\rcc\qrc_MyEngineClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qrc_MyEngineClient.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\moc\moc_MyEngineClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_MyEngineClient.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\moc\moc_PicPlayer.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_PicPlayer.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\moc\moc_SignUpWidget.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_SignUpWidget.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\moc\moc_MyTcpClient.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_MyTcpClient.obj
+D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\qt\moc\moc_HCLWidhet.cpp;D:\chen\Pro\CPP\MyEngine\CyEngine\Projects\MyEngineClient\x64\Debug\moc_HCLWidhet.obj

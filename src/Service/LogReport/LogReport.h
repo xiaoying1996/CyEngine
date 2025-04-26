@@ -1,9 +1,14 @@
 #ifndef _LOGREPORT_
 #define _LOGREPORT_
-
-#include "../../Public/PublicInclude.h"
+using namespace std;
+#include "Public/PublicStruct.h"
+#include "Public/PublicEnum.h"
 #include <fstream>
-
+#include <vector>
+#include <mutex>
+#include <map>
+#include <iostream>
+#include <string>
 #define _LOG LogReport::GetInstance()
 
 class LogReport {

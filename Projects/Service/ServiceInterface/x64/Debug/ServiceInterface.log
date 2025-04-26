@@ -1,0 +1,6 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  ServiceInterface.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC\14.36.32532\include\sal.h(2361,12): warning C4518: “__declspec(dllimport)”: 此处遇到意外的存储类或类型说明符；被忽略
+C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Tools\MSVC\14.36.32532\include\sal.h(2361,12): warning C4502: “链接规范”要求使用关键字“extern”，并且该关键字必须在所有其他说明符之前
+  ServiceInterface.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\lib\Debug\ServiceInterfaced.lib

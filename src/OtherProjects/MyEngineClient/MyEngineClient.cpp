@@ -140,6 +140,8 @@ void MyEngineClient::slot_ProcessTimeout()
                     {
                         m_HCL = new HCLWidhet();
                         m_HCL->show();
+                        //创建客户端主界面并将用户名赋值给主界面
+                        content.name();
                         this->hide();
                     }
                 }

@@ -2,6 +2,10 @@
 
 ModelManager* ModelManager::m_ModelManager = nullptr;
 std::mutex ModelManager::m_Mutex;
+std::mutex ModelManager::m_Mutex_Model;
+std::mutex ModelManager::m_Mutex_ModelReadyRun;
+std::mutex ModelManager::m_Mutex_ModelRunning;
+std::mutex ModelManager::m_Mutex_ModelFinish;
 
 ModelManager::ModelManager()
 {
@@ -38,21 +42,21 @@ ModelManager::~ModelManager()
 
 void ModelManager::AppendModel(ModelBase* model)
 {
-	m_Mutex.lock();
+    m_Mutex_Model.lock();
 	m_model_Vec.push_back(model);
-	m_Mutex.unlock();
+    m_Mutex_Model.unlock();
 }
 
 void ModelManager::AddModelToRunningVec(ModelBase* model)
 {
-    m_Mutex.lock();
+    m_Mutex_ModelRunning.lock();
     m_model_Running_Vec.push_back(model);
-    m_Mutex.unlock();
+    m_Mutex_ModelRunning.unlock();
 }
 
 void ModelManager::MoveModelFromRunningToFinish(ModelBase* model)
 {
-    m_Mutex.lock();
+    m_Mutex_ModelRunning.lock();
     for (auto iter = m_model_Running_Vec.begin(); iter != m_model_Running_Vec.end(); iter++)
     {
         if (model == *iter)
@@ -61,8 +65,11 @@ void ModelManager::MoveModelFromRunningToFinish(ModelBase* model)
             break;
         }
     }
+    m_Mutex_ModelRunning.unlock();
+    m_Mutex_ModelFinish.lock();
     m_model_Finish_Vec.push_back(model);
-    m_Mutex.unlock();
+    m_Mutex_ModelFinish.unlock();
+   
 }
 
 void ModelManager::MoveAllModelsFromFinishToReady()
@@ -86,40 +93,67 @@ void ModelManager::MoveAllModelsFromFinishToReady()
 
 void ModelManager::SetAllModelToReadyVec()
 {
-    m_Mutex.lock();
+    m_Mutex_ModelReadyRun.lock();
     m_model_ReadyRun_Vec.clear();
     m_model_ReadyRun_Vec = m_model_Vec;
-    m_Mutex.unlock();
+    m_Mutex_ModelReadyRun.unlock();
     _LOG->PrintError("已将环境中所有模型置于就绪态");
 }
 
 ModelBase* ModelManager::GetModelForRunn()
 {
     ModelBase* model = nullptr;
-    m_Mutex.lock();
+    m_Mutex_ModelReadyRun.lock();
     if (m_model_ReadyRun_Vec.size())
     {
         model = m_model_ReadyRun_Vec[0];
         m_model_ReadyRun_Vec.erase(m_model_ReadyRun_Vec.begin());
     }
-    m_Mutex.unlock();
+    m_Mutex_ModelReadyRun.unlock();
     return model;
 }
 
 bool ModelManager::Is_model_Finish_Vec_Empty()
 {
     bool b;
-    m_Mutex.lock();
+    m_Mutex_ModelFinish.lock();
     b = m_model_Finish_Vec.empty();
-    m_Mutex.unlock();
+    m_Mutex_ModelFinish.unlock();
     return b;
 }
 
 bool ModelManager::Is_model_Running_Vec_Empty()
 {
     bool b;
-    m_Mutex.lock();
+    m_Mutex_ModelRunning.lock();
     b = m_model_Running_Vec.empty();
-    m_Mutex.unlock();
+    m_Mutex_ModelRunning.unlock();
     return b;
+}
+
+void ModelManager::GetAllModels(std::vector<Model_BasicInfo>& models)
+{
+    m_Mutex_Model.lock();
+    for (int i = 0;i<m_model_Vec.size();i++)
+    {
+        Model_BasicInfo info;
+        m_model_Vec[i]->GetBasicInfo(info);
+        models.push_back(info);
+    }
+    m_Mutex_Model.unlock();
+}
+
+void ModelManager::GetModelByID(Model_BasicInfo& model, int id)
+{
+    m_Mutex_Model.lock();
+    for (int i = 0; i < m_model_Vec.size(); i++)
+    {
+        Model_BasicInfo info;
+        m_model_Vec[i]->GetBasicInfo(info);
+        if (info._id == id)
+        {
+            model = info;
+        }
+    }
+    m_Mutex_Model.unlock();
 }

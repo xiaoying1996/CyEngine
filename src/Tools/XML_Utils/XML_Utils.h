@@ -20,6 +20,8 @@ void GetTypeFromTiXmlElement(std::string& type, TiXmlElement* unitElement);
 void GetIDFromTiXmlElement(int &id, TiXmlElement* unitElement);
 void GetPositionFromTiXmlElement(std::vector<int>& pos, TiXmlElement* unitElement);
 void GetNameFromTiXmlElement(std::string &name, TiXmlElement* unitElement);
+std::string UTF8ToString(const std::string& utf8Data);
+LPCWSTR stringToLPCWSTR(string orig);
 time_t GetCurrentTimeMsec();
 
 #endif // !XML_UTILS

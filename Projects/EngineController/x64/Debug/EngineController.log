@@ -1,4 +1,19 @@
-﻿  main.cpp
-  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\EngineController.exe
-  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
-  或批处理文件。
+﻿   Qt/MSBuild: 3.3.1.1
+  Reading Qt configuration (D:/Program/qt/5.9.9/msvc2017_64/bin/qmake)
+   Qt: 5.9.9
+  main.cpp
+  EngineController.cpp
+  MissionChooser.cpp
+  MoveMissionWidget.cpp
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\EventStruct.h(7,7): error C2059: 语法错误:“using namespace” (编译源文件 ..\..\src\OtherProjects\EngineController\resource\main.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,9): error C2065: “ComponentBase”: 未声明的标识符 (编译源文件 ..\..\src\OtherProjects\EngineController\resource\main.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,23): error C2059: 语法错误:“>” (编译源文件 ..\..\src\OtherProjects\EngineController\resource\main.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\EventStruct.h(7,7): error C2059: 语法错误:“using namespace” (编译源文件 MissionChooser.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\EventStruct.h(7,7): error C2059: 语法错误:“using namespace” (编译源文件 MoveMissionWidget.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,9): error C2065: “ComponentBase”: 未声明的标识符 (编译源文件 MissionChooser.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,23): error C2059: 语法错误:“>” (编译源文件 MissionChooser.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,9): error C2065: “ComponentBase”: 未声明的标识符 (编译源文件 MoveMissionWidget.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Models\ModelBase\ModelBase.h(36,23): error C2059: 语法错误:“>” (编译源文件 MoveMissionWidget.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(46,23): error C2065: “ServiceBase”: 未声明的标识符 (编译源文件 EngineController.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(46,35): error C2059: 语法错误:“>” (编译源文件 EngineController.cpp)
+D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(51,2): warning C4091: “__declspec(dllimport)”: 没有声明变量时忽略“ServiceInterface”的左侧 (编译源文件 EngineController.cpp)

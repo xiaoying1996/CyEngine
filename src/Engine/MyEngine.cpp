@@ -6,7 +6,7 @@ std::mutex MyEngine::m_Mutex_Advance;
 
 void ModelRunner(void* arg)
 {
-    time_t tickStart;
+    static time_t tickStart;
     time_t tickFinish;
     bool isPrintTick = false;;
     while (true)
@@ -43,8 +43,17 @@ void ModelRunner(void* arg)
         else//拿到了要运行的模型，1.将其放入RunningVec 2.执行运行任务
         {
             ModelManager::GetInstance()->AddModelToRunningVec(model);
-            model->ReceiveEvent();
-            model->Run();
+            //遍历当前暂存的事件数据，推给模型
+            Model_BasicInfo info;
+            model->GetBasicInfo(info);
+            vector<EventBase*> events = MyEngine::GetInstance()->GetEvents(info._id);
+            for (int i = 0; i < events.size(); i++)
+            {
+                model->ReceiveEvent(events[i]);
+                model->PutEventToComponent();
+                delete events[i];
+            }
+            model->Run(0);
             //执行结束后，将其从RunningVec转移到FinishVec
             ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
         }
@@ -106,6 +115,7 @@ MyEngine::MyEngine()
 
     m_pool = nullptr;
     m_isScenarioRead = false;
+    m_isStart = false;
     m_battleTime = 0;
 
     #if _DEBUG
@@ -168,6 +178,7 @@ ErrorState MyEngine::Init(int minThread, int maxThread)
 #if _DEBUG
     _LOG->PrintError("引擎初始化完成");
 #endif // NDEBUG
+    m_isStart = true;
     return NERROR;
 }
 
@@ -177,7 +188,16 @@ bool MyEngine::GetScenarioReadStu()
     m_Mutex.lock();
     ret = m_isScenarioRead;
     m_Mutex.unlock();
-    return m_isScenarioRead;
+    return ret;
+}
+
+bool MyEngine::GetStartStu()
+{
+    bool ret;
+    m_Mutex.lock();
+    ret = m_isStart;
+    m_Mutex.unlock();
+    return ret;
 }
 
 bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
@@ -210,15 +230,15 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
         {
             if (modelsElement)
             {
-                TiXmlElement* humanElement = nullptr;
+                TiXmlElement* Element = nullptr;
                 for (TiXmlElement* childElement = modelsElement->FirstChildElement();
                     childElement != nullptr; childElement = childElement->NextSiblingElement())
                 {
                     std::string str =  childElement->Value();
                     if (str == "Human")
                     {
-                        humanElement = childElement;
-                        for (TiXmlElement* unitElement = humanElement->FirstChildElement("unit");
+                        Element = childElement;
+                        for (TiXmlElement* unitElement = Element->FirstChildElement("unit");
                             unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
                         {
                             int id = 0;
@@ -232,7 +252,8 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 hDll = LoadLibrary(stringToLPCWSTR(dllPath));
                             #endif
                             #if NDEBUG
-                                hDll = LoadLibrary(L"dll\Debug\People.dll");
+                                std::string dllPath = "dll\\Release\\" + type + ".dll";
+                                hDll = LoadLibrary(stringToLPCWSTR(dllPath));
                             #endif
                             if (hDll == NULL)
                             {
@@ -250,6 +271,52 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
+                            //初始化组件
+                            model->InitComponent();
+                            Model_BasicInfo modelInfo;
+                            model->GetBasicInfo(modelInfo);
+                            _LOG->AddModelToLog(modelInfo);
+                            MM->AppendModel(model);
+                        }
+                    }
+                    else if (str == "UAV")
+                    {
+                        Element = childElement;
+                        for (TiXmlElement* unitElement = Element->FirstChildElement("unit");
+                            unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
+                        {
+                            int id = 0;
+                            std::string type;
+                            GetTypeFromTiXmlElement(type, unitElement);
+                            GetIDFromTiXmlElement(id, unitElement);
+
+                            HINSTANCE hDll;
+                            #if _DEBUG
+                            std::string dllPath = "dll\\Debug\\" + type + "d.dll";
+                            hDll = LoadLibrary(stringToLPCWSTR(dllPath));
+                            #endif
+                            #if NDEBUG
+                            std::string dllPath = "dll\\Release\\" + type + ".dll";
+                            hDll = LoadLibrary(stringToLPCWSTR(dllPath));
+                            #endif
+                            if (hDll == NULL)
+                            {
+                                std::cout << "Load dll failed!";
+                                return -1;
+                            }
+                            using functionPtr = ModelBase * (*)();
+                            functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
+                            if (addFunction == NULL)
+                            {
+                                std::cout << "cannot find target function!";
+                                return -1;
+                            }
+                            ModelBase* model = addFunction();
+                            model->Init(unitElement);
+                            model->ReadScenario();
+                            model->SetID(id);
+                            //初始化组件
+                            model->InitComponent();
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
                             _LOG->AddModelToLog(modelInfo);
@@ -266,6 +333,12 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
     m_Mutex.lock();
     m_isScenarioRead = true;
     m_Mutex.unlock();
+    return true;
+}
+
+bool MyEngine::LoadService(std::string& errStr)
+{
+    ServiceInterface::GetInstance()->LoadInterface();
     return true;
 }
 
@@ -315,6 +388,36 @@ void MyEngine::BattleTimeAdvance()
     m_Mutex.unlock();
 }
 
+void MyEngine::PutEvent(EventBase* event)
+{
+    m_Mutex.lock();
+    m_eventList.push_back(event);
+    m_Mutex.unlock();
+}
+
+vector<EventBase*> MyEngine::GetEvents(int id)
+{
+    vector<EventBase*> ret;
+    m_Mutex.lock();
+    for (auto iter = m_eventList.begin(); iter != m_eventList.end(); iter++)
+    {
+        EventBase *event = *iter;
+        if (event->receicerID == id || event->receicerID == 0)
+        {
+            ret.push_back(std::move(event));
+            auto temp = *iter;
+            iter = m_eventList.erase(iter);
+            if (iter == m_eventList.end())
+            {
+                break;
+            }
+            delete temp;
+        }
+    }
+    m_Mutex.unlock();
+    return ret;
+}
+                                               
 double MyEngine::GetBattleTime()
 {
     double t;
@@ -331,4 +434,14 @@ TimeAdvanceStu MyEngine::GetAdvanceStu()
     stu = m_canAdvance;
     m_Mutex.unlock();
     return stu;
+}
+
+void MyEngine::GetAllModels(std::vector<Model_BasicInfo>& modelsList)
+{
+    ModelManager::GetInstance()->GetAllModels(modelsList);
+}
+
+void MyEngine::GetModelByID(Model_BasicInfo& model,int id)
+{
+    ModelManager::GetInstance()->GetModelByID(model,id);
 }

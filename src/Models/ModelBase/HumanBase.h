@@ -8,9 +8,9 @@ public:
 	virtual ~HumanBase();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void Run();
 	virtual void PostEvent();
-	virtual void ReceiveEvent();
+	virtual void ReceiveEvent(EventBase *event);
+	virtual void Run(double t);
 	virtual void Destory();
 private:
 	double _runSpeed = 0;

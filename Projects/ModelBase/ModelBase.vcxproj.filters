@@ -13,24 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\Model">
+      <UniqueIdentifier>{ff5a5d91-7048-4b76-9def-96f6f003cfde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Model">
+      <UniqueIdentifier>{132a452d-b779-43b8-a1cd-00ce7d630631}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Models\ModelBase\ModelBase.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\Models\ModelBase\HumanBase.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Models\ModelBase\ModelBase.cpp">
+      <Filter>源文件\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Models\ModelBase\UAVBase.cpp">
+      <Filter>源文件\Model</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Models\ModelBase\ModelBase.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\src\Models\ModelBase\PublicStruct.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Models\ModelBase\HumanBase.h">
+    <ClInclude Include="..\..\src\Models\ModelBase\EventStruct.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Models\ModelBase\ModelBase.h">
+      <Filter>头文件\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Models\ModelBase\HumanBase.h">
+      <Filter>头文件\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Models\ModelBase\UAVBase.h">
+      <Filter>头文件\Model</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

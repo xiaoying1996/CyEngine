@@ -13,12 +13,22 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\main.cpp" />
     <ClCompile Include="EngineController.cpp" />
+    <ClCompile Include="MissionChooser.cpp" />
+    <ClCompile Include="MoveMissionWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="EngineController.h" />
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="EngineController.ui" />
+    <QtUic Include="MissionChooser.ui" />
+    <QtUic Include="MoveMissionWidget.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MissionChooser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="MoveMissionWidget.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B816131D-98F7-46A2-9BA7-2A6A3921AB4D}</ProjectGuid>
@@ -81,7 +91,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;XML_Utilsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;XML_Utilsd.lib;ComponentBased.lib;ServiceInterfaced.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

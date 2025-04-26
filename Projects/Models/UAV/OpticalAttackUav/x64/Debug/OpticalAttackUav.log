@@ -1,0 +1,8 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  OpticalAttackUav.cpp
+ModelBased.lib(UAVBase.obj) : warning LNK4099: 未找到 PDB“”(使用“ModelBased.lib(UAVBase.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+ModelBased.lib(ModelBase.obj) : warning LNK4099: 未找到 PDB“”(使用“ModelBased.lib(ModelBase.obj)”或在“”中寻找)；正在链接对象，如同没有调试信息一样
+    正在创建库 D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\OpticalAttackUavd.lib 和对象 D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\OpticalAttackUavd.exp
+  OpticalAttackUav.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\OpticalAttackUavd.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

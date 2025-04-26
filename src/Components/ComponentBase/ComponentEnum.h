@@ -1,0 +1,20 @@
+#ifndef _COMPONENT_ENUM_
+#define _COMPONENT_ENUM_
+
+enum ComType
+{
+	COM_UNKNOW = 0,
+	COM_MOVE = 1,
+	COM_DETECT,
+	COM_ATTACK,
+};
+
+enum MoveState
+{
+	MOVE_STOP = 0,
+	MOVE_READY,
+	MOVE_MOVING,
+	MOVE_ATTACHPOINT,
+};
+
+#endif // !_MODEL_BASE_
