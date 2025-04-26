@@ -1,4 +1,3 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+﻿D:\VS\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
   ModelManagerService.cpp
-D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ModelManagerService\ModelManagerService.cpp(59,54): error C2733: “CreateServiceW”: 无法重载具有外部 "C" 链接的函数
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winsvc.h(1121,1): message : 参见“CreateServiceW”的声明
+  ModelManagerService.vcxproj -> E:\CPP\CyEngine\dll\Debug\ModelManagerServiced.dll

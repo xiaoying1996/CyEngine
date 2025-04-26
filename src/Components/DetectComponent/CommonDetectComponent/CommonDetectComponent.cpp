@@ -14,6 +14,13 @@ CommonDetectComponent::~CommonDetectComponent()
 void CommonDetectComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
+	_detectDis = 100.0;
+	ServiceInterface* s = GetServiceInterfaceSingle();
+	_modelManagerService = dynamic_cast<ModelManagerService*> (GetServiceInterfaceSingle()->GetServiceByName("ModelManagerService"));
+	if (_modelManagerService == nullptr)
+	{
+		return;
+	}
 }
 
 void CommonDetectComponent::ReadScenario()

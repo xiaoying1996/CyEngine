@@ -3,7 +3,6 @@
 #include <QMainWindow>
 #include "ui_MoveMissionWidget.h"
 #include "Engine/MyEngine.h"
-#include "Public/PublicInclude.h"
 #include <QString>
 #include <QTimer>
 

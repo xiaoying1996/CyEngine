@@ -1,4 +1,6 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
-  CommonDetectComponent.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\CommonDetectComponentd.dll
-  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
-  或批处理文件。
+﻿D:\VS\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  CommonDetectComponent.cpp
+D:\VS\VS2022\VC\Tools\MSVC\14.36.32532\include\vcruntime_startup.h(15,1): warning C4518: “__declspec(dllimport)”: 此处遇到意外的存储类或类型说明符；被忽略
+D:\VS\VS2022\VC\Tools\MSVC\14.36.32532\include\vcruntime_startup.h(15,1): warning C4502: “链接规范”要求使用关键字“extern”，并且该关键字必须在所有其他说明符之前
+    正在创建库 E:\CPP\CyEngine\dll\Debug\CommonDetectComponentd.lib 和对象 E:\CPP\CyEngine\dll\Debug\CommonDetectComponentd.exp
+  CommonDetectComponent.vcxproj -> E:\CPP\CyEngine\dll\Debug\CommonDetectComponentd.dll

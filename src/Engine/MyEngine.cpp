@@ -72,6 +72,40 @@ void TimeAdvanceManager(void* arg)
             int i = 0;
             //1.将所有已完成容器里面的模型放入ReadyVec中
             ModelManager::GetInstance()->MoveAllModelsFromFinishToReady();
+            //在将所有实体放入预备执行容器之前，还要处理两件事
+            //  1.将需要发送给所有实体的事件推送下去
+            //   2.将需要推送给所有服务的实体数据和事件数据推送出去
+            std::vector<ServiceBase*> Services = GetServiceInterfaceSingle()->GetAllService();
+            for (int i = 0; i < Services.size(); i++)
+            {
+                if (Services[i] != nullptr)
+                {
+                    std::vector<EventCategory> EventPublic;
+                    std::vector<EventCategory> EventRegister;
+                    std::vector<ModelType> ModelPublic;
+                    std::vector<ModelType> ModelRegister;
+                    Services[i]->GetDataPublicRegister(EventPublic, EventRegister, ModelPublic, ModelRegister);
+                    //先写用到的，目前只对侦察组件用了模型数据订购，所以目前先把这个写上
+                    if (ModelRegister.size())
+                    {
+                        std::vector<Model_BasicInfo> modelsList;
+                        MyEngine::GetInstance()->GetAllModels(modelsList);
+                        //将已有实体和订阅类型进行匹配，然后将信息写入服务
+                        std::vector<Model_BasicInfo> modelsToService;
+                        for (int x = 0; x < ModelRegister.size(); x++)
+                        {
+                            for (int y = 0; y < modelsList.size(); y++)
+                            {
+                                if (ModelRegister[x] == modelsList[y]._type)
+                                {
+                                    modelsToService.push_back(modelsList[y]);
+                                }
+                            }
+                        }
+                        Services[i]->SetEntityList(modelsToService);
+                    }
+                }
+            }
             //2.将时间状态设置为Ready
             MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
             MyEngine::GetInstance()->BattleTimeAdvance();
@@ -338,7 +372,9 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
 
 bool MyEngine::LoadService(std::string& errStr)
 {
-    ServiceInterface::GetInstance()->LoadInterface();
+    //将创建的服务接口对象放入共享内存
+    ServiceInterface* serviceInterface = ServiceInterface::GetInstance();
+    GetServiceInterfaceSingle()->LoadInterface();
     return true;
 }
 

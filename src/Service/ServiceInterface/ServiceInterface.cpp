@@ -1,8 +1,7 @@
 #include "ServiceInterface.h"
 #include <tinyxml/tinyxml.h>
-#include "Tools//XML_Utils/XML_Utils.h"
 
-ServiceInterface* ServiceInterface::m_ServiceInterface = nullptr;
+
 std::mutex ServiceInterface::m_Mutex;
 
 ServiceInterface::ServiceInterface()
@@ -99,13 +98,37 @@ void ServiceInterface::LoadInterface()
 			return;
 		}
 		using functionPtr = ServiceBase * (*)();
-		functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateService");
+		functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateServices");
 		if (addFunction == NULL)
 		{
 			std::cout << "cannot find target function!";
 			return;
 		}
 		ServiceBase* service = addFunction();
+		service->PublishRegister();
 		m_Services[iter->second] = service;
 	}
 }
+
+std::vector<ServiceBase*> ServiceInterface::GetAllService()
+{
+	std::vector<ServiceBase*> ret;
+	m_Mutex.lock();
+	for (auto iter = m_Services.begin(); iter != m_Services.end(); iter++)
+	{
+		ret.push_back(iter->second);
+	}
+	m_Mutex.unlock();
+	return ret;
+}
+
+ServiceBase* ServiceInterface::GetServiceByName(std::string serviceName)
+{
+	ServiceBase* ret = m_Services[serviceName];
+	return ret;
+}
+
+//ServiceInterface* GetServiceInterfaceSingle() {
+//	static ServiceInterface* instance = ServiceInterface::GetInstance();
+//	return instance;
+//}

@@ -34,6 +34,7 @@ public:
 	~ServiceInterface();
 	static ServiceInterface* GetInstance();
 	static void deleteInstance();
+
 private:
 	ServiceInterface();
 	ServiceInterface(const ServiceInterface& manager);
@@ -48,6 +49,10 @@ private:
 
 public:
 	void LoadInterface();
+	std::vector<ServiceBase*> GetAllService();
+	ServiceBase* GetServiceByName(std::string serviceName);
 };
+
+SINGLETON_API ServiceInterface* GetServiceInterfaceSingle();
 
 #endif // !_MODEL_MANAGER

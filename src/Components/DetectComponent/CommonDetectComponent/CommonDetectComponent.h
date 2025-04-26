@@ -3,6 +3,8 @@
 
 #include "Components/ComponentBase/ComponentBase.h"
 #include "Tools/XML_Utils/XML_Utils.h"
+#include "Service/ServiceInterface/ServiceInterface.h"
+#include "Service/ModelManagerService/ModelManagerService.h"
 
 class CommonDetectComponent :public ComponentBase
 {
@@ -17,7 +19,8 @@ public:
 	virtual void Destory();
 
 private:
-
+	double _detectDis;
+	ModelManagerService* _modelManagerService = nullptr;
 };
 
 #endif // !_CommonUavMoveComponent_

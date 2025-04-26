@@ -22,6 +22,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -44,6 +45,9 @@ public:
     QPushButton *StopBtn;
     QPushButton *TestBtn;
     QPushButton *ReadScenarioBtn;
+    QTreeWidget *ModelsListTree;
+    QPushButton *UpdateBtn;
+    QPushButton *SendMissionBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -65,7 +69,7 @@ public:
         ThreadModePoolBox->setGeometry(QRect(100, 30, 87, 22));
         StartBtn = new QPushButton(centralWidget);
         StartBtn->setObjectName(QStringLiteral("StartBtn"));
-        StartBtn->setGeometry(QRect(490, 30, 93, 28));
+        StartBtn->setGeometry(QRect(150, 200, 112, 34));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(200, 30, 72, 15));
@@ -92,13 +96,22 @@ public:
         AliveEdit->setGeometry(QRect(280, 130, 81, 21));
         StopBtn = new QPushButton(centralWidget);
         StopBtn->setObjectName(QStringLiteral("StopBtn"));
-        StopBtn->setGeometry(QRect(490, 70, 93, 28));
+        StopBtn->setGeometry(QRect(150, 240, 112, 34));
         TestBtn = new QPushButton(centralWidget);
         TestBtn->setObjectName(QStringLiteral("TestBtn"));
-        TestBtn->setGeometry(QRect(660, 400, 112, 34));
+        TestBtn->setGeometry(QRect(20, 240, 112, 34));
         ReadScenarioBtn = new QPushButton(centralWidget);
         ReadScenarioBtn->setObjectName(QStringLiteral("ReadScenarioBtn"));
         ReadScenarioBtn->setGeometry(QRect(20, 200, 112, 34));
+        ModelsListTree = new QTreeWidget(centralWidget);
+        ModelsListTree->setObjectName(QStringLiteral("ModelsListTree"));
+        ModelsListTree->setGeometry(QRect(390, 50, 381, 481));
+        UpdateBtn = new QPushButton(centralWidget);
+        UpdateBtn->setObjectName(QStringLiteral("UpdateBtn"));
+        UpdateBtn->setGeometry(QRect(390, 10, 120, 40));
+        SendMissionBtn = new QPushButton(centralWidget);
+        SendMissionBtn->setObjectName(QStringLiteral("SendMissionBtn"));
+        SendMissionBtn->setGeometry(QRect(20, 280, 112, 34));
         EngineControllerClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(EngineControllerClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -171,6 +184,10 @@ public:
         StopBtn->setText(QApplication::translate("EngineControllerClass", "\345\201\234\346\255\242", Q_NULLPTR));
         TestBtn->setText(QApplication::translate("EngineControllerClass", "\346\265\213\350\257\225", Q_NULLPTR));
         ReadScenarioBtn->setText(QApplication::translate("EngineControllerClass", "\350\257\273\345\217\226\346\203\263\345\256\232", Q_NULLPTR));
+        QTreeWidgetItem *___qtreewidgetitem = ModelsListTree->headerItem();
+        ___qtreewidgetitem->setText(0, QApplication::translate("EngineControllerClass", "\346\250\241\345\236\213\345\210\227\350\241\250", Q_NULLPTR));
+        UpdateBtn->setText(QApplication::translate("EngineControllerClass", "\345\210\267\346\226\260", Q_NULLPTR));
+        SendMissionBtn->setText(QApplication::translate("EngineControllerClass", "\344\273\273\345\212\241\344\270\213\345\217\221", Q_NULLPTR));
     } // retranslateUi
 
 };

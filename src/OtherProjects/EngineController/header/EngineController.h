@@ -5,8 +5,7 @@
 #include <QMessageBox>
 #include <QTimer>
 #include "../header/EngineController.h"
-#include "../../../Engine/MyEngine.h"
-#include "../../../Public/PublicInclude.h"
+#include "Engine/MyEngine.h"
 #include "../../../Service/LogReport/LogReport.h"
 #include "../../../Models//Human//People/People.h"
 #include <ui_EngineController.h>

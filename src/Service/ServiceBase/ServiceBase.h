@@ -15,12 +15,22 @@ public:
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
-	virtual void PublishEvent();
-	virtual void RegisterEvent();
-	virtual void PublishModel();
-	virtual void RegisterModel();
+	virtual void PublishRegister();
 	void HandleEvent();
+	void AddEventPublic(std::vector<EventCategory> events);
+	void AddEventRegister(std::vector<EventCategory> events);
+	void AddModelPublic(std::vector<ModelType> models);
+	void AddModelRegister(std::vector<ModelType> models);
+	void GetDataPublicRegister(std::vector<EventCategory> &EventPublic, std::vector<EventCategory> &EventRegister, std::vector<ModelType> &ModelPublic, std::vector<ModelType> &ModelRegister);
+	void SetEntityList(std::vector<Model_BasicInfo> EmyityList);
+	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
 private:
+	std::vector<Model_BasicInfo> _emyityList;
+protected:
+	std::vector<EventCategory> _EventPublic;
+	std::vector<EventCategory> _EventRegister;
+	std::vector<ModelType> _ModelPublic;
+	std::vector<ModelType> _ModelRegister;
 	
 public:
 	ServiceType _type;

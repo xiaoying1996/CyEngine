@@ -49,7 +49,7 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>5.9.9_msvc2017_64</QtInstall>
+    <QtInstall>5.9.9_msvc2015_64</QtInstall>
     <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
@@ -91,7 +91,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;XML_Utilsd.lib;ComponentBased.lib;ServiceInterfaced.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;ServiceBased.lib;XML_Utilsd.lib;ComponentBased.lib;ServiceInterfaced.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
