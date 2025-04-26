@@ -8,9 +8,6 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{cda88272-0f2c-478b-88f7-037e974519fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Public">
-      <UniqueIdentifier>{20e6f39b-cf1a-4e83-8267-217dc02ad3bc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Service">
       <UniqueIdentifier>{097c75c6-e8f9-47f9-a0ea-87b95045c3c1}</UniqueIdentifier>
     </Filter>
@@ -26,9 +23,6 @@
     <Filter Include="UI\EngineMainFrame">
       <UniqueIdentifier>{74c9ac63-3e6a-4a32-a995-45aaec737925}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Service\XML">
-      <UniqueIdentifier>{73be10de-ebaf-46fe-8c06-0c91e8106afa}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\MyEngine.cpp">
@@ -41,21 +35,6 @@
     <ClCompile Include="src\Engine\ThreadPool\ThreadPool.cpp">
       <Filter>Engine\ThreadPool</Filter>
     </ClCompile>
-    <ClCompile Include="src\tinyxml\tinystr.cpp">
-      <Filter>Service\XML</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tinyxml\tinyxml.cpp">
-      <Filter>Service\XML</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tinyxml\tinyxmlerror.cpp">
-      <Filter>Service\XML</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tinyxml\tinyxmlparser.cpp">
-      <Filter>Service\XML</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Public\PublicTools.cpp">
-      <Filter>Public</Filter>
-    </ClCompile>
     <ClCompile Include="src\Engine\ModelManager.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
@@ -64,26 +43,11 @@
     <ClInclude Include="src\Engine\MyEngine.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\Public\PublicInclude.h">
-      <Filter>Public</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Public\PublicEnum.h">
-      <Filter>Public</Filter>
-    </ClInclude>
     <ClInclude Include="src\Service\LogReport\LogReport.h">
       <Filter>Service\Log</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\ThreadPool\ThreadPool.h">
       <Filter>Engine\ThreadPool</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tinyxml\tinystr.h">
-      <Filter>Service\XML</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tinyxml\tinyxml.h">
-      <Filter>Service\XML</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Public\PublicTools.h">
-      <Filter>Public</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine\ModelManager.h">
       <Filter>Engine</Filter>
