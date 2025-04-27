@@ -1,6 +1,8 @@
 #ifndef _MODEL_BASE_
 #define _MODEL_BASE_
 #include <Components/ComponentBase/ComponentBase.h>
+#include"Service/ServiceInterface/ServiceInterface.h"
+#include"Service/ServiceBase/ServiceBase.h"
 using namespace std;
 class ModelBase {
 public:
@@ -19,6 +21,8 @@ public:
 	void HandleModelState();
 	void InitComponent();
 	void PutEventToComponent();
+	void SetServiceInterFace(ServiceInterface * inter);
+	ServiceInterface* _serviceInter = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;
 	bool _isInit;
@@ -28,7 +32,6 @@ private:
 	Model_Shape _shape;
 	string _name;
 	int _camp;
-	
 	vector<EventBase*> _events;
 
 protected:

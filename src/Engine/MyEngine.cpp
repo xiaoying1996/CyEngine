@@ -1,5 +1,5 @@
 #include "MyEngine.h"
-#include "Service/ServiceInterface/ServiceInterfaceSMDefine.h"
+#include "Public/ServiceInterShareMemoryDefs.h"
 
 MyEngine* MyEngine::m_MyEngine = nullptr;
 std::mutex MyEngine::m_Mutex;
@@ -303,10 +303,12 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
+                            model->SetServiceInterFace(m_serviceInterface);
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
                             //初始化组件
+                            
                             model->InitComponent();
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
@@ -347,6 +349,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
+                            model->SetServiceInterFace(m_serviceInterface);
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
@@ -375,14 +378,7 @@ bool MyEngine::LoadService(std::string& errStr)
 {
     //将创建的服务接口对象放入共享内存
     m_serviceInterface = new ServiceInterface();
-    //将创建的服务接口对象指针放入共享内存
-    ShareMemoryData smData = GetServiceInterfaceSMData();
-    HANDLE hMapFile = CreateFileMapping(INVALID_HANDLE_VALUE,NULL,PAGE_READWRITE,0,smData.bufferSize,smData.shareMemoryName);
-    if (hMapFile == NULL)
-    {
-        std::cerr << "Could not create file mapping object: " << GetLastError() << std::endl;
-        return 0;
-    }
+
     m_serviceInterface->LoadInterface();
     return true;
 }

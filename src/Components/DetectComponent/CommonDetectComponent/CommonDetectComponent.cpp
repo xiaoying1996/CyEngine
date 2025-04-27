@@ -15,12 +15,6 @@ void CommonDetectComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
 	_detectDis = 100.0;
-	//ServiceInterface* s = GetServiceInterfaceSingle();
-	//_modelManagerService = dynamic_cast<ModelManagerService*> (GetServiceInterfaceSingle()->GetServiceByName("ModelManagerService"));
-	if (_modelManagerService == nullptr)
-	{
-		return;
-	}
 }
 
 void CommonDetectComponent::ReadScenario()
@@ -41,6 +35,13 @@ void CommonDetectComponent::ReceiveEvent(EventBase *event)
 void CommonDetectComponent::Run(double t)
 {
 	ComponentBase::Run(t);
+	if (_serviceInterface)
+	{
+		ServiceBase* service =  _serviceInterface->GetServiceByName("ModelManagerService");
+		std::vector<Model_BasicInfo> entitys;
+		service->GetAllEntity(entitys);
+		int i = 0;
+	}
 }
 
 void CommonDetectComponent::Destory()

@@ -25,7 +25,6 @@ public:
 	void SetEntityList(std::vector<Model_BasicInfo> EmyityList);
 	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
 private:
-	std::vector<Model_BasicInfo> _emyityList;
 protected:
 	std::vector<EventCategory> _EventPublic;
 	std::vector<EventCategory> _EventRegister;
@@ -34,6 +33,7 @@ protected:
 	
 public:
 	ServiceType _type;
+	std::vector<Model_BasicInfo> _emyityList;
 };
 
 #endif // !_MODEL_BASE_

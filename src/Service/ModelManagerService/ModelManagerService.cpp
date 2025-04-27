@@ -52,6 +52,11 @@ void ModelManagerService::PublishRegister()
 	AddModelRegister(modelsForRegister);
 }
 
+void ModelManagerService::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
+{
+	ServiceBase::GetAllEntity(entitys);
+}
+
 extern "C" _declspec(dllexport) ModelManagerService* CreateServices()
 {
 	return new ModelManagerService();

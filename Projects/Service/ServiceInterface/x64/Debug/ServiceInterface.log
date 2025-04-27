@@ -1,19 +1,4 @@
-﻿D:\VS\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(519,5): warning MSB8004: Intermediate 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
-D:\VS\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(516,5): warning MSB8004: Intermediate 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Intermediate 目录。
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
   ServiceInterface.cpp
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,17): error C2143: 语法错误: 缺少“;”(在“*”的前面)
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,17): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,19): error C2825: 'ServiceInterface': 当后面跟“::”时必须为类或命名空间
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,37): error C2510: “ServiceInterface”:“::”的左边必须是类/结构/联合
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,58): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(10,1): error C2062: 意外的类型“int”
-D:\VS\VS2022\VC\Tools\MSVC\14.36.32532\include\sal.h(2361,12): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-D:\VS\VS2022\VC\Tools\MSVC\14.36.32532\include\sal.h(2361,12): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(17,17): error C2143: 语法错误: 缺少“;”(在“*”的前面)
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(17,17): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(17,1): error C2086: “int ServiceInterface”: 重定义
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(2,1): message : 参见“ServiceInterface”的声明
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(18,1): error C2761: “ServiceInterface *ServiceInterface::GetInstance(void)”: 不允许重新声明成员
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(18,1): error C2059: 语法错误:“{”
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(18,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-E:\CPP\CyEngine\src\Service\ServiceInterface\ServiceInterface.cpp(18,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+  ServiceInterface.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\lib\Debug\ServiceInterfaced.lib

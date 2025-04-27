@@ -14,6 +14,7 @@ public:
 	virtual void Destory();
 	virtual void PublishRegister();
 	void HandleEvent();
+	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
 private:
 	
 public:

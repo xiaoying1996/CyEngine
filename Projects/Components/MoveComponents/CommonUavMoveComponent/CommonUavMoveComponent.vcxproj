@@ -121,7 +121,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>ComponentBased.lib;XML_Utilsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ComponentBased.lib;XML_Utilsd.lib;ServiceInterfaced.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>

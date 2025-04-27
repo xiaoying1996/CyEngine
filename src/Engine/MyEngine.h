@@ -45,5 +45,5 @@ private:
     double m_battleTime;
     TimeAdvanceStu m_canAdvance;
     vector<EventBase*> m_eventList;
-    ServiceInterface* m_serviceInterface = nullptr;
+    ServiceInterface* m_serviceInterface;
 };

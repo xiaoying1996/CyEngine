@@ -197,6 +197,7 @@ void ModelBase::InitComponent()
 		Model_BasicInfo info;
 		GetBasicInfo(info);
 		com->SetBasicInfo(info);
+		com->SetServiceInterface(_serviceInter);
 		_myComponents.push_back(com);
 	}
 }
@@ -210,4 +211,10 @@ void ModelBase::PutEventToComponent()
 			_myComponents[i]->ReceiveEvent(_events[j]);
 		}
 	}
+}
+
+void ModelBase::SetServiceInterFace(ServiceInterface* inter)
+{
+	_serviceInter = inter;
+	int i = 0;
 }

@@ -4,6 +4,7 @@
 #include "Public/EventStruct.h"
 #include "Public/PublicStruct.h"
 #include "Tools/XML_Utils/XML_Utils.h"
+#include "Service/ServiceInterface/ServiceInterface.h"
 #include "ComponentEnum.h"
 #include <iostream>
 
@@ -22,6 +23,8 @@ public:
 	void HandleComponentState();
 	void SetBasicInfo(Model_BasicInfo info);
 	Model_Position GetPos();
+	ServiceBase* GetService(std::string serviceName);
+	void SetServiceInterface(ServiceInterface *inter);
 private:
 	bool _isInit;
 	bool _isReadScenario;
@@ -29,6 +32,7 @@ private:
 public:
 	ComType _type;
 	Model_Position _pos;
+	ServiceInterface* _serviceInterface = nullptr;
 };
 
 #endif // !_COMPONENT_BASE_
