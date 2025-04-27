@@ -1,4 +1,5 @@
 #include "MyEngine.h"
+#include "Service/ServiceInterface/ServiceInterfaceSMDefine.h"
 
 MyEngine* MyEngine::m_MyEngine = nullptr;
 std::mutex MyEngine::m_Mutex;
@@ -75,7 +76,7 @@ void TimeAdvanceManager(void* arg)
             //在将所有实体放入预备执行容器之前，还要处理两件事
             //  1.将需要发送给所有实体的事件推送下去
             //   2.将需要推送给所有服务的实体数据和事件数据推送出去
-            std::vector<ServiceBase*> Services = GetServiceInterfaceSingle()->GetAllService();
+            std::vector<ServiceBase*> Services = MyEngine::GetInstance()->GetServiceInterface()->GetAllService();
             for (int i = 0; i < Services.size(); i++)
             {
                 if (Services[i] != nullptr)
@@ -373,8 +374,16 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
 bool MyEngine::LoadService(std::string& errStr)
 {
     //将创建的服务接口对象放入共享内存
-    ServiceInterface* serviceInterface = ServiceInterface::GetInstance();
-    GetServiceInterfaceSingle()->LoadInterface();
+    m_serviceInterface = new ServiceInterface();
+    //将创建的服务接口对象指针放入共享内存
+    ShareMemoryData smData = GetServiceInterfaceSMData();
+    HANDLE hMapFile = CreateFileMapping(INVALID_HANDLE_VALUE,NULL,PAGE_READWRITE,0,smData.bufferSize,smData.shareMemoryName);
+    if (hMapFile == NULL)
+    {
+        std::cerr << "Could not create file mapping object: " << GetLastError() << std::endl;
+        return 0;
+    }
+    m_serviceInterface->LoadInterface();
     return true;
 }
 
@@ -480,4 +489,9 @@ void MyEngine::GetAllModels(std::vector<Model_BasicInfo>& modelsList)
 void MyEngine::GetModelByID(Model_BasicInfo& model,int id)
 {
     ModelManager::GetInstance()->GetModelByID(model,id);
+}
+
+ServiceInterface* MyEngine::GetServiceInterface()
+{
+    return m_serviceInterface;
 }

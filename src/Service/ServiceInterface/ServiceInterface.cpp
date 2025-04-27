@@ -9,28 +9,28 @@ ServiceInterface::ServiceInterface()
     m_IsInterfaceLoad = false;
 }
 
-ServiceInterface* ServiceInterface::GetInstance()
-{
-    if (m_ServiceInterface == nullptr)
-    {
-        std::unique_lock<std::mutex> lock(m_Mutex);
-        if (m_ServiceInterface == nullptr)
-        {
-            m_ServiceInterface = new (std::nothrow) ServiceInterface();
-        }
-    }
-    return m_ServiceInterface;
-}
+//ServiceInterface* ServiceInterface::GetInstance()
+//{
+//    if (m_ServiceInterface == nullptr)
+//    {
+//        std::unique_lock<std::mutex> lock(m_Mutex);
+//        if (m_ServiceInterface == nullptr)
+//        {
+//            m_ServiceInterface = new (std::nothrow) ServiceInterface();
+//        }
+//    }
+//    return m_ServiceInterface;
+//}
 
-void ServiceInterface::deleteInstance()
-{
-    std::unique_lock<std::mutex> lock(m_Mutex);
-    if (m_ServiceInterface)
-    {
-        delete m_ServiceInterface;
-        m_ServiceInterface = nullptr;
-    }
-}
+//void ServiceInterface::deleteInstance()
+//{
+//    std::unique_lock<std::mutex> lock(m_Mutex);
+//    if (m_ServiceInterface)
+//    {
+//        delete m_ServiceInterface;
+//        m_ServiceInterface = nullptr;
+//    }
+//}
 
 ServiceInterface::~ServiceInterface()
 {

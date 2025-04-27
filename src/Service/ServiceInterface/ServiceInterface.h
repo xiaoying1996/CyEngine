@@ -1,18 +1,18 @@
 #ifndef _SERVICE_INTERFACE
 #define _SERVICE_INTERFACE
 
-#ifdef _WIN32
-	#ifdef SINGLETON_EXPORTS 
-		#define SINGLETON_API
-__declspec(dllexport)
-	#else
-		#define SINGLETON_API
-__declspec(dllimport)
-	#endif
-#else
-	#define SINGLETON_API
-__attribute__((visibility("default")))
-#endif // 
+//#ifdef _WIN32
+//	#ifdef SINGLETON_EXPORTS 
+//		#define SINGLETON_API
+//__declspec(dllexport)
+//	#else
+//		#define SINGLETON_API
+//__declspec(dllimport)
+//	#endif
+//#else
+//	#define SINGLETON_API
+//__attribute__((visibility("default")))
+//#endif // 
 
 
 #include <iostream>
@@ -32,10 +32,10 @@ class ServiceInterface
 {
 public:
 	~ServiceInterface();
-	static ServiceInterface* GetInstance();
-	static void deleteInstance();
+	//static ServiceInterface* GetInstance();
+	//static void deleteInstance();
 
-private:
+//private:
 	ServiceInterface();
 	ServiceInterface(const ServiceInterface& manager);
 	const ServiceInterface& operator=(const ServiceInterface& manager);
@@ -53,6 +53,6 @@ public:
 	ServiceBase* GetServiceByName(std::string serviceName);
 };
 
-SINGLETON_API ServiceInterface* GetServiceInterfaceSingle();
+//SINGLETON_API ServiceInterface* GetServiceInterfaceSingle();
 
 #endif // !_MODEL_MANAGER

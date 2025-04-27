@@ -26,6 +26,7 @@ public:
     double GetBattleTime();
     void GetAllModels(std::vector<Model_BasicInfo> &modelsList);
     void GetModelByID(Model_BasicInfo & model,int id);
+    ServiceInterface* GetServiceInterface();
     vector<EventBase*> GetEvents(int id);
 
 private:
@@ -44,4 +45,5 @@ private:
     double m_battleTime;
     TimeAdvanceStu m_canAdvance;
     vector<EventBase*> m_eventList;
+    ServiceInterface* m_serviceInterface = nullptr;
 };
