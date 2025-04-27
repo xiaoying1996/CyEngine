@@ -17,9 +17,10 @@ ModelBase::~ModelBase()
 void ModelBase::Init(TiXmlElement* unitElement)
 {
 	//对模型的一些初始化信息进行读取
-	std::vector<int> posVec;
+	std::vector<double> posVec;
 	GetPositionFromTiXmlElement(posVec, unitElement);
 	GetNameFromTiXmlElement(_name,unitElement);
+	GetCampFromTiXmlElement(_camp, unitElement);
 	_pos._lon = posVec[0];
 	_pos._lat = posVec[1];
 	_pos._alt = posVec[2];
@@ -66,6 +67,7 @@ void ModelBase::Run(double t)
 		{
 			_pos = _myComponents[i]->GetPos();
 		}
+		//在这里通过组件的handleEvent函数读取组件产生的事件
 	}
 }
 

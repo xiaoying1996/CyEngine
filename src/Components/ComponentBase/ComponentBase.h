@@ -14,7 +14,7 @@ public:
 	virtual ~ComponentBase();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent();
+	virtual void PostEvent(EventBase *event);
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
@@ -28,10 +28,13 @@ public:
 private:
 	bool _isInit;
 	bool _isReadScenario;
+	std::vector<EventBase*> _EventListToSend;
 	
 public:
 	ComType _type;
 	Model_Position _pos;
+	int _camp;
+	int _id;
 	ServiceInterface* _serviceInterface = nullptr;
 };
 

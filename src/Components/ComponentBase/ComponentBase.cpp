@@ -22,8 +22,9 @@ void ComponentBase::ReadScenario()
 	_isReadScenario = true;
 }
 
-void ComponentBase::PostEvent()
+void ComponentBase::PostEvent(EventBase* event)
 {
+	_EventListToSend.push_back(event);
 }
 
 void ComponentBase::HandleEvent()
@@ -52,6 +53,8 @@ void ComponentBase::HandleComponentState()
 void ComponentBase::SetBasicInfo(Model_BasicInfo info)
 {
 	_pos = info._pos;
+	_camp = info._camp;
+	_id = info._id;
 }
 
 Model_Position ComponentBase::GetPos()

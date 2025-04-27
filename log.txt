@@ -1,3 +1,5 @@
+add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt
+
 2024.05.11 可以用xml文件作为想定进行读取了 初步
 
 2024.05.14 可以根据想定类型获取People动态库返回的指针

@@ -23,9 +23,9 @@ void CommonUavMoveComponent::ReadScenario()
 	ComponentBase::ReadScenario();
 }
 
-void CommonUavMoveComponent::PostEvent()
+void CommonUavMoveComponent::PostEvent(EventBase* event)
 {
-	ComponentBase::PostEvent();
+	ComponentBase::PostEvent(event);
 }
 
 void CommonUavMoveComponent::ReceiveEvent(EventBase *event)

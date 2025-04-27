@@ -12,7 +12,7 @@ public:
 	virtual ~CommonUavMoveComponent();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent();
+	virtual void PostEvent(EventBase* event);
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();

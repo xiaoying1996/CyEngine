@@ -46,7 +46,7 @@ void GetIDFromTiXmlElement(int &id, TiXmlElement* unitElement)
     }
 }
 
-void GetPositionFromTiXmlElement(std::vector<int>& pos, TiXmlElement* unitElement)
+void GetPositionFromTiXmlElement(std::vector<double>& pos, TiXmlElement* unitElement)
 {
     for (TiXmlElement* valElement = unitElement->FirstChildElement();
         valElement != nullptr; valElement = valElement->NextSiblingElement())
@@ -60,15 +60,15 @@ void GetPositionFromTiXmlElement(std::vector<int>& pos, TiXmlElement* unitElemen
                 key = posElement->Value();
                 if (key == "lon")
                 {
-                    pos.push_back(atoi(posElement->FirstChild()->Value()));
+                    pos.push_back(atof(posElement->FirstChild()->Value()));
                 }
                 if (key == "lat")
                 {
-                    pos.push_back(atoi(posElement->FirstChild()->Value()));
+                    pos.push_back(atof(posElement->FirstChild()->Value()));
                 }
                 if (key == "alt")
                 {
-                    pos.push_back(atoi(posElement->FirstChild()->Value()));
+                    pos.push_back(atof(posElement->FirstChild()->Value()));
                 }
             }
         }
@@ -85,6 +85,19 @@ void GetNameFromTiXmlElement(std::string& name, TiXmlElement* unitElement)
         {
             name = valElement->FirstChild()->Value();
             name = UTF8ToString(name);
+        }
+    }
+}
+
+void GetCampFromTiXmlElement(int& camp, TiXmlElement* unitElement)
+{
+    for (TiXmlElement* valElement = unitElement->FirstChildElement();
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "camp")
+        {
+            camp = atoi(valElement->FirstChild()->Value());
         }
     }
 }

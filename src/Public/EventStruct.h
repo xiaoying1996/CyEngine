@@ -9,6 +9,7 @@ enum EventCategory {
 	EVENT_UNKNOW = 0,
 	EVENT_MISSION_MOVE = 1,
 	EVENT_MESSAGE_MODELSINFOALL=500,
+	EVENT_MESSAGE_MODELSDETECT,
 };
 
 struct EventBase {
@@ -45,6 +46,19 @@ struct Message_ModelsInfoAll : public EventBase
 	Message_ModelsInfoAll()
 	{
 		category = EventCategory::EVENT_MESSAGE_MODELSINFOALL;
+	}
+};
+
+struct Message_ModelsDetect : public EventBase
+{
+	vector<Model_BasicInfo> modelsInfoList;
+	virtual void GetData()
+	{
+
+	}
+	Message_ModelsDetect()
+	{
+		category = EventCategory::EVENT_MESSAGE_MODELSDETECT;
 	}
 };
 #endif // !_PUBLIC_STRUCT_

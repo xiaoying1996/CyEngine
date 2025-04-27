@@ -11,7 +11,7 @@
                 <camp>2</camp>
                 <position>
                     <lon>115.0000</lon>
-                    <lat>31.0000</lat>
+                    <lat>31.5000</lat>
                     <alt>15.0000</alt>
                 </position>
             </unit>
@@ -32,7 +32,7 @@
                 <name>群众-3</name>
                 <camp>2</camp>
                 <position>
-                    <lon>115.00002</lon>
+                    <lon>115.10002</lon>
                     <lat>31.0000</lat>
                     <alt>15.0000</alt>
                 </position>
@@ -44,7 +44,7 @@
                 <camp>2</camp>
                 <position>
                     <lon>115.00003</lon>
-                    <lat>31.0000</lat>
+                    <lat>31.2000</lat>
                     <alt>15.0000</alt>
                 </position>
             </unit>
@@ -54,7 +54,7 @@
                 <name>群众-5</name>
                 <camp>2</camp>
                 <position>
-                    <lon>115.00004</lon>
+                    <lon>115.30004</lon>
                     <lat>31.0000</lat>
                     <alt>15.0000</alt>
                 </position>

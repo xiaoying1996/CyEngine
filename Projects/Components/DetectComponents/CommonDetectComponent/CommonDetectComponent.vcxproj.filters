@@ -18,9 +18,15 @@
     <ClCompile Include="..\..\..\..\src\Components\DetectComponent\CommonDetectComponent\CommonDetectComponent.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Tools\ECEF_LLA\ECEF_LLA.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\src\Components\DetectComponent\CommonDetectComponent\CommonDetectComponent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\Tools\ECEF_LLA\ECEF_LLA.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
