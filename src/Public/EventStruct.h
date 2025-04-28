@@ -8,6 +8,7 @@
 enum EventCategory {
 	EVENT_UNKNOW = 0,
 	EVENT_MISSION_MOVE = 1,
+	EVENT_MISSION_ATTACK,
 	EVENT_MESSAGE_MODELSINFOALL=500,
 	EVENT_MESSAGE_MODELSDETECT,
 };
@@ -33,6 +34,21 @@ struct Mission_Move : public EventBase
 	Mission_Move()
 	{
 		category = EventCategory::EVENT_MISSION_MOVE;
+	}
+};
+
+struct Mission_Attack : public EventBase
+{
+	int attackMode;//0停止攻击1全局攻击2选取目标攻击
+	vector<int> targets;
+	virtual void GetData()
+	{
+
+	}
+	Mission_Attack()
+	{
+		category = EventCategory::EVENT_MISSION_ATTACK;
+		attackMode = 0;
 	}
 };
 

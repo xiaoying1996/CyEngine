@@ -38,9 +38,11 @@ void ModelBase::PostEvent()
 {
 }
 
-void ModelBase::HandleEvent()
+vector<EventBase*> ModelBase::HandleEvent()
 {
-
+	std::vector<EventBase*> ret = _eventsToSend;
+	_eventsToSend.clear();
+	return ret;
 }
 
 void ModelBase::HandleModelState()
@@ -59,6 +61,12 @@ void ModelBase::Run(double t)
 	for (int i = 0; i < _myComponents.size(); i++)
 	{
 			_myComponents[i]->Run(t);
+			//在这里通过组件的handleEvent函数读取组件产生的事件
+			std::vector<EventBase*> events = _myComponents[i]->HandleEvent();
+			for (int i = 0; i < events.size(); i++)
+			{
+				_eventsToSend.push_back(events[i]);
+			}
 	}
 	//在Run完之后，根据组件类型获取相应数据
 	for (int i = 0; i < _myComponents.size(); i++)
@@ -67,7 +75,6 @@ void ModelBase::Run(double t)
 		{
 			_pos = _myComponents[i]->GetPos();
 		}
-		//在这里通过组件的handleEvent函数读取组件产生的事件
 	}
 }
 
@@ -213,6 +220,7 @@ void ModelBase::PutEventToComponent()
 			_myComponents[i]->ReceiveEvent(_events[j]);
 		}
 	}
+	_events.clear();
 }
 
 void ModelBase::SetServiceInterFace(ServiceInterface* inter)

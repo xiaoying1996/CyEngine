@@ -52,9 +52,28 @@ void ModelRunner(void* arg)
             {
                 model->ReceiveEvent(events[i]);
                 model->PutEventToComponent();
-                delete events[i];
+                //delete events[i];
             }
+            if (events.size() > 1)
+            {
+                for (int i = 0; i < events.size(); i++)
+                {
+                    delete events[i];
+                }
+            }
+            else if (events.size() == 1)
+            {
+                delete events[0];
+            }
+
             model->Run(0);
+            //在模型运行完成以后，将产生的事件提取出来
+            std::vector<EventBase*> eventsFromModel = model->HandleEvent();
+            for (int i = 0; i < eventsFromModel.size(); i++)
+            {
+                MyEngine::GetInstance()->PutEvent((eventsFromModel[i]));
+            }
+            
             //执行结束后，将其从RunningVec转移到FinishVec
             ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
         }
@@ -446,13 +465,11 @@ vector<EventBase*> MyEngine::GetEvents(int id)
         if (event->receicerID == id || event->receicerID == 0)
         {
             ret.push_back(std::move(event));
-            auto temp = *iter;
             iter = m_eventList.erase(iter);
             if (iter == m_eventList.end())
             {
                 break;
             }
-            delete temp;
         }
     }
     m_Mutex.unlock();

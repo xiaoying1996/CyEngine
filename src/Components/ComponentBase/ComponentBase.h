@@ -19,7 +19,7 @@ public:
 	virtual void Run(double t);
 	virtual void Destory();
 
-	void HandleEvent();
+	std::vector<EventBase*> HandleEvent();
 	void HandleComponentState();
 	void SetBasicInfo(Model_BasicInfo info);
 	Model_Position GetPos();

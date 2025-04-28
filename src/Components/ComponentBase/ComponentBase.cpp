@@ -27,9 +27,11 @@ void ComponentBase::PostEvent(EventBase* event)
 	_EventListToSend.push_back(event);
 }
 
-void ComponentBase::HandleEvent()
+std::vector<EventBase*> ComponentBase::HandleEvent()
 {
-
+	std::vector<EventBase*> ret = _EventListToSend;
+	_EventListToSend.clear();
+	return ret;
 }
 
 void ComponentBase::ReceiveEvent(EventBase *event)

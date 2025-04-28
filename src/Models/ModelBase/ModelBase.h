@@ -17,7 +17,7 @@ public:
 
 	void SetID(int id);
 	void GetBasicInfo(Model_BasicInfo &info);
-	void HandleEvent();
+	vector<EventBase*> HandleEvent();
 	void HandleModelState();
 	void InitComponent();
 	void PutEventToComponent();
@@ -33,6 +33,7 @@ private:
 	string _name;
 	int _camp;
 	vector<EventBase*> _events;
+	vector<EventBase*> _eventsToSend;
 
 protected:
 	ModelType _type;

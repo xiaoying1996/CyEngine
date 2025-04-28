@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\OtherProjects\EngineController\resource\main.cpp" />
+    <ClCompile Include="AttackMissionWidget.cpp" />
     <ClCompile Include="EngineController.cpp" />
     <ClCompile Include="MissionChooser.cpp" />
     <ClCompile Include="MoveMissionWidget.cpp" />
@@ -20,6 +21,7 @@
     <QtMoc Include="EngineController.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="AttackMissionWidget.ui" />
     <QtUic Include="EngineController.ui" />
     <QtUic Include="MissionChooser.ui" />
     <QtUic Include="MoveMissionWidget.ui" />
@@ -29,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MoveMissionWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="AttackMissionWidget.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B816131D-98F7-46A2-9BA7-2A6A3921AB4D}</ProjectGuid>
