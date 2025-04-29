@@ -22,8 +22,11 @@ public:
 	void AddModelPublic(std::vector<ModelType> models);
 	void AddModelRegister(std::vector<ModelType> models);
 	void GetDataPublicRegister(std::vector<EventCategory> &EventPublic, std::vector<EventCategory> &EventRegister, std::vector<ModelType> &ModelPublic, std::vector<ModelType> &ModelRegister);
+	//实体管理服务使用的，后面放到中间类里面去
 	void SetEntityList(std::vector<Model_BasicInfo> EmyityList);
 	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
+	//战斗裁决服务使用的，后面放到中间类里面去
+
 private:
 protected:
 	std::vector<EventCategory> _EventPublic;

@@ -201,12 +201,12 @@ void ModelBase::InitComponent()
 			return ;
 		}
 		ComponentBase* com = addFunction();
+		com->SetServiceInterface(_serviceInter);
 		com->Init(nullptr);
 		com->ReadScenario();
 		Model_BasicInfo info;
 		GetBasicInfo(info);
 		com->SetBasicInfo(info);
-		com->SetServiceInterface(_serviceInter);
 		_myComponents.push_back(com);
 	}
 }

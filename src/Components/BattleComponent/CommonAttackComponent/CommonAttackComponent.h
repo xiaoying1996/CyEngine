@@ -3,6 +3,7 @@
 
 #include "Components/ComponentBase/ComponentBase.h"
 #include "Service/ServiceInterface/ServiceInterface.h"
+#include "Service/BattleAdjustService/BattleAdjustService.h"
 
 enum AttackMode
 {
@@ -28,6 +29,7 @@ private:
 	double _attackDis;
 	vector<int> _targetList;
 	vector<Model_BasicInfo> entityListDetect;//本组件已知的情报信息
+	ServiceBase* battleAdjustService = nullptr;
 };
 
 #endif // !_CommonUavMoveComponent_

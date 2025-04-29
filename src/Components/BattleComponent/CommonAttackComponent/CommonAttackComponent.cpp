@@ -1,5 +1,6 @@
 #include "CommonAttackComponent.h"
 #include "Tools/ECEF_LLA/ECEF_LLA.h"
+#include "Public/AttackStruct.h"
 
 CommonAttackComponent::CommonAttackComponent()
 {
@@ -17,6 +18,10 @@ CommonAttackComponent::~CommonAttackComponent()
 void CommonAttackComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
+	if (_serviceInterface)
+	{
+		battleAdjustService  =_serviceInterface->GetServiceByName("BattleAdjustService");
+	}
 }
 
 void CommonAttackComponent::ReadScenario()
@@ -60,6 +65,9 @@ void CommonAttackComponent::ReceiveEvent(EventBase *event)
 
 void CommonAttackComponent::Run(double t)
 {
+
+	
+	//battleAdjustService = dynamic_cast<BattleAdjustService*> (GetService(""));
 	ComponentBase::Run(t);
 	if (_attackMode == ATTACKALL)//全局攻击攻击离自己最近的一个
 	{
