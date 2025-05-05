@@ -116,6 +116,12 @@ void CommonAttackComponent::Run(double t)
 			}
 		}
 		//对目标进行打击，调用战场裁决服务
+		if (battleAdjustService)
+		{
+			Attack_Physical* attack = new Attack_Physical();
+			battleAdjustService->AddAttackEvent(attack);
+			delete attack;
+		}
 	}
 }
 

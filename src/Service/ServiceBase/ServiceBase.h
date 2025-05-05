@@ -11,7 +11,7 @@ public:
 	virtual ~ServiceBase();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent();
+	virtual void PostEvent(EventBase* event);
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
@@ -25,9 +25,12 @@ public:
 	//实体管理服务使用的，后面放到中间类里面去
 	void SetEntityList(std::vector<Model_BasicInfo> EmyityList);
 	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
+	void SetEventList(std::vector<EventBase*> eventList);
+	void GetAllEvent(std::vector<EventBase*>& events);
 	//战斗裁决服务使用的，后面放到中间类里面去
-
+	virtual void AddAttackEvent(AttackBase* attack);
 private:
+	std::vector<EventBase*> _EventListToSend;
 protected:
 	std::vector<EventCategory> _EventPublic;
 	std::vector<EventCategory> _EventRegister;
@@ -37,6 +40,7 @@ protected:
 public:
 	ServiceType _type;
 	std::vector<Model_BasicInfo> _emyityList;
+	std::vector<AttackResult> _attackResultList;
 };
 
 #endif // !_MODEL_BASE_

@@ -124,6 +124,16 @@ void TimeAdvanceManager(void* arg)
                         }
                         Services[i]->SetEntityList(modelsToService);
                     }
+                    //从服务中获取服务公布的事件
+                    if (EventPublic.size())
+                    {
+                        std::vector<EventBase*> events;
+                        Services[i]->GetAllEvent(events);
+                        for (int i = 0; i < events.size(); i++)
+                        {
+                            MyEngine::GetInstance()->PutEvent(events[i]);
+                        }
+                    }
                 }
             }
             //2.将时间状态设置为Ready

@@ -34,5 +34,13 @@ struct Attack_Physical : public AttackBase
 		category = AttackCategory::ATTACK_PHYSICAL;
 	}
 };
+
+struct AttackResult 
+{
+	int _agentID;
+	int _effectID;
+	AttackCategory _category;
+	double _hurt;
+};
 #endif // !_ATTACK_STRUCT_
 

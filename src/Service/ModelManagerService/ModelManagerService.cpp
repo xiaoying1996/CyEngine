@@ -20,9 +20,9 @@ void ModelManagerService::ReadScenario()
 	ServiceBase::ReadScenario();
 }
 
-void ModelManagerService::PostEvent()
+void ModelManagerService::PostEvent(EventBase* event)
 {
-	ServiceBase::PostEvent();
+	ServiceBase::PostEvent(event);
 }
 
 void ModelManagerService::HandleEvent()

@@ -20,10 +20,6 @@ void BattleAdjustService::ReadScenario()
 	ServiceBase::ReadScenario();
 }
 
-void BattleAdjustService::PostEvent()
-{
-	ServiceBase::PostEvent();
-}
 
 void BattleAdjustService::HandleEvent()
 {
@@ -48,15 +44,35 @@ void BattleAdjustService::Destory()
 void BattleAdjustService::PublishRegister()
 {
 	ServiceBase::PublishRegister();
-	std::vector<ModelType> modelsForRegister = { ModelType ::M_PEOPLE,ModelType ::M_OPTICALATTACKUAV};
+	std::vector<ModelType> modelsForRegister;
 	AddModelRegister(modelsForRegister);
-	std::vector<EventCategory> events;
-	AddEventRegister(events);
+	std::vector<EventCategory> events = { EVENT_MESSAGE_ATTACK };
+	AddEventPublic(events);
 }
 
-void BattleAdjustService::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
+void BattleAdjustService::AddAttackEvent(AttackBase* attack)
 {
-	ServiceBase::GetAllEntity(entitys);
+	ServiceBase::AddAttackEvent(attack);
+	switch (attack->category)
+	{
+	case AttackCategory::ATTACK_PHYSICAL://真实伤害攻击
+	{
+		Attack_Physical* attack_p = dynamic_cast<Attack_Physical*>(attack);
+		AttackResult result;
+		result._agentID = attack_p->agentID;
+		result._effectID = attack_p->effectID;
+		result._category = attack_p->category;
+		result._hurt = attack_p->hurt;
+		//在这里推送事件到相应的实体
+		Message_Attack *msg = new Message_Attack();
+		msg->receicerID = attack_p->effectID;
+		msg->attackRes = result;
+		PostEvent(msg);
+		break;
+	}
+	default:
+		break;
+	}
 }
 
 extern "C" _declspec(dllexport) BattleAdjustService* CreateServices()

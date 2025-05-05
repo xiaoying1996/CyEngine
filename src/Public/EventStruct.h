@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "PublicStruct.h"
+#include "AttackStruct.h"
 
 enum EventCategory {
 	EVENT_UNKNOW = 0,
@@ -76,6 +77,19 @@ struct Message_ModelsDetect : public EventBase
 	Message_ModelsDetect()
 	{
 		category = EventCategory::EVENT_MESSAGE_MODELSDETECT;
+	}
+};
+
+struct Message_Attack : public EventBase
+{
+	AttackResult attackRes;
+	virtual void GetData()
+	{
+
+	}
+	Message_Attack()
+	{
+		category = EventCategory::EVENT_MESSAGE_ATTACK;
 	}
 };
 #endif // !_PUBLIC_STRUCT_
