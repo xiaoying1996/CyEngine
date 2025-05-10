@@ -14,6 +14,7 @@ enum AttackMode
 	ATTACKNO = 0,//不攻击
 	ATTACKALL,//全局攻击，攻击能攻击的所有目标,不移动
 	ATTACKSELECT,//指定攻击，攻击指定的目标，不移动
+	ATTACKFOLLOW,//指定攻击，攻击指定的目标，移动
 };
 
 struct AttackBase {

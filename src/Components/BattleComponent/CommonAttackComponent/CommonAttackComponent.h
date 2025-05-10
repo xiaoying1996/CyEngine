@@ -4,6 +4,7 @@
 #include "Components/ComponentBase/ComponentBase.h"
 #include "Service/ServiceInterface/ServiceInterface.h"
 #include "Service/BattleAdjustService/BattleAdjustService.h"
+#include "Tools/ECEF_LLA/ECEF_LLA.h"
 
 class CommonAttackComponent :public ComponentBase
 {
@@ -20,7 +21,10 @@ public:
 private:
 	AttackMode _attackMode;
 	double _attackDis;
+	bool _isMoving;
 	vector<int> _targetList;
+	int _targetLock;
+	LLA _lla_targetTemp;
 	vector<Model_BasicInfo> entityListDetect;//本组件已知的情报信息
 	ServiceBase* battleAdjustService = nullptr;
 };

@@ -15,7 +15,7 @@ CommonDetectComponent::~CommonDetectComponent()
 void CommonDetectComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
-	_detectDis = 100.0;
+	_detectDis = 10000.0;
 }
 
 void CommonDetectComponent::ReadScenario()

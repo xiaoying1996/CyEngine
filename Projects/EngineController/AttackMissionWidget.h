@@ -20,6 +20,7 @@ public:
 public slots:
 	void on_SendBtn_clicked();//不机动攻击选择的目标下发
 	void on_SendBtn_2_clicked();//不机动攻击所有目标下发
+	void on_SendBtn_3_clicked();//追击目标下发
 	void onHumanComboxSelect(int index);
 	void onUavComboxSelect(int index);
 	void slot_update();

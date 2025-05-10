@@ -226,6 +226,19 @@
      <string>不移动攻击所有目标下发</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="SendBtn_3">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>640</y>
+      <width>191</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>追击目标下发</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

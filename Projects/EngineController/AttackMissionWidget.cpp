@@ -138,3 +138,28 @@ void AttackMissionWidget::on_SendBtn_2_clicked()
     MyEngine::GetInstance()->PutEvent(mission);
     timer->start(1000);
 }
+
+void AttackMissionWidget::on_SendBtn_3_clicked()
+{
+    Mission_Attack* mission = new Mission_Attack();
+    int modelID = 0;
+    for (int i = 0; i < models.size(); i++)
+    {
+        if (choosedModelName == models[i]._name)
+        {
+            modelID = models[i]._id;
+        }
+    }
+    mission->receicerID = modelID;
+    for (int i = 0; i < ui.TargetListWidget->rowCount(); i++)
+    {
+        QCheckBox* box = dynamic_cast<QCheckBox*>(ui.TargetListWidget->cellWidget(i, 5));
+        if (box->checkState())
+        {
+            mission->targets.push_back(ui.TargetListWidget->item(i, 0)->text().toInt());
+        }
+    }
+    mission->attackMode = AttackMode::ATTACKFOLLOW;
+    MyEngine::GetInstance()->PutEvent(mission);
+    timer->start(1000);
+}
