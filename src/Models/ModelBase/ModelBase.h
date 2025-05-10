@@ -14,6 +14,8 @@ public:
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
+	virtual void SetHealth(double health);
+	virtual void SetHurt(double hurt);
 
 	void SetID(int id);
 	void GetBasicInfo(Model_BasicInfo &info);
@@ -32,6 +34,7 @@ private:
 	Model_Shape _shape;
 	string _name;
 	int _camp;
+	double _health;
 	vector<EventBase*> _events;
 	vector<EventBase*> _eventsToSend;
 

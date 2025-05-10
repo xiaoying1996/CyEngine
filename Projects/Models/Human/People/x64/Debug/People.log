@@ -1,4 +1,2 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
-  People.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\Peopled.dll
-  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
-  或批处理文件。
+﻿D:\VS\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(520,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  People.vcxproj -> E:\CPP\CyEngine\dll\Debug\Peopled.dll

@@ -41,7 +41,7 @@ struct Mission_Move : public EventBase
 
 struct Mission_Attack : public EventBase
 {
-	int attackMode;//0停止攻击1全局攻击2选取目标攻击
+	AttackMode attackMode;//0停止攻击1全局攻击2选取目标攻击
 	vector<int> targets;
 	virtual void GetData()
 	{
@@ -50,7 +50,7 @@ struct Mission_Attack : public EventBase
 	Mission_Attack()
 	{
 		category = EventCategory::EVENT_MISSION_ATTACK;
-		attackMode = 0;
+		attackMode = AttackMode::ATTACKNO;
 	}
 };
 

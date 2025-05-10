@@ -28,6 +28,7 @@ class Ui_MissionChooserClass
 public:
     QWidget *centralWidget;
     QPushButton *MoveMissionBtn;
+    QPushButton *AttackMissionBtn;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -44,6 +45,9 @@ public:
         MoveMissionBtn = new QPushButton(centralWidget);
         MoveMissionBtn->setObjectName(QStringLiteral("MoveMissionBtn"));
         MoveMissionBtn->setGeometry(QRect(50, 20, 112, 34));
+        AttackMissionBtn = new QPushButton(centralWidget);
+        AttackMissionBtn->setObjectName(QStringLiteral("AttackMissionBtn"));
+        AttackMissionBtn->setGeometry(QRect(50, 70, 112, 34));
         MissionChooserClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MissionChooserClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -65,6 +69,7 @@ public:
     {
         MissionChooserClass->setWindowTitle(QApplication::translate("MissionChooserClass", "MissionChooser", Q_NULLPTR));
         MoveMissionBtn->setText(QApplication::translate("MissionChooserClass", "\347\247\273\345\212\250", Q_NULLPTR));
+        AttackMissionBtn->setText(QApplication::translate("MissionChooserClass", "\346\224\273\345\207\273", Q_NULLPTR));
     } // retranslateUi
 
 };

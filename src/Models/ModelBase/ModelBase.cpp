@@ -26,6 +26,7 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	_pos._alt = posVec[2];
 	Model_Shape _shape;
 	_isInit = true;
+	_health = 1;
 
 }
 
@@ -36,6 +37,23 @@ void ModelBase::ReadScenario()
 
 void ModelBase::PostEvent()
 {
+}
+
+void ModelBase::SetHealth(double hurt)
+{
+	_health = hurt;
+}
+
+void ModelBase::SetHurt(double hurt)
+{
+	if (_health - hurt <= 0)
+	{
+		_health = 0;
+	}
+	else
+	{
+		_health = _health - hurt;
+	}
 }
 
 vector<EventBase*> ModelBase::HandleEvent()
@@ -57,6 +75,11 @@ void ModelBase::ReceiveEvent(EventBase *event)
 
 void ModelBase::Run(double t)
 {
+	//判断生命值，如果小于等于0，不执行
+	if (_health <= 0)
+	{
+		return;
+	}
 	//在运行的基类里面,先执行所有组件的Run函数
 	for (int i = 0; i < _myComponents.size(); i++)
 	{
@@ -95,6 +118,7 @@ void ModelBase::GetBasicInfo(Model_BasicInfo &info)
 	info._pos = _pos;
 	info._shape = _shape;
 	info._camp = _camp;
+	info._health = _health;
 }
 
 void ModelBase::InitComponent()

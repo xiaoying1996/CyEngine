@@ -28,6 +28,11 @@ void People::PostEvent()
 void People::ReceiveEvent(EventBase *event)
 {
 	HumanBase::ReceiveEvent(event);
+	if (event->category == EventCategory::EVENT_MESSAGE_ATTACK)
+	{
+		Message_Attack* msg = dynamic_cast<Message_Attack*>(event);
+		SetHurt(msg->attackRes._hurt);
+	}
 }
 
 void People::Run(double t)

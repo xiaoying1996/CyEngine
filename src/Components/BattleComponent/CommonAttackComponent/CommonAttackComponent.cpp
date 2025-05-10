@@ -36,6 +36,7 @@ void CommonAttackComponent::PostEvent(EventBase* event)
 
 void CommonAttackComponent::ReceiveEvent(EventBase *event)
 {
+	//模型和组件的事件接收还没有做公布订购，这样很消耗性能
 	ComponentBase::ReceiveEvent(event);
 	if (event->category == EVENT_MISSION_ATTACK)
 	{
@@ -119,6 +120,10 @@ void CommonAttackComponent::Run(double t)
 		if (battleAdjustService)
 		{
 			Attack_Physical* attack = new Attack_Physical();
+			attack->agentID = _id;
+			attack->effectID = targetID;
+			attack->category = AttackCategory::ATTACK_PHYSICAL;
+			attack->hurt = 30;
 			battleAdjustService->AddAttackEvent(attack);
 			delete attack;
 		}

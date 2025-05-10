@@ -1,4 +1,1 @@
-﻿   Qt/MSBuild: 3.3.1.1
-  Reading Qt configuration (D:/Program/qt/5.9.9/msvc2015_64/bin/qmake)
-   Qt: 5.9.9
-  EngineController.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\x64\Debug\EngineController.exe
+﻿  EngineController.vcxproj -> E:\CPP\CyEngine\x64\Debug\EngineController.exe

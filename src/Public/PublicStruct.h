@@ -42,6 +42,7 @@ struct Model_BasicInfo {
 	int _type;
 	string _name;
 	int _camp;
+	double _health;
 	Model_Position _pos;
 	Model_Shape _shape;
 	Model_BasicInfo() {
@@ -51,14 +52,16 @@ struct Model_BasicInfo {
 		_shape._length = 0; _shape._width = 0; _shape._hight = 0;
 		_type = 0;
 		_camp = 0;
+		_health = 0;
 	}
-	Model_BasicInfo(int id, int type,string name,int camp, Model_Position pos,Model_Shape shape) {
+	Model_BasicInfo(int id, int type,string name,int camp, Model_Position pos,Model_Shape shape,double health) {
 		_id = id;
 		_name = name;
 		_pos = pos;
 		_shape = shape;
 		_type = type;
 		_camp = camp;
+		_health = health;
 	}
 };
 

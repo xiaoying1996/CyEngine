@@ -13,6 +13,7 @@ HumanBase::~HumanBase()
 void HumanBase::Init(TiXmlElement* unitElement)
 {
 	ModelBase::Init(unitElement);
+	SetHealth(100);
 }
 
 void HumanBase::ReadScenario()
