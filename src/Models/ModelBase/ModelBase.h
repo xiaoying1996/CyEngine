@@ -23,7 +23,7 @@ public:
 	void HandleModelState();
 	void InitComponent();
 	void PutEventToComponent();
-	void SetServiceInterFace(ServiceInterface * inter);
+	void SetServiceInterFace();
 	ServiceInterface* _serviceInter = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;

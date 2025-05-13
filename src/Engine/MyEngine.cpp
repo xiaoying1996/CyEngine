@@ -73,7 +73,7 @@ void ModelRunner(void* arg)
             {
                 MyEngine::GetInstance()->PutEvent((eventsFromModel[i]));
             }
-            
+
             //执行结束后，将其从RunningVec转移到FinishVec
             ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
         }
@@ -92,52 +92,9 @@ void TimeAdvanceManager(void* arg)
             int i = 0;
             //1.将所有已完成容器里面的模型放入ReadyVec中
             ModelManager::GetInstance()->MoveAllModelsFromFinishToReady();
-            //在将所有实体放入预备执行容器之前，还要处理两件事
-            //  1.将需要发送给所有实体的事件推送下去
-            //   2.将需要推送给所有服务的实体数据和事件数据推送出去
-            std::vector<ServiceBase*> Services = MyEngine::GetInstance()->GetServiceInterface()->GetAllService();
-            for (int i = 0; i < Services.size(); i++)
-            {
-                if (Services[i] != nullptr)
-                {
-                    std::vector<EventCategory> EventPublic;
-                    std::vector<EventCategory> EventRegister;
-                    std::vector<ModelType> ModelPublic;
-                    std::vector<ModelType> ModelRegister;
-                    Services[i]->GetDataPublicRegister(EventPublic, EventRegister, ModelPublic, ModelRegister);
-                    //先写用到的，目前只对侦察组件用了模型数据订购，所以目前先把这个写上
-                    if (ModelRegister.size())
-                    {
-                        std::vector<Model_BasicInfo> modelsList;
-                        MyEngine::GetInstance()->GetAllModels(modelsList);
-                        //将已有实体和订阅类型进行匹配，然后将信息写入服务
-                        std::vector<Model_BasicInfo> modelsToService;
-                        for (int x = 0; x < ModelRegister.size(); x++)
-                        {
-                            for (int y = 0; y < modelsList.size(); y++)
-                            {
-                                if (ModelRegister[x] == modelsList[y]._type)
-                                {
-                                    modelsToService.push_back(modelsList[y]);
-                                }
-                            }
-                        }
-                        Services[i]->SetEntityList(modelsToService);
-                    }
-                    //从服务中获取服务公布的事件
-                    if (EventPublic.size())
-                    {
-                        std::vector<EventBase*> events;
-                        Services[i]->GetAllEvent(events);
-                        for (int i = 0; i < events.size(); i++)
-                        {
-                            MyEngine::GetInstance()->PutEvent(events[i]);
-                        }
-                    }
-                }
-            }
             //2.将时间状态设置为Ready
             MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
+            MyEngine::GetInstance()->OperatService();
             MyEngine::GetInstance()->BattleTimeAdvance();
         }
         else
@@ -181,7 +138,7 @@ MyEngine::MyEngine()
     m_isScenarioRead = false;
     m_isStart = false;
     m_battleTime = 0;
-
+    _serviceInterface = ServiceInterface::GetInstance();
     #if _DEBUG
         _LOG->PrintError("引擎构造完成");
     #endif // NDEBUG
@@ -332,7 +289,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
-                            model->SetServiceInterFace(m_serviceInterface);
+                            model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
@@ -378,7 +335,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
-                            model->SetServiceInterFace(m_serviceInterface);
+                            model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
                             model->SetID(id);
@@ -400,15 +357,6 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
     m_Mutex.lock();
     m_isScenarioRead = true;
     m_Mutex.unlock();
-    return true;
-}
-
-bool MyEngine::LoadService(std::string& errStr)
-{
-    //将创建的服务接口对象放入共享内存
-    m_serviceInterface = new ServiceInterface();
-
-    m_serviceInterface->LoadInterface();
     return true;
 }
 
@@ -514,7 +462,13 @@ void MyEngine::GetModelByID(Model_BasicInfo& model,int id)
     ModelManager::GetInstance()->GetModelByID(model,id);
 }
 
-ServiceInterface* MyEngine::GetServiceInterface()
+void MyEngine::OperatService()
 {
-    return m_serviceInterface;
+    if (_serviceInterface)
+    {
+        ServiceBase* service = _serviceInterface->GetServiceByName("ModelManagerService");
+        std::vector<Model_BasicInfo> modelsList;
+        MyEngine::GetInstance()->GetAllModels(modelsList);
+        service->SetEntityList(modelsList);
+    }
 }

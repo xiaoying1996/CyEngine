@@ -20,6 +20,38 @@ struct Model_Position {
 	}
 };
 
+struct Model_Posture {
+	double _pitch;
+	double _yaw;
+	double _roll;
+	Model_Posture() {
+		_pitch = 0;
+		_yaw = 0;
+		_roll = 0;
+	}
+	Model_Posture(double pitch, double yaw, double roll) {
+		_pitch = pitch;
+		_yaw = yaw;
+		_roll = roll;
+	}
+};
+
+struct Model_Velocity {
+	double _x;
+	double _y;
+	double _z;
+	Model_Velocity() {
+		_x = 0;
+		_y = 0;
+		_z = 0;
+	}
+	Model_Velocity(double x, double y, double z) {
+		_x = x;
+		_y = y;
+		_z = x;
+	}
+};
+
 struct Model_Shape {
 	double _length;
 	double _width;

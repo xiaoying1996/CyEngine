@@ -3,10 +3,12 @@
 
 
 std::mutex ServiceInterface::m_Mutex;
+ServiceInterface* ServiceInterface::m_ServiceInterface = nullptr;
 
 ServiceInterface::ServiceInterface()
 {
     m_IsInterfaceLoad = false;
+	LoadInterface();
 }
 
 //ServiceInterface* ServiceInterface::GetInstance()
@@ -34,6 +36,19 @@ ServiceInterface::ServiceInterface()
 
 ServiceInterface::~ServiceInterface()
 {
+}
+
+ServiceInterface* ServiceInterface::GetInstance()
+{
+	if (m_ServiceInterface == nullptr)
+	{
+		std::unique_lock<std::mutex> lock(m_Mutex);
+		if (m_ServiceInterface == nullptr)
+		{
+			m_ServiceInterface = new (std::nothrow) ServiceInterface();
+		}
+	}
+	return m_ServiceInterface;
 }
 
 void ServiceInterface::LoadInterface()

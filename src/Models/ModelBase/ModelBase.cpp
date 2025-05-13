@@ -99,6 +99,31 @@ void ModelBase::Run(double t)
 			_pos = _myComponents[i]->GetPos();
 		}
 	}
+	//GetAllEventByID(std::vector<Message_Attack>& events,int id)
+	//从服务获取自己所受的毁伤
+	ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
+	if (service)
+	{
+		std::vector<Message_Attack> events;
+		service->GetAllEventByID(events, _id);
+		if (events.size())
+		{
+			for (int i = 0; i < events.size(); i++)
+			{
+				SetHurt(events[i].attackRes._hurt);
+				AttackResult result;
+				result._agentID = events[i].attackRes._agentID;
+				result._effectID = events[i].attackRes._effectID;
+				result._category = events[i].attackRes._category;
+				result._hurt = events[i].attackRes._hurt;
+				//在这里推送事件到相应的实体
+				Message_Attack* msg = new Message_Attack();
+				msg->receicerID = result._effectID;
+				msg->attackRes = result;
+				_eventsToSend.push_back(msg);
+			}
+		}
+	}
 }
 
 void ModelBase::Destory()
@@ -247,8 +272,12 @@ void ModelBase::PutEventToComponent()
 	_events.clear();
 }
 
-void ModelBase::SetServiceInterFace(ServiceInterface* inter)
+void ModelBase::SetServiceInterFace()
 {
-	_serviceInter = inter;
-	int i = 0;
+	_serviceInter = ServiceInterface::GetInstance();
+	if (_serviceInter)
+	{
+		int i = 0;
+	}
+	//int i = 0;
 }

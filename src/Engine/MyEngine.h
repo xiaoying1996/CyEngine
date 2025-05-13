@@ -1,5 +1,4 @@
 #include "ModelManager.h"
-#include "Service/ServiceInterface/ServiceInterface.h"
 #include "ThreadPool/ThreadPool.h"
 #include <windows.h>
 #include <cstdlib>
@@ -15,7 +14,6 @@ public:
     bool GetScenarioReadStu();
     bool GetStartStu();
     bool ReadScenario(std::string filename,std::string &errStr);
-    bool LoadService(std::string& errStr);
     bool Init_ThreadPool(int min,int max);
     TimeAdvanceStu GetAdvanceStu();
     void GetThreadNum(int &aliveNum,int &busyNum);
@@ -26,7 +24,7 @@ public:
     double GetBattleTime();
     void GetAllModels(std::vector<Model_BasicInfo> &modelsList);
     void GetModelByID(Model_BasicInfo & model,int id);
-    ServiceInterface* GetServiceInterface();
+    void OperatService();
     vector<EventBase*> GetEvents(int id);
 
 private:
@@ -45,5 +43,5 @@ private:
     double m_battleTime;
     TimeAdvanceStu m_canAdvance;
     vector<EventBase*> m_eventList;
-    ServiceInterface* m_serviceInterface;
+    ServiceInterface* _serviceInterface = nullptr;
 };

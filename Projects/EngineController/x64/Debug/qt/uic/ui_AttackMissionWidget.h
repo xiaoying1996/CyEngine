@@ -47,6 +47,8 @@ public:
     QLabel *label_7;
     QTableWidget *TargetListWidget;
     QLabel *label_4;
+    QPushButton *SendBtn_2;
+    QPushButton *SendBtn_3;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -62,7 +64,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         SendBtn = new QPushButton(centralWidget);
         SendBtn->setObjectName(QStringLiteral("SendBtn"));
-        SendBtn->setGeometry(QRect(360, 560, 120, 30));
+        SendBtn->setGeometry(QRect(289, 560, 191, 30));
         HumanBox = new QComboBox(centralWidget);
         HumanBox->setObjectName(QStringLiteral("HumanBox"));
         HumanBox->setGeometry(QRect(240, 100, 150, 30));
@@ -108,10 +110,16 @@ public:
         label_4 = new QLabel(centralWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(470, 30, 120, 30));
+        SendBtn_2 = new QPushButton(centralWidget);
+        SendBtn_2->setObjectName(QStringLiteral("SendBtn_2"));
+        SendBtn_2->setGeometry(QRect(290, 600, 191, 30));
+        SendBtn_3 = new QPushButton(centralWidget);
+        SendBtn_3->setObjectName(QStringLiteral("SendBtn_3"));
+        SendBtn_3->setGeometry(QRect(290, 640, 191, 30));
         AttackMissionWidgetClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(AttackMissionWidgetClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1200, 30));
+        menuBar->setGeometry(QRect(0, 0, 1200, 23));
         AttackMissionWidgetClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(AttackMissionWidgetClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -128,7 +136,7 @@ public:
     void retranslateUi(QMainWindow *AttackMissionWidgetClass)
     {
         AttackMissionWidgetClass->setWindowTitle(QApplication::translate("AttackMissionWidgetClass", "AttackMissionWidget", Q_NULLPTR));
-        SendBtn->setText(QApplication::translate("AttackMissionWidgetClass", "\344\270\213\345\217\221", Q_NULLPTR));
+        SendBtn->setText(QApplication::translate("AttackMissionWidgetClass", "\344\270\215\347\247\273\345\212\250\351\200\211\346\213\251\347\233\256\346\240\207\346\224\273\345\207\273\344\270\213\345\217\221", Q_NULLPTR));
         label_8->setText(QApplication::translate("AttackMissionWidgetClass", "\351\253\230\345\272\246:", Q_NULLPTR));
         label_5->setText(QApplication::translate("AttackMissionWidgetClass", "\345\275\223\345\211\215\344\275\215\347\275\256", Q_NULLPTR));
         label_3->setText(QApplication::translate("AttackMissionWidgetClass", "\346\227\240\344\272\272\346\234\272:", Q_NULLPTR));
@@ -137,6 +145,8 @@ public:
         label_2->setText(QApplication::translate("AttackMissionWidgetClass", "\344\272\272\345\221\230:", Q_NULLPTR));
         label_7->setText(QApplication::translate("AttackMissionWidgetClass", "\347\272\254\345\272\246:", Q_NULLPTR));
         label_4->setText(QApplication::translate("AttackMissionWidgetClass", "\347\233\256\346\240\207\345\210\227\350\241\250", Q_NULLPTR));
+        SendBtn_2->setText(QApplication::translate("AttackMissionWidgetClass", "\344\270\215\347\247\273\345\212\250\346\224\273\345\207\273\346\211\200\346\234\211\347\233\256\346\240\207\344\270\213\345\217\221", Q_NULLPTR));
+        SendBtn_3->setText(QApplication::translate("AttackMissionWidgetClass", "\350\277\275\345\207\273\347\233\256\346\240\207\344\270\213\345\217\221", Q_NULLPTR));
     } // retranslateUi
 
 };

@@ -19,7 +19,7 @@ void ServiceBase::ReadScenario()
 
 void ServiceBase::PostEvent(EventBase* event)
 {
-	_EventListToSend.push_back(event);
+	//_EventListToSend.push_back(event);
 }
 
 void ServiceBase::HandleEvent()
@@ -162,15 +162,26 @@ void ServiceBase::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
 
 void ServiceBase::AddAttackEvent(AttackBase* attack)
 {
-
+	
 }
 
 void ServiceBase::SetEventList(std::vector<EventBase*> eventList)
 {
 
 }
-void ServiceBase::GetAllEvent(std::vector<EventBase*>& events)
+void ServiceBase::GetAllEventByID(std::vector<Message_Attack>& events,int id)
 {
-	events = _EventListToSend;
-	_EventListToSend.clear();
+	for (auto iter = _EventListToSend.begin(); iter != _EventListToSend.end(); iter++)
+	{
+		if (iter->receicerID == id)
+		{
+			events.push_back(*iter);
+			iter = _EventListToSend.erase(iter);
+			if (iter == _EventListToSend.end())
+			{
+				break;
+			}
+		}
+	}
+	
 }

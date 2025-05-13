@@ -52,22 +52,17 @@ void BattleAdjustService::PublishRegister()
 
 void BattleAdjustService::AddAttackEvent(AttackBase* attack)
 {
-	ServiceBase::AddAttackEvent(attack);
 	switch (attack->category)
 	{
-	case AttackCategory::ATTACK_PHYSICAL://真实伤害攻击
+	case ATTACK_PHYSICAL:
 	{
-		Attack_Physical* attack_p = dynamic_cast<Attack_Physical*>(attack);
-		AttackResult result;
-		result._agentID = attack_p->agentID;
-		result._effectID = attack_p->effectID;
-		result._category = attack_p->category;
-		result._hurt = attack_p->hurt;
-		//在这里推送事件到相应的实体
-		Message_Attack *msg = new Message_Attack();
-		msg->receicerID = attack_p->effectID;
-		msg->attackRes = result;
-		PostEvent(msg);
+		Attack_Physical* a = dynamic_cast<Attack_Physical*>(attack);
+		Message_Attack msg;
+		msg.receicerID = attack->effectID;
+		msg.attackRes._agentID = attack->agentID;
+		msg.attackRes._effectID = attack->effectID;
+		msg.attackRes._hurt = a->hurt;
+		_EventListToSend.push_back(msg);
 		break;
 	}
 	default:

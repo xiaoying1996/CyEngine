@@ -1,18 +1,11 @@
 #ifndef _SERVICE_INTERFACE
 #define _SERVICE_INTERFACE
 
-//#ifdef _WIN32
-//	#ifdef SINGLETON_EXPORTS 
-//		#define SINGLETON_API
-//__declspec(dllexport)
-//	#else
-//		#define SINGLETON_API
-//__declspec(dllimport)
-//	#endif
-//#else
-//	#define SINGLETON_API
-//__attribute__((visibility("default")))
-//#endif // 
+#ifdef CORE_DLL_EXPORTS
+	#define CORE_API __declspec(dllexport)
+#else
+	#define CORE_API __declspec(dllimport)
+#endif // CORE_DLL_EXPORTS
 
 
 #include <iostream>
@@ -28,29 +21,27 @@
 * 3 对服务数据进出进行管理
 */
 
-class ServiceInterface
+class CORE_API ServiceInterface
 {
 public:
-	~ServiceInterface();
-	//static ServiceInterface* GetInstance();
-	//static void deleteInstance();
-
-//private:
-	ServiceInterface();
-	ServiceInterface(const ServiceInterface& manager);
-	const ServiceInterface& operator=(const ServiceInterface& manager);
+	
+	static ServiceInterface* GetInstance();
+	ServiceInterface(const ServiceInterface&) = delete;
+	ServiceInterface& operator=(const ServiceInterface& manager) = delete;
+	void LoadInterface();
+	std::vector<ServiceBase*> GetAllService();
+	ServiceBase* GetServiceByName(std::string serviceName);
 
 private:
+	ServiceInterface();
+	~ServiceInterface();
 	static ServiceInterface* m_ServiceInterface;
 	static std::mutex m_Mutex;
 	bool m_IsInterfaceLoad;
 	std::map<std::string,ServiceBase*> m_Services;
 	std::map<std::string, std::string>  m_ServiceMap;
 
-public:
-	void LoadInterface();
-	std::vector<ServiceBase*> GetAllService();
-	ServiceBase* GetServiceByName(std::string serviceName);
+	
 };
 
 //SINGLETON_API ServiceInterface* GetServiceInterfaceSingle();

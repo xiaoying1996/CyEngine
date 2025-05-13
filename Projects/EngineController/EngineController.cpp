@@ -120,7 +120,6 @@ void EngineController::on_ReadScenarioBtn_clicked()
         engine = MyEngine::GetInstance();
     }
     std::string errStr;
-    MyEngine::GetInstance()->LoadService(errStr);
     MyEngine::GetInstance()->ReadScenario(FilePath.toLocal8Bit().data(), errStr);
 }
 

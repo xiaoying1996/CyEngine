@@ -31,7 +31,7 @@ void People::ReceiveEvent(EventBase *event)
 	if (event->category == EventCategory::EVENT_MESSAGE_ATTACK)
 	{
 		Message_Attack* msg = dynamic_cast<Message_Attack*>(event);
-		SetHurt(msg->attackRes._hurt);
+		//SetHurt(msg->attackRes._hurt);
 	}
 }
 
