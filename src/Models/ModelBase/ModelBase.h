@@ -17,19 +17,19 @@ public:
 	virtual void SetHealth(double health);
 	virtual void SetHurt(double hurt);
 
-	void SetID(int id);
 	void GetBasicInfo(Model_BasicInfo &info);
 	vector<EventBase*> HandleEvent();
 	void HandleModelState();
 	void InitComponent();
 	void PutEventToComponent();
 	void SetServiceInterFace();
+	void CreateSmData(SMStruct sm);
 	ServiceInterface* _serviceInter = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;
 	bool _isInit;
 	bool _isReadScenario;
-	int _id;
+	string _shareMemoryID;
 	Model_Position _pos;
 	Model_Shape _shape;
 	string _name;

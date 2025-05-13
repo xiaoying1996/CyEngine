@@ -2,6 +2,7 @@
 #define _PUBLIC_STRUCT_
 
 #include <iostream>
+#include <map>
 using namespace std;
 
 struct Model_Position {
@@ -69,6 +70,7 @@ struct Model_Shape {
 	}
 };
 
+//模型基础数据
 struct Model_BasicInfo {
 	int _id;
 	int _type;
@@ -95,6 +97,13 @@ struct Model_BasicInfo {
 		_camp = camp;
 		_health = health;
 	}
+};
+
+//带有模型基础数据的的共享内存结构体
+struct SMStruct
+{
+	Model_BasicInfo basicInfo;
+	std::string otherInfo;
 };
 
 #endif // !_PUBLIC_STRUCT_

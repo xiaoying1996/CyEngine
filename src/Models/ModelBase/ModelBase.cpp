@@ -1,4 +1,5 @@
 #include "ModelBase.h"
+#include "Windows.h"
 
 ModelBase::ModelBase()
 {
@@ -16,9 +17,37 @@ ModelBase::~ModelBase()
 
 void ModelBase::Init(TiXmlElement* unitElement)
 {
-	//对模型的一些初始化信息进行读取
+	if (unitElement == nullptr)
+	{
+		//没有找到XML节点，无法进行初始化,后面加入日志服务
+		return;
+	}
+	int id = 0;
+	GetIDFromTiXmlElement(id, unitElement);
+	if (id == 0)
+	{
+		//模型没有设置ID，无法进行初始化,后面加入日志服务
+		return;
+	}
+	_shareMemoryID = "_SM_" + to_string(id);
+	SMStruct sm;
+	Model_BasicInfo basicInfo;
+	basicInfo._id = id;
+	GetCampFromTiXmlElement(basicInfo._camp, unitElement);
+	basicInfo._health = 100;
+	GetNameFromTiXmlElement(basicInfo._name, unitElement);
+	basicInfo._pos;
 	std::vector<double> posVec;
 	GetPositionFromTiXmlElement(posVec, unitElement);
+	basicInfo._pos._lon = posVec[0];
+	basicInfo._pos._lat = posVec[1];
+	basicInfo._pos._alt = posVec[2];
+	basicInfo._shape;
+	basicInfo._type = 0;
+	sm.basicInfo = basicInfo;
+	CreateSmData(sm);
+
+
 	GetNameFromTiXmlElement(_name,unitElement);
 	GetCampFromTiXmlElement(_camp, unitElement);
 	_pos._lon = posVec[0];
@@ -105,7 +134,7 @@ void ModelBase::Run(double t)
 	if (service)
 	{
 		std::vector<Message_Attack> events;
-		service->GetAllEventByID(events, _id);
+		//service->GetAllEventByID(events, _id);//***在修改完共享内存后重写***
 		if (events.size())
 		{
 			for (int i = 0; i < events.size(); i++)
@@ -130,20 +159,16 @@ void ModelBase::Destory()
 {
 }
 
-void ModelBase::SetID(int id)
-{
-	this->_id = id;
-}
-
 void ModelBase::GetBasicInfo(Model_BasicInfo &info)
 {
-	info._id = _id;
+	//***这里的获取基础数据在修改完共享内存后重写***
+	/*info._id = _id;
 	info._name = _name;
 	info._type = _type;
 	info._pos = _pos;
 	info._shape = _shape;
 	info._camp = _camp;
-	info._health = _health;
+	info._health = _health;*/
 }
 
 void ModelBase::InitComponent()
@@ -279,5 +304,39 @@ void ModelBase::SetServiceInterFace()
 	{
 		int i = 0;
 	}
-	//int i = 0;
+}
+
+void ModelBase::CreateSmData(SMStruct sm)
+{
+	std::wstring wideStr(_shareMemoryID.begin(), _shareMemoryID.end());
+	LPCWSTR lpcwstr = wideStr.c_str();
+	HANDLE hMapFile = CreateFileMapping(
+		INVALID_HANDLE_VALUE,    // 使用分页文件
+		NULL,                    // 默认安全属性
+		PAGE_READWRITE,          // 读写权限
+		0,                       // 高序DWORD的文件映射大小
+		sizeof(SMStruct),      // 低序DWORD的文件映射大小
+		lpcwstr); // 共享内存名称
+
+	if (hMapFile == NULL) {
+		std::cerr << "CreateFileMapping failed: " << GetLastError() << std::endl;//***错误后面写道log服务里
+		return ;
+	}
+	SMStruct* pData = (SMStruct*)MapViewOfFile(
+		hMapFile,                // 映射对象句柄
+		FILE_MAP_ALL_ACCESS,     // 读写权限
+		0,
+		0,
+		sizeof(SMStruct));
+
+	if (pData == NULL) {
+		std::cerr << "MapViewOfFile failed: " << GetLastError() << std::endl;//***错误后面写道log服务里
+		CloseHandle(hMapFile);
+		return ;
+	}
+	pData->basicInfo = sm.basicInfo;
+	pData->otherInfo = sm.otherInfo;
+	int i = 0;
+	UnmapViewOfFile(pData);
+	CloseHandle(hMapFile);
 }

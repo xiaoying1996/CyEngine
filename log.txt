@@ -1,4 +1,4 @@
-add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt
+add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt ServiceInterfaced.dll
 
 2024.05.11 可以用xml文件作为想定进行读取了 初步
 
@@ -37,3 +37,5 @@ add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj
 2025.05.05 打通了组件调用服务，服务计算后产生事件推送出去这一路线，但是模型实体还没有进行处理
 
 2025.05.10 实体接收伤害可以将自己的血量置为0，并不再参与组件的循环
+
+2025.05.13 将模型基类的数据存储方式改为了共享内存，并添加了一个map和json互转的工具类

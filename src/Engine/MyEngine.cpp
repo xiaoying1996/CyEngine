@@ -292,9 +292,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
-                            model->SetID(id);
                             //初始化组件
-                            
                             model->InitComponent();
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
@@ -311,7 +309,6 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             int id = 0;
                             std::string type;
                             GetTypeFromTiXmlElement(type, unitElement);
-                            GetIDFromTiXmlElement(id, unitElement);
 
                             HINSTANCE hDll;
                             #if _DEBUG
@@ -338,7 +335,6 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
-                            model->SetID(id);
                             //初始化组件
                             model->InitComponent();
                             Model_BasicInfo modelInfo;
