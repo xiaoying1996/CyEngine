@@ -74,14 +74,15 @@ struct Model_Shape {
 struct Model_BasicInfo {
 	int _id;
 	int _type;
-	string _name;
+	char _name[128];
 	int _camp;
 	double _health;
 	Model_Position _pos;
 	Model_Shape _shape;
 	Model_BasicInfo() {
 		_id = 0;
-		_name = "";
+		strncpy_s(_name, "", 0);
+		_name[0] = '\0'; // 确保终止符
 		_pos._lon = 0;_pos._lat = 0;_pos._alt = 0;
 		_shape._length = 0; _shape._width = 0; _shape._hight = 0;
 		_type = 0;
@@ -90,7 +91,8 @@ struct Model_BasicInfo {
 	}
 	Model_BasicInfo(int id, int type,string name,int camp, Model_Position pos,Model_Shape shape,double health) {
 		_id = id;
-		_name = name;
+		strncpy_s(_name, name.c_str(), sizeof(name) - 1);
+		_name[sizeof(name) - 1] = '\0'; // 确保终止符
 		_pos = pos;
 		_shape = shape;
 		_type = type;

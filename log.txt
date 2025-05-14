@@ -1,4 +1,4 @@
-add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt ServiceInterfaced.dll
+git add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt ServiceInterfaced.dll
 
 2024.05.11 可以用xml文件作为想定进行读取了 初步
 
@@ -39,3 +39,5 @@ add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj
 2025.05.10 实体接收伤害可以将自己的血量置为0，并不再参与组件的循环
 
 2025.05.13 将模型基类的数据存储方式改为了共享内存，并添加了一个map和json互转的工具类
+
+2025.05.14 可以使用共享内存了

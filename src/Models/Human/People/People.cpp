@@ -11,8 +11,8 @@ People::~People()
 
 void People::Init(TiXmlElement* unitElement)
 {
-	_type = M_PEOPLE;
 	HumanBase::Init(unitElement);
+	SetType(M_PEOPLE);
 }
 
 void People::ReadScenario()

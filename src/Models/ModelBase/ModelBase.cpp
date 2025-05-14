@@ -1,5 +1,6 @@
 #include "ModelBase.h"
 #include "Windows.h"
+#include "Tools/MapToJson/MapToJson.h"
 
 ModelBase::ModelBase()
 {
@@ -13,6 +14,8 @@ ModelBase::~ModelBase()
 	{
 		delete _myComponents[i];
 	}*/
+	UnmapViewOfFile(pData);
+	CloseHandle(hMapFile);
 }
 
 void ModelBase::Init(TiXmlElement* unitElement)
@@ -35,7 +38,10 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	basicInfo._id = id;
 	GetCampFromTiXmlElement(basicInfo._camp, unitElement);
 	basicInfo._health = 100;
-	GetNameFromTiXmlElement(basicInfo._name, unitElement);
+	string name;
+	GetNameFromTiXmlElement(name, unitElement);
+	strncpy_s(basicInfo._name, name.c_str(), sizeof(name) - 1);
+	basicInfo._name[sizeof(name) - 1] = '\0'; // 确保终止符
 	basicInfo._pos;
 	std::vector<double> posVec;
 	GetPositionFromTiXmlElement(posVec, unitElement);
@@ -46,16 +52,7 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	basicInfo._type = 0;
 	sm.basicInfo = basicInfo;
 	CreateSmData(sm);
-
-
-	GetNameFromTiXmlElement(_name,unitElement);
-	GetCampFromTiXmlElement(_camp, unitElement);
-	_pos._lon = posVec[0];
-	_pos._lat = posVec[1];
-	_pos._alt = posVec[2];
-	Model_Shape _shape;
 	_isInit = true;
-	_health = 1;
 
 }
 
@@ -68,21 +65,41 @@ void ModelBase::PostEvent()
 {
 }
 
-void ModelBase::SetHealth(double hurt)
+void ModelBase::SetHealth(double health)
 {
-	_health = hurt;
+	//_health = health;
+	//1.通过共享内存获取模型信息结构体
+	SMStruct sm = GetSMData();
+	string name = sm.basicInfo._name;
+	if (sm.basicInfo._id)
+	{
+		sm.basicInfo._health = health;
+	}
+	SetSMData(sm);
+}
+
+void ModelBase::SetType(int type)
+{
+	SMStruct sm = GetSMData();
+	if (sm.basicInfo._id)
+	{
+		sm.basicInfo._type = type;
+	}
+	SetSMData(sm);
 }
 
 void ModelBase::SetHurt(double hurt)
 {
-	if (_health - hurt <= 0)
+	double health = GetHealth();
+	if (health - hurt <= 0)
 	{
-		_health = 0;
+		health = 0;
 	}
 	else
 	{
-		_health = _health - hurt;
+		health = health - hurt;
 	}
+	SetHealth(health);
 }
 
 vector<EventBase*> ModelBase::HandleEvent()
@@ -105,7 +122,7 @@ void ModelBase::ReceiveEvent(EventBase *event)
 void ModelBase::Run(double t)
 {
 	//判断生命值，如果小于等于0，不执行
-	if (_health <= 0)
+	if (GetHealth() <= 0)
 	{
 		return;
 	}
@@ -121,13 +138,14 @@ void ModelBase::Run(double t)
 			}
 	}
 	//在Run完之后，根据组件类型获取相应数据
-	for (int i = 0; i < _myComponents.size(); i++)
+	//这一段不需要了，因为直接在共享内存里面修改
+	/*for (int i = 0; i < _myComponents.size(); i++)
 	{
 		if (_myComponents[i]->_type == COM_MOVE)
 		{
 			_pos = _myComponents[i]->GetPos();
 		}
-	}
+	}*/
 	//GetAllEventByID(std::vector<Message_Attack>& events,int id)
 	//从服务获取自己所受的毁伤
 	ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
@@ -174,7 +192,7 @@ void ModelBase::GetBasicInfo(Model_BasicInfo &info)
 void ModelBase::InitComponent()
 {
 	//读取类型对应配置文件名称
-	int type = _type;
+	int type = GetType();
 	
 	int t_Value = 0;
 	std::string t_Name;
@@ -310,7 +328,7 @@ void ModelBase::CreateSmData(SMStruct sm)
 {
 	std::wstring wideStr(_shareMemoryID.begin(), _shareMemoryID.end());
 	LPCWSTR lpcwstr = wideStr.c_str();
-	HANDLE hMapFile = CreateFileMapping(
+	hMapFile = CreateFileMapping(
 		INVALID_HANDLE_VALUE,    // 使用分页文件
 		NULL,                    // 默认安全属性
 		PAGE_READWRITE,          // 读写权限
@@ -322,7 +340,8 @@ void ModelBase::CreateSmData(SMStruct sm)
 		std::cerr << "CreateFileMapping failed: " << GetLastError() << std::endl;//***错误后面写道log服务里
 		return ;
 	}
-	SMStruct* pData = (SMStruct*)MapViewOfFile(
+
+	pData = (SMStruct*)MapViewOfFile(
 		hMapFile,                // 映射对象句柄
 		FILE_MAP_ALL_ACCESS,     // 读写权限
 		0,
@@ -336,7 +355,35 @@ void ModelBase::CreateSmData(SMStruct sm)
 	}
 	pData->basicInfo = sm.basicInfo;
 	pData->otherInfo = sm.otherInfo;
-	int i = 0;
-	UnmapViewOfFile(pData);
-	CloseHandle(hMapFile);
+}
+
+SMStruct ModelBase::GetSMData()
+{
+	SMStruct sm;
+	if (hMapFile && pData)
+	{
+		sm.basicInfo = pData->basicInfo;
+		sm.otherInfo = pData->otherInfo;
+	}
+	return sm;
+}
+
+void ModelBase::SetSMData(SMStruct sm)
+{
+	*pData = sm;
+}
+
+double ModelBase::GetHealth()
+{
+	return  GetSMData().basicInfo._health;
+}
+
+Model_Position ModelBase::GetPos()
+{
+	return GetSMData().basicInfo._pos;
+}
+
+int ModelBase::GetType()
+{
+	return GetSMData().basicInfo._type;
 }

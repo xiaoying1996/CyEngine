@@ -14,7 +14,6 @@ public:
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
-	virtual void SetHealth(double health);
 	virtual void SetHurt(double hurt);
 
 	void GetBasicInfo(Model_BasicInfo &info);
@@ -24,22 +23,23 @@ public:
 	void PutEventToComponent();
 	void SetServiceInterFace();
 	void CreateSmData(SMStruct sm);
+	SMStruct GetSMData();
+	void SetSMData(SMStruct sm);
+	double GetHealth();
+	void SetHealth(double health);
+	void SetType(int type);
+	Model_Position GetPos();
+	int GetType();
 	ServiceInterface* _serviceInter = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;
 	bool _isInit;
 	bool _isReadScenario;
 	string _shareMemoryID;
-	Model_Position _pos;
-	Model_Shape _shape;
-	string _name;
-	int _camp;
-	double _health;
 	vector<EventBase*> _events;
 	vector<EventBase*> _eventsToSend;
-
-protected:
-	ModelType _type;
+	SMStruct* pData;
+	HANDLE hMapFile;
 };
 
 #endif // !_MODEL_BASE_

@@ -30,12 +30,12 @@ void AttackMissionWidget::SetExecuter()
         {
         case ModelType::M_PEOPLE:
         {
-            ui.HumanBox->addItem(QString::fromLocal8Bit(models[i]._name.c_str()));
+            ui.HumanBox->addItem(QString::fromLocal8Bit(models[i]._name));
             break;
         }
         case ModelType::M_OPTICALATTACKUAV:
         {
-            ui.UavBox->addItem(QString::fromLocal8Bit(models[i]._name.c_str()));
+            ui.UavBox->addItem(QString::fromLocal8Bit(models[i]._name));
             break;
         }
         default:
@@ -61,7 +61,7 @@ void AttackMissionWidget::SetExecuter()
         ui.TargetListWidget->setItem(i, 0, new QTableWidgetItem(QString::number(models[i]._id)));
         ui.TargetListWidget->setItem(i, 1, new QTableWidgetItem(QString::number(models[i]._camp)));
         ui.TargetListWidget->setItem(i, 2, new QTableWidgetItem(TypeMap[(ModelType)models[i]._type]));
-        ui.TargetListWidget->setItem(i, 3, new QTableWidgetItem(QString::fromLocal8Bit(models[i]._name.data())));
+        ui.TargetListWidget->setItem(i, 3, new QTableWidgetItem(QString::fromLocal8Bit(models[i]._name)));
         ui.TargetListWidget->setItem(i, 4, new QTableWidgetItem(QString::number(models[i]._health)));
         QCheckBox *ckBox = new QCheckBox(ui.TargetListWidget);
         ckBox->setChecked(false);

@@ -26,12 +26,12 @@ void MoveMissionWidget::SetExecuter()
         {
         case ModelType::M_PEOPLE:
         {
-            ui.HumanBox->addItem(QString::fromLocal8Bit(models[i]._name.c_str()));
+            ui.HumanBox->addItem(QString::fromLocal8Bit(models[i]._name));
             break;
         }
         case ModelType::M_OPTICALATTACKUAV:
         {
-            ui.UavBox->addItem(QString::fromLocal8Bit(models[i]._name.c_str()));
+            ui.UavBox->addItem(QString::fromLocal8Bit(models[i]._name));
             break;
         }
         default:

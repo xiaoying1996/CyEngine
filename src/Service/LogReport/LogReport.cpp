@@ -106,7 +106,7 @@ void LogReport::AddModelToLog(Model_BasicInfo modelInfo)
         m_modelLog_Map[modelInfo._id] = m_modelLog_Vec.size()-1;
         logoutFile->open("Log\\" +  m_logPath + "\\" + modelInfo._name + ".txt", ios::out);
         *logoutFile << "ID:" + to_string(modelInfo._id) << endl;
-        *logoutFile << "Name:" + modelInfo._name << endl;
+        *logoutFile << "Name:" + string(modelInfo._name) << endl;
         string typeStr;
         switch (modelInfo._type)
         {

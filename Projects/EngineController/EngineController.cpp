@@ -159,7 +159,7 @@ void EngineController::on_UpdateBtn_clicked()
             if (humanItem != nullptr)
             {
                 QTreeWidgetItem* humanItemSub = new QTreeWidgetItem(humanItem);
-                humanItemSub->setText(0, QString::fromLocal8Bit(models[i]._name.c_str()));
+                humanItemSub->setText(0, QString::fromLocal8Bit(models[i]._name));
                 humanItem->addChild(humanItemSub);
                 //类型、坐标、id
                 QTreeWidgetItem* humanItemSub_Type = new QTreeWidgetItem(humanItemSub);
@@ -185,7 +185,7 @@ void EngineController::on_UpdateBtn_clicked()
             if (uavItem != nullptr)
             {
                 QTreeWidgetItem* uavItemSub = new QTreeWidgetItem(uavItem);
-                uavItemSub->setText(0, QString::fromLocal8Bit(models[i]._name.c_str()));
+                uavItemSub->setText(0, QString::fromLocal8Bit(models[i]._name));
                 uavItem->addChild(uavItemSub);
                 //类型、坐标、id
                 QTreeWidgetItem* uavItemSub_Type = new QTreeWidgetItem(uavItemSub);

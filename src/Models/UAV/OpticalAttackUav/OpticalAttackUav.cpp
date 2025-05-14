@@ -11,8 +11,8 @@ OpticalAttackUav::~OpticalAttackUav()
 
 void OpticalAttackUav::Init(TiXmlElement* unitElement)
 {
-	_type = M_OPTICALATTACKUAV;
 	UAVBase::Init(unitElement);
+	SetType(M_OPTICALATTACKUAV);
 }
 
 void OpticalAttackUav::ReadScenario()
