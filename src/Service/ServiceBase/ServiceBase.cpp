@@ -134,41 +134,11 @@ void ServiceBase::GetDataPublicRegister(std::vector<EventCategory>& EventPublic,
 	ModelRegister = _ModelRegister;
 }
 
-void ServiceBase::SetEntityList(std::vector<Model_BasicInfo> EmyityList)
-{
-	//做判断去重，如果已经存在，就更新数据，否则就新增
-	for (int i = 0; i < EmyityList.size(); i++)
-	{
-		bool exist = false;
-		for (int j = 0; j < _emyityList.size(); j++)
-		{
-			if (EmyityList[i]._id == _emyityList[j]._id)
-			{
-				exist = true;
-				_emyityList[j] = EmyityList[i];
-			}
-		}
-		if (!exist)
-		{
-			_emyityList.push_back(EmyityList[i]);
-		}
-	}
-}
-
-void ServiceBase::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
-{
-	entitys = _emyityList;
-}
-
 void ServiceBase::AddAttackEvent(AttackBase* attack)
 {
 	
 }
 
-void ServiceBase::SetEventList(std::vector<EventBase*> eventList)
-{
-
-}
 void ServiceBase::GetAllEventByID(std::vector<Message_Attack>& events,int id)
 {
 	for (auto iter = _EventListToSend.begin(); iter != _EventListToSend.end(); iter++)

@@ -96,7 +96,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;ServiceBased.lib;XML_Utilsd.lib;ComponentBased.lib;ServiceInterfaced.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CyEngined.lib;ModelBased.lib;ServiceBased.lib;XML_Utilsd.lib;ComponentBased.lib;ServiceInterfaced.lib;WriteReadShareMemoryd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">

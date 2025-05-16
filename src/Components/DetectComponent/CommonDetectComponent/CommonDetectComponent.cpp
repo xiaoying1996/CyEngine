@@ -36,6 +36,7 @@ void CommonDetectComponent::ReceiveEvent(EventBase *event)
 void CommonDetectComponent::Run(double t)
 {
 	ComponentBase::Run(t);
+	Model_Position pos = GetPos();
 	if (_serviceInterface)
 	{
 		ServiceBase* service =  _serviceInterface->GetServiceByName("ModelManagerService");
@@ -46,7 +47,7 @@ void CommonDetectComponent::Run(double t)
 			if (entitys[i]._camp != _camp && entitys[i]._id != _id)
 			{
 				LLA lla_self; ECEF ecef_self;
-				lla_self.lon = _pos._lon; lla_self.lat = _pos._lat; lla_self.alt = _pos._alt;
+				lla_self.lon = pos._lon; lla_self.lat = pos._lat; lla_self.alt = pos._alt;
 				ecef_self = llaToECEF(lla_self);
 				LLA lla_target; ECEF ecef_target;
 				lla_target.lon = entitys[i]._pos._lon; lla_target.lat = entitys[i]._pos._lat; lla_target.alt = entitys[i]._pos._alt;
@@ -88,6 +89,11 @@ void CommonDetectComponent::Run(double t)
 void CommonDetectComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+Model_Position CommonDetectComponent::GetPos()
+{
+	return GetSMData(hMapFile, pData).basicInfo._pos;
 }
 
 extern "C" _declspec(dllexport) CommonDetectComponent* CreateComponent()

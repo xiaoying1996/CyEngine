@@ -17,6 +17,9 @@ public:
 	virtual void Run(double t);
 	virtual void Destory();
 
+	void SetPos(Model_Position pos);
+	Model_Position GetPos();
+
 private:
 	MoveState _moveState;
 	vector<Model_Position> _wayList_LLA;

@@ -23,9 +23,6 @@ public:
 	void AddModelRegister(std::vector<ModelType> models);
 	void GetDataPublicRegister(std::vector<EventCategory> &EventPublic, std::vector<EventCategory> &EventRegister, std::vector<ModelType> &ModelPublic, std::vector<ModelType> &ModelRegister);
 	//实体管理服务使用的，后面放到中间类里面去
-	void SetEntityList(std::vector<Model_BasicInfo> EmyityList);
-	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
-	void SetEventList(std::vector<EventBase*> eventList);
 	void GetAllEventByID(std::vector<Message_Attack>& events,int id);
 	//战斗裁决服务使用的，后面放到中间类里面去
 	virtual void AddAttackEvent(AttackBase* attack);
@@ -38,7 +35,6 @@ protected:
 	
 public:
 	ServiceType _type;
-	std::vector<Model_BasicInfo> _emyityList;
 	std::vector<AttackResult> _attackResultList;
 	std::vector<Message_Attack> _EventListToSend;
 };

@@ -18,6 +18,8 @@ public:
 	virtual void Run(double t);
 	virtual void Destory();
 
+	Model_Position GetPos();
+
 private:
 	AttackMode _attackMode;
 	double _attackDis;

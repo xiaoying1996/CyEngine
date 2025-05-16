@@ -1,5 +1,6 @@
 #include "CommonAttackComponent.h"
 #include "Public/AttackStruct.h"
+#include <Tools/WriteReadShareMemory/WriteReadShareMemory.h>
 
 CommonAttackComponent::CommonAttackComponent()
 {
@@ -74,21 +75,8 @@ void CommonAttackComponent::ReceiveEvent(EventBase *event)
 
 void CommonAttackComponent::Run(double t)
 {
-	//实时更新自身pos，现在是没有做共享内存，先用这种蠢办法，后面改成共享
-	ServiceBase* service = _serviceInterface->GetServiceByName("ModelManagerService");
-	std::vector<Model_BasicInfo> entitys;
-	service->GetAllEntity(entitys);
-	for (int i = 0; i < entitys.size(); i++)
-	{
-		if (entitys[i]._id == _id)
-		{
-			_pos = entitys[i]._pos;
-			break;
-		}
-	}
-
-	//battleAdjustService = dynamic_cast<BattleAdjustService*> (GetService(""));
 	ComponentBase::Run(t);
+	Model_Position pos = GetPos();
 	if (_attackMode == ATTACKALL)//全局攻击攻击离自己最近的一个
 	{
 		int targetID = 0;
@@ -97,7 +85,7 @@ void CommonAttackComponent::Run(double t)
 		{
 			//求距离，若距离大于可攻击距离，则抛弃
 			LLA lla_self; ECEF ecef_self;
-			lla_self.lon = _pos._lon; lla_self.lat = _pos._lat; lla_self.alt = _pos._alt;
+			lla_self.lon = pos._lon; lla_self.lat = pos._lat; lla_self.alt = pos._alt;
 			ecef_self = llaToECEF(lla_self);
 			LLA lla_target; ECEF ecef_target;
 			lla_target.lon = entityListDetect[i]._pos._lon; lla_target.lat = entityListDetect[i]._pos._lat; lla_target.alt = entityListDetect[i]._pos._alt;
@@ -148,7 +136,7 @@ void CommonAttackComponent::Run(double t)
 				{
 					//求距离，若距离大于可攻击距离，则抛弃
 					LLA lla_self; ECEF ecef_self;
-					lla_self.lon = _pos._lon; lla_self.lat = _pos._lat; lla_self.alt = _pos._alt;
+					lla_self.lon = pos._lon; lla_self.lat = pos._lat; lla_self.alt = pos._alt;
 					ecef_self = llaToECEF(lla_self);
 					LLA lla_target; ECEF ecef_target;
 					lla_target.lon = entityListDetect[j]._pos._lon; lla_target.lat = entityListDetect[j]._pos._lat; lla_target.alt = entityListDetect[j]._pos._alt;
@@ -204,7 +192,7 @@ void CommonAttackComponent::Run(double t)
 					{
 						//求距离，若距离大于可攻击距离，则抛弃
 						LLA lla_self; ECEF ecef_self;
-						lla_self.lon = _pos._lon; lla_self.lat = _pos._lat; lla_self.alt = _pos._alt;
+						lla_self.lon = pos._lon; lla_self.lat = pos._lat; lla_self.alt = pos._alt;
 						ecef_self = llaToECEF(lla_self);
 						LLA lla_target; ECEF ecef_target;
 						lla_target.lon = entityListDetect[j]._pos._lon; lla_target.lat = entityListDetect[j]._pos._lat; lla_target.alt = entityListDetect[j]._pos._alt;
@@ -251,7 +239,7 @@ void CommonAttackComponent::Run(double t)
 		{
 			//判断是否进入距离
 			LLA lla_self; ECEF ecef_self;
-			lla_self.lon = _pos._lon; lla_self.lat = _pos._lat; lla_self.alt = _pos._alt;
+			lla_self.lon = pos._lon; lla_self.lat = pos._lat; lla_self.alt = pos._alt;
 			ecef_self = llaToECEF(lla_self);
 			LLA lla_target; ECEF ecef_target;
 			lla_target.lon = _lla_targetTemp.lon; lla_target.lat = _lla_targetTemp.lat; lla_target.alt = _lla_targetTemp.alt;
@@ -277,6 +265,11 @@ void CommonAttackComponent::Run(double t)
 void CommonAttackComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+Model_Position CommonAttackComponent::GetPos()
+{
+	return GetSMData(hMapFile, pData).basicInfo._pos;
 }
 
 extern "C" _declspec(dllexport) CommonAttackComponent* CreateComponent()

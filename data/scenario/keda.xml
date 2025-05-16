@@ -6,6 +6,7 @@
         <Human>
             <unit>
                 <type>People</type>
+                <typeEnum>1</typeEnum>
                 <id>1</id>
                 <name>群众-1</name>
                 <camp>2</camp>
@@ -17,6 +18,7 @@
             </unit>
             <unit>
                 <type>People</type>
+                <typeEnum>1</typeEnum>
                 <id>2</id>
                 <name>群众-2</name>
                 <camp>2</camp>
@@ -28,6 +30,7 @@
             </unit>
             <unit>
                 <type>People</type>
+                <typeEnum>1</typeEnum>
                 <id>3</id>
                 <name>群众-3</name>
                 <camp>2</camp>
@@ -39,6 +42,7 @@
             </unit>
             <unit>
                 <type>People</type>
+                <typeEnum>1</typeEnum>
                 <id>4</id>
                 <name>群众-4</name>
                 <camp>2</camp>
@@ -50,6 +54,7 @@
             </unit>
             <unit>
                 <type>People</type>
+                <typeEnum>1</typeEnum>
                 <id>5</id>
                 <name>群众-5</name>
                 <camp>2</camp>
@@ -63,6 +68,7 @@
         <UAV>
             <unit>
                 <type>OpticalAttackUav</type>
+                <typeEnum>101</typeEnum>
                 <id>6</id>
                 <name>可见光打击无人机-1</name>
                 <camp>1</camp>

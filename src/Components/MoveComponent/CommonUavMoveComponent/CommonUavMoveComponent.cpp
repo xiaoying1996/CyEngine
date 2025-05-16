@@ -51,6 +51,7 @@ void CommonUavMoveComponent::ReceiveEvent(EventBase *event)
 void CommonUavMoveComponent::Run(double t)
 {
 	ComponentBase::Run(t);
+	Model_Position pos = GetPos();
 	if (_moveState == MOVE_READY)
 	{
 		Model_Position p_LLA = _wayList_LLA.front();
@@ -61,7 +62,8 @@ void CommonUavMoveComponent::Run(double t)
 		_moveState = MOVE_MOVING;
 		//将当前点转化为ECEF保存
 		LLA lla_curr;
-		lla_curr.lon = _pos._lon; lla_curr.lat = _pos._lat; lla_curr.alt = _pos._alt;
+		Model_Position pos = GetPos();
+		lla_curr.lon = pos._lon; lla_curr.lat = pos._lat; lla_curr.alt = pos._alt;
 		_currentPiont_ECEF = llaToECEF(lla_curr);
 		//将下一个点转化为ECEF保存
 		LLA lla_next;
@@ -79,7 +81,11 @@ void CommonUavMoveComponent::Run(double t)
 			ECEF new_point = moveTowards(_currentPiont_ECEF, _nextPiont_ECEF, _speed / 10.0);
 			_currentPiont_ECEF = new_point;
 			LLA llaret = ecefToLLA(_currentPiont_ECEF);
-			_pos._lon = llaret.lon; _pos._lat = llaret.lat; _pos._alt = llaret.alt;
+			Model_Position pos;
+			pos._lon= llaret.lon;
+			pos._lat = llaret.lat;
+			pos._alt = llaret.alt;
+			SetPos(pos);
 		}
 	}
 	else if (_moveState == MOVE_ATTACHPOINT)
@@ -107,6 +113,22 @@ void CommonUavMoveComponent::Run(double t)
 void CommonUavMoveComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+void CommonUavMoveComponent::SetPos(Model_Position pos)
+{
+	SMStruct sm = GetSMData(hMapFile, pData);
+	string name = sm.basicInfo._name;
+	if (sm.basicInfo._id)
+	{
+		sm.basicInfo._pos = pos;
+	}
+	SetSMData(sm, pData);
+}
+
+Model_Position CommonUavMoveComponent::GetPos()
+{
+	return GetSMData(hMapFile, pData).basicInfo._pos;
 }
 
 extern "C" _declspec(dllexport) CommonUavMoveComponent* CreateComponent()

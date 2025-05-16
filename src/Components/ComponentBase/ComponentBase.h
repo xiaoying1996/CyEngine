@@ -6,6 +6,8 @@
 #include "Tools/XML_Utils/XML_Utils.h"
 #include "Service/ServiceInterface/ServiceInterface.h"
 #include "ComponentEnum.h"
+#include "Windows.h";
+#include "Tools/WriteReadShareMemory/WriteReadShareMemory.h"
 #include <iostream>
 
 class ComponentBase {
@@ -20,10 +22,7 @@ public:
 	virtual void Destory();
 
 	std::vector<EventBase*> HandleEvent();
-	void HandleComponentState();
-	void SetBasicInfo(Model_BasicInfo info);
-	Model_Position GetPos();
-	ServiceBase* GetService(std::string serviceName);
+	void SetBasicInfo(Model_BasicInfo info, SMStruct* pData, HANDLE hMapFile);
 	void SetServiceInterface(ServiceInterface *inter);
 private:
 	bool _isInit;
@@ -32,9 +31,11 @@ private:
 	
 public:
 	ComType _type;
-	Model_Position _pos;
 	int _camp;
 	int _id;
+	string _shareMemoryID;
+	SMStruct* pData;
+	HANDLE hMapFile;
 	ServiceInterface* _serviceInterface = nullptr;
 };
 

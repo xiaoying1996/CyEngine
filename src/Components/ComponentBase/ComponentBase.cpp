@@ -47,33 +47,12 @@ void ComponentBase::Destory()
 {
 }
 
-void ComponentBase::HandleComponentState()
+void ComponentBase::SetBasicInfo(Model_BasicInfo info, SMStruct* pData, HANDLE hMapFile)
 {
-
-}
-
-void ComponentBase::SetBasicInfo(Model_BasicInfo info)
-{
-	_pos = info._pos;
-	_camp = info._camp;
 	_id = info._id;
-}
-
-Model_Position ComponentBase::GetPos()
-{
-	return _pos;
-}
-
-ServiceBase* ComponentBase::GetService(std::string serviceName)
-{
-	if (_serviceInterface)
-	{
-		_serviceInterface->GetServiceByName(serviceName);
-	}
-	else 
-	{
-		return nullptr;
-	}
+	_shareMemoryID = "_SM_" + to_string(_id);
+	this->pData = pData;
+	this->hMapFile = hMapFile;
 }
 
 void ComponentBase::SetServiceInterface(ServiceInterface* inter)

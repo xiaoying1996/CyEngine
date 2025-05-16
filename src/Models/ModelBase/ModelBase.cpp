@@ -1,6 +1,6 @@
 #include "ModelBase.h"
-#include "Windows.h"
 #include "Tools/MapToJson/MapToJson.h"
+#include "Tools/WriteReadShareMemory/WriteReadShareMemory.h"
 
 ModelBase::ModelBase()
 {
@@ -20,22 +20,25 @@ ModelBase::~ModelBase()
 
 void ModelBase::Init(TiXmlElement* unitElement)
 {
+	if (_isInit)
+	{
+		return;
+	}
 	if (unitElement == nullptr)
 	{
 		//没有找到XML节点，无法进行初始化,后面加入日志服务
 		return;
 	}
-	int id = 0;
-	GetIDFromTiXmlElement(id, unitElement);
-	if (id == 0)
+	GetIDFromTiXmlElement(_id, unitElement);
+	if (_id == 0)
 	{
 		//模型没有设置ID，无法进行初始化,后面加入日志服务
 		return;
 	}
-	_shareMemoryID = "_SM_" + to_string(id);
+	_shareMemoryID = "_SM_" + to_string(_id);
 	SMStruct sm;
 	Model_BasicInfo basicInfo;
-	basicInfo._id = id;
+	basicInfo._id = _id;
 	GetCampFromTiXmlElement(basicInfo._camp, unitElement);
 	basicInfo._health = 100;
 	string name;
@@ -49,11 +52,31 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	basicInfo._pos._lat = posVec[1];
 	basicInfo._pos._alt = posVec[2];
 	basicInfo._shape;
-	basicInfo._type = 0;
+	GetTypeFromTiXmlElement(basicInfo._type, unitElement);
+	_type = basicInfo._type;
 	sm.basicInfo = basicInfo;
-	CreateSmData(sm);
+	CreateSmData(sm, _shareMemoryID, hMapFile, pData);
+	SetServiceInterFace();
+	InitComponent();
 	_isInit = true;
 
+}
+
+void ModelBase::InitByBasicInfo(Model_BasicInfo basicInfo)
+{
+	if (_isInit)
+	{
+		return;
+	}
+	_shareMemoryID = "_SM_" + to_string(basicInfo._id);
+	SMStruct sm;
+	sm.basicInfo = basicInfo;
+	CreateSmData(sm, _shareMemoryID, hMapFile, pData);
+	SetServiceInterFace();
+	InitComponent();
+	_id = basicInfo._id;
+	_type = basicInfo._type;
+	_isInit = true;
 }
 
 void ModelBase::ReadScenario()
@@ -69,23 +92,23 @@ void ModelBase::SetHealth(double health)
 {
 	//_health = health;
 	//1.通过共享内存获取模型信息结构体
-	SMStruct sm = GetSMData();
+	SMStruct sm = GetSMData(hMapFile,pData);
 	string name = sm.basicInfo._name;
 	if (sm.basicInfo._id)
 	{
 		sm.basicInfo._health = health;
 	}
-	SetSMData(sm);
+	SetSMData(sm,pData);
 }
 
 void ModelBase::SetType(int type)
 {
-	SMStruct sm = GetSMData();
+	SMStruct sm = GetSMData(hMapFile, pData);
 	if (sm.basicInfo._id)
 	{
 		sm.basicInfo._type = type;
 	}
-	SetSMData(sm);
+	SetSMData(sm,pData);
 }
 
 void ModelBase::SetHurt(double hurt)
@@ -109,14 +132,9 @@ vector<EventBase*> ModelBase::HandleEvent()
 	return ret;
 }
 
-void ModelBase::HandleModelState()
-{
-
-}
-
 void ModelBase::ReceiveEvent(EventBase *event)
 {
-	_events.push_back(event);
+	//对接收到的事件进行处理，并推送给组件
 }
 
 void ModelBase::Run(double t)
@@ -137,15 +155,6 @@ void ModelBase::Run(double t)
 				_eventsToSend.push_back(events[i]);
 			}
 	}
-	//在Run完之后，根据组件类型获取相应数据
-	//这一段不需要了，因为直接在共享内存里面修改
-	/*for (int i = 0; i < _myComponents.size(); i++)
-	{
-		if (_myComponents[i]->_type == COM_MOVE)
-		{
-			_pos = _myComponents[i]->GetPos();
-		}
-	}*/
 	//GetAllEventByID(std::vector<Message_Attack>& events,int id)
 	//从服务获取自己所受的毁伤
 	ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
@@ -179,14 +188,16 @@ void ModelBase::Destory()
 
 void ModelBase::GetBasicInfo(Model_BasicInfo &info)
 {
-	//***这里的获取基础数据在修改完共享内存后重写***
-	/*info._id = _id;
-	info._name = _name;
-	info._type = _type;
-	info._pos = _pos;
-	info._shape = _shape;
-	info._camp = _camp;
-	info._health = _health;*/
+	info = GetSMData(hMapFile,pData).basicInfo;
+}
+
+void ModelBase::AddEvent(EventBase* event)
+{
+	ReceiveEvent(event);
+	for (int i = 0; i < _myComponents.size(); i++)
+	{
+		_myComponents[i]->ReceiveEvent(event);
+	}
 }
 
 void ModelBase::InitComponent()
@@ -298,21 +309,9 @@ void ModelBase::InitComponent()
 		com->ReadScenario();
 		Model_BasicInfo info;
 		GetBasicInfo(info);
-		com->SetBasicInfo(info);
+		com->SetBasicInfo(info, pData,hMapFile);
 		_myComponents.push_back(com);
 	}
-}
-
-void ModelBase::PutEventToComponent()
-{
-	for (int i = 0; i < _myComponents.size(); i++)
-	{
-		for (int j = 0; j < _events.size(); j++)
-		{
-			_myComponents[i]->ReceiveEvent(_events[j]);
-		}
-	}
-	_events.clear();
 }
 
 void ModelBase::SetServiceInterFace()
@@ -324,66 +323,17 @@ void ModelBase::SetServiceInterFace()
 	}
 }
 
-void ModelBase::CreateSmData(SMStruct sm)
-{
-	std::wstring wideStr(_shareMemoryID.begin(), _shareMemoryID.end());
-	LPCWSTR lpcwstr = wideStr.c_str();
-	hMapFile = CreateFileMapping(
-		INVALID_HANDLE_VALUE,    // 使用分页文件
-		NULL,                    // 默认安全属性
-		PAGE_READWRITE,          // 读写权限
-		0,                       // 高序DWORD的文件映射大小
-		sizeof(SMStruct),      // 低序DWORD的文件映射大小
-		lpcwstr); // 共享内存名称
-
-	if (hMapFile == NULL) {
-		std::cerr << "CreateFileMapping failed: " << GetLastError() << std::endl;//***错误后面写道log服务里
-		return ;
-	}
-
-	pData = (SMStruct*)MapViewOfFile(
-		hMapFile,                // 映射对象句柄
-		FILE_MAP_ALL_ACCESS,     // 读写权限
-		0,
-		0,
-		sizeof(SMStruct));
-
-	if (pData == NULL) {
-		std::cerr << "MapViewOfFile failed: " << GetLastError() << std::endl;//***错误后面写道log服务里
-		CloseHandle(hMapFile);
-		return ;
-	}
-	pData->basicInfo = sm.basicInfo;
-	pData->otherInfo = sm.otherInfo;
-}
-
-SMStruct ModelBase::GetSMData()
-{
-	SMStruct sm;
-	if (hMapFile && pData)
-	{
-		sm.basicInfo = pData->basicInfo;
-		sm.otherInfo = pData->otherInfo;
-	}
-	return sm;
-}
-
-void ModelBase::SetSMData(SMStruct sm)
-{
-	*pData = sm;
-}
-
 double ModelBase::GetHealth()
 {
-	return  GetSMData().basicInfo._health;
+	return  GetSMData(hMapFile,pData).basicInfo._health;
 }
 
 Model_Position ModelBase::GetPos()
 {
-	return GetSMData().basicInfo._pos;
+	return GetSMData(hMapFile, pData).basicInfo._pos;
 }
 
 int ModelBase::GetType()
 {
-	return GetSMData().basicInfo._type;
+	return GetSMData(hMapFile, pData).basicInfo._type;
 }

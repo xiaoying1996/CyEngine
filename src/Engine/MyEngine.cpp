@@ -50,9 +50,7 @@ void ModelRunner(void* arg)
             vector<EventBase*> events = MyEngine::GetInstance()->GetEvents(info._id);
             for (int i = 0; i < events.size(); i++)
             {
-                model->ReceiveEvent(events[i]);
-                model->PutEventToComponent();
-                //delete events[i];
+                model->AddEvent(events[i]);
             }
             if (events.size() > 1)
             {
@@ -67,12 +65,6 @@ void ModelRunner(void* arg)
             }
 
             model->Run(0);
-            //在模型运行完成以后，将产生的事件提取出来
-            std::vector<EventBase*> eventsFromModel = model->HandleEvent();
-            for (int i = 0; i < eventsFromModel.size(); i++)
-            {
-                MyEngine::GetInstance()->PutEvent((eventsFromModel[i]));
-            }
 
             //执行结束后，将其从RunningVec转移到FinishVec
             ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
@@ -94,7 +86,6 @@ void TimeAdvanceManager(void* arg)
             ModelManager::GetInstance()->MoveAllModelsFromFinishToReady();
             //2.将时间状态设置为Ready
             MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
-            MyEngine::GetInstance()->OperatService();
             MyEngine::GetInstance()->BattleTimeAdvance();
         }
         else
@@ -138,7 +129,6 @@ MyEngine::MyEngine()
     m_isScenarioRead = false;
     m_isStart = false;
     m_battleTime = 0;
-    _serviceInterface = ServiceInterface::GetInstance();
     #if _DEBUG
         _LOG->PrintError("引擎构造完成");
     #endif // NDEBUG
@@ -264,7 +254,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                         {
                             int id = 0;
                             std::string type;
-                            GetTypeFromTiXmlElement(type, unitElement);
+                            GetTypeNameFromTiXmlElement(type, unitElement);
                             GetIDFromTiXmlElement(id, unitElement);
                       
                             HINSTANCE hDll;
@@ -289,11 +279,8 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
-                            model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
-                            //初始化组件
-                            model->InitComponent();
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
                             _LOG->AddModelToLog(modelInfo);
@@ -308,7 +295,7 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                         {
                             int id = 0;
                             std::string type;
-                            GetTypeFromTiXmlElement(type, unitElement);
+                            GetTypeNameFromTiXmlElement(type, unitElement);
 
                             HINSTANCE hDll;
                             #if _DEBUG
@@ -332,11 +319,9 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                                 return -1;
                             }
                             ModelBase* model = addFunction();
-                            model->SetServiceInterFace();
                             model->Init(unitElement);
                             model->ReadScenario();
                             //初始化组件
-                            model->InitComponent();
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
                             _LOG->AddModelToLog(modelInfo);
@@ -456,15 +441,4 @@ void MyEngine::GetAllModels(std::vector<Model_BasicInfo>& modelsList)
 void MyEngine::GetModelByID(Model_BasicInfo& model,int id)
 {
     ModelManager::GetInstance()->GetModelByID(model,id);
-}
-
-void MyEngine::OperatService()
-{
-    if (_serviceInterface)
-    {
-        ServiceBase* service = _serviceInterface->GetServiceByName("ModelManagerService");
-        std::vector<Model_BasicInfo> modelsList;
-        MyEngine::GetInstance()->GetAllModels(modelsList);
-        service->SetEntityList(modelsList);
-    }
 }

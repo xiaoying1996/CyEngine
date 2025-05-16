@@ -114,7 +114,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)lib\Debug</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ModelBased.lib;ComponentBased.lib;XML_Utilsd.lib;ServiceInterfaced.lib;ServiceBased.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ModelBased.lib;ComponentBased.lib;XML_Utilsd.lib;ServiceInterfaced.lib;ServiceBased.lib;WriteReadShareMemoryd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

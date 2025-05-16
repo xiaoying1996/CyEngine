@@ -1,8 +1,8 @@
 #ifndef _MODELMANAGERSERVICE_
 #define _MODELMANAGERSERVICE_
-#include "Service/ServiceBase/ServiceBase.h"
+#include "Service/ModelManagerBaseService/ModelManagerBaseService.h"
 
-class ModelManagerService :public ServiceBase{
+class ModelManagerService :public ModelManagerBaseService{
 public:
 	ModelManagerService();
 	virtual ~ModelManagerService();
@@ -13,8 +13,9 @@ public:
 	virtual void Run(double t);
 	virtual void Destory();
 	virtual void PublishRegister();
-	void HandleEvent();
-	void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
+	virtual void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
+	virtual void UpdateEntity(Model_BasicInfo baseInfo);
+	virtual void GetEntityByID(Model_BasicInfo &baseInfo);
 private:
 	
 public:

@@ -20,17 +20,30 @@ std::string UTF8ToString(const std::string& utf8Data)
     return UnicodeToAscii(wString);
 }
 
-void GetTypeFromTiXmlElement(std::string& type, TiXmlElement* unitElement)
+void GetTypeFromTiXmlElement(int& type, TiXmlElement* unitElement)
 {
     for (TiXmlElement* valElement = unitElement->FirstChildElement();
                               valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "typeEnum")
         {
-            std::string key = valElement->Value();
-            if (key == "type")
-            {
-                type = valElement->FirstChild()->Value();
-            }
+            type = atoi(valElement->FirstChild()->Value());
         }
+    }
+}
+
+void GetTypeNameFromTiXmlElement(std::string& type, TiXmlElement* unitElement)
+{
+    for (TiXmlElement* valElement = unitElement->FirstChildElement();
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "type")
+        {
+            type = valElement->FirstChild()->Value();
+        }
+    }
 }
 
 void GetIDFromTiXmlElement(int &id, TiXmlElement* unitElement)

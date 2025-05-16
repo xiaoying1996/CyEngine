@@ -2,59 +2,61 @@
 
 ModelManagerService::ModelManagerService()
 {
-	ServiceBase::ServiceBase();
+	ModelManagerBaseService::ModelManagerBaseService();
 }
 
 ModelManagerService::~ModelManagerService()
 {
-	ServiceBase::~ServiceBase();
+	ModelManagerBaseService::~ModelManagerBaseService();
 }
 
 void ModelManagerService::Init(TiXmlElement* unitElement)
 {
-	ServiceBase::Init(unitElement);
+	ModelManagerBaseService::Init(unitElement);
 }
 
 void ModelManagerService::ReadScenario()
 {
-	ServiceBase::ReadScenario();
+	ModelManagerBaseService::ReadScenario();
 }
 
 void ModelManagerService::PostEvent(EventBase* event)
 {
-	ServiceBase::PostEvent(event);
-}
-
-void ModelManagerService::HandleEvent()
-{
-	ServiceBase::HandleEvent();
+	ModelManagerBaseService::PostEvent(event);
 }
 
 void ModelManagerService::ReceiveEvent(EventBase* event)
 {
-	ServiceBase::ReadScenario();
+	ModelManagerBaseService::ReadScenario();
 }
 
 void ModelManagerService::Run(double t)
 {
-	ServiceBase::Run(t);
+	ModelManagerBaseService::Run(t);
 }
 
 void ModelManagerService::Destory()
 {
-	ServiceBase::Destory();
+	ModelManagerBaseService::Destory();
 }
 
 void ModelManagerService::PublishRegister()
 {
-	ServiceBase::PublishRegister();
-	std::vector<ModelType> modelsForRegister = { ModelType ::M_PEOPLE,ModelType ::M_OPTICALATTACKUAV};
-	AddModelRegister(modelsForRegister);
+	ModelManagerBaseService::PublishRegister();
 }
 
 void ModelManagerService::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
 {
-	ServiceBase::GetAllEntity(entitys);
+	ModelManagerBaseService::GetAllEntity(entitys);
+}
+void ModelManagerService::UpdateEntity(Model_BasicInfo baseInfo)
+{
+	ModelManagerBaseService::UpdateEntity(baseInfo);
+}
+
+void ModelManagerService::GetEntityByID(Model_BasicInfo& baseInfo)
+{
+
 }
 
 extern "C" _declspec(dllexport) ModelManagerService* CreateServices()
