@@ -1,4 +1,4 @@
-git add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt ServiceInterfaced.dll
+git add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcxproj CyEngine.vcxproj.filters CyEngine.vcxproj.user log.txt ServiceInterfaced.dll Plan.xlsx
 
 2024.05.11 可以用xml文件作为想定进行读取了 初步
 
@@ -43,3 +43,5 @@ git add data/* dll/* lib/* material/* Projects/* src/* CyEngine.sln CyEngine.vcx
 2025.05.14 可以使用共享内存了
 
 2025.05.16 优化了服务结构逻辑，删除了一些模型的对外结构，便于使用者使用，很多需要外部使用的外部逻辑需要改到内部实现
+
+2025.05.18 已完成事件转发服务的构建，打击服务已经能收到侦察组件发送的侦察事件，明天将整套流程完善

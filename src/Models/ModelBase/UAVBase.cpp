@@ -25,7 +25,7 @@ void UAVBase::PostEvent()
 	ModelBase::PostEvent();
 }
 
-void UAVBase::ReceiveEvent(EventBase *event)
+void UAVBase::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	ModelBase::ReceiveEvent(event);
 }

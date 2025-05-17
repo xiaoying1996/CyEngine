@@ -25,14 +25,14 @@ void OpticalAttackUav::PostEvent()
 	UAVBase::PostEvent();
 }
 
-void OpticalAttackUav::ReceiveEvent(EventBase *event)
+void OpticalAttackUav::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	UAVBase::ReceiveEvent(event);
 	switch (event->category)
 	{
 	case EventCategory::EVENT_MISSION_MOVE:
 	{
-		Mission_Move* missionMove = dynamic_cast<Mission_Move*>(event);
+		shared_ptr<Mission_Move> missionMove = std::dynamic_pointer_cast<Mission_Move>(event);
 		m_missions.push_back(missionMove);
 	}
 	default:

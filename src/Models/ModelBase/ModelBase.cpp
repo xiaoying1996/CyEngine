@@ -125,14 +125,14 @@ void ModelBase::SetHurt(double hurt)
 	SetHealth(health);
 }
 
-vector<EventBase*> ModelBase::HandleEvent()
+vector<shared_ptr<EventBase>> ModelBase::HandleEvent()
 {
-	std::vector<EventBase*> ret = _eventsToSend;
+	std::vector<shared_ptr<EventBase>> ret = _eventsToSend;
 	_eventsToSend.clear();
 	return ret;
 }
 
-void ModelBase::ReceiveEvent(EventBase *event)
+void ModelBase::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	//对接收到的事件进行处理，并推送给组件
 }
@@ -149,7 +149,7 @@ void ModelBase::Run(double t)
 	{
 			_myComponents[i]->Run(t);
 			//在这里通过组件的handleEvent函数读取组件产生的事件
-			std::vector<EventBase*> events = _myComponents[i]->HandleEvent();
+			std::vector<shared_ptr<EventBase>> events = _myComponents[i]->HandleEvent();
 			for (int i = 0; i < events.size(); i++)
 			{
 				_eventsToSend.push_back(events[i]);
@@ -157,29 +157,38 @@ void ModelBase::Run(double t)
 	}
 	//GetAllEventByID(std::vector<Message_Attack>& events,int id)
 	//从服务获取自己所受的毁伤
-	ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
-	if (service)
+	//将被打击的事件写在被攻击着身上是不合理的，应该写在攻击者身上
+	//ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
+	//if (service)
+	//{
+	//	std::vector<Message_Attack> events;
+	//	//service->GetAllEventByID(events, _id);//***在修改完共享内存后重写***
+	//	if (events.size())
+	//	{
+	//		for (int i = 0; i < events.size(); i++)
+	//		{
+	//			SetHurt(events[i].attackRes._hurt);
+	//			AttackResult result;
+	//			result._agentID = events[i].attackRes._agentID;
+	//			result._effectID = events[i].attackRes._effectID;
+	//			result._category = events[i].attackRes._category;
+	//			result._hurt = events[i].attackRes._hurt;
+	//			//在这里推送事件到相应的实体
+	//			auto msg = std::make_shared<Message_Attack>(); // 避免显式 new
+	//			msg->receicerID = result._effectID;
+	//			msg->attackRes = result;
+	//			_eventsToSend.push_back(msg);
+	//		}
+	//	}
+	//}
+	//在执行完周期函数以后，应当向ModelManager更新自身状态
+	if (_modelManagerService)
 	{
-		std::vector<Message_Attack> events;
-		//service->GetAllEventByID(events, _id);//***在修改完共享内存后重写***
-		if (events.size())
-		{
-			for (int i = 0; i < events.size(); i++)
-			{
-				SetHurt(events[i].attackRes._hurt);
-				AttackResult result;
-				result._agentID = events[i].attackRes._agentID;
-				result._effectID = events[i].attackRes._effectID;
-				result._category = events[i].attackRes._category;
-				result._hurt = events[i].attackRes._hurt;
-				//在这里推送事件到相应的实体
-				Message_Attack* msg = new Message_Attack();
-				msg->receicerID = result._effectID;
-				msg->attackRes = result;
-				_eventsToSend.push_back(msg);
-			}
-		}
+		Model_BasicInfo info;
+		GetBasicInfo(info);
+		_modelManagerService->UpdateEntity(info);
 	}
+	
 }
 
 void ModelBase::Destory()
@@ -191,7 +200,7 @@ void ModelBase::GetBasicInfo(Model_BasicInfo &info)
 	info = GetSMData(hMapFile,pData).basicInfo;
 }
 
-void ModelBase::AddEvent(EventBase* event)
+void ModelBase::AddEvent(shared_ptr<EventBase> event)
 {
 	ReceiveEvent(event);
 	for (int i = 0; i < _myComponents.size(); i++)
@@ -310,6 +319,7 @@ void ModelBase::InitComponent()
 		Model_BasicInfo info;
 		GetBasicInfo(info);
 		com->SetBasicInfo(info, pData,hMapFile);
+		com->RegisterPublishEvent();
 		_myComponents.push_back(com);
 	}
 }
@@ -319,7 +329,8 @@ void ModelBase::SetServiceInterFace()
 	_serviceInter = ServiceInterface::GetInstance();
 	if (_serviceInter)
 	{
-		int i = 0;
+		ServiceBase  * servicebase = _serviceInter->GetServiceByName("ModelManagerService");
+		_modelManagerService = dynamic_cast<ModelManagerBaseService*>(servicebase);
 	}
 }
 

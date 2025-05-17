@@ -92,7 +92,7 @@ void AttackMissionWidget::slot_update()
 
 void AttackMissionWidget::on_SendBtn_clicked()
 {
-    Mission_Attack* mission = new Mission_Attack();
+    auto mission = std::make_shared<Mission_Attack>();
     int modelID = 0;
     for (int i = 0; i < models.size(); i++)
     {
@@ -124,7 +124,7 @@ void AttackMissionWidget::on_SendBtn_clicked()
 
 void AttackMissionWidget::on_SendBtn_2_clicked()
 {
-    Mission_Attack* mission = new Mission_Attack();
+    auto mission = std::make_shared<Mission_Attack>();
     int modelID = 0;
     for (int i = 0; i < models.size(); i++)
     {
@@ -141,7 +141,7 @@ void AttackMissionWidget::on_SendBtn_2_clicked()
 
 void AttackMissionWidget::on_SendBtn_3_clicked()
 {
-    Mission_Attack* mission = new Mission_Attack();
+    auto mission = std::make_shared<Mission_Attack>();
     int modelID = 0;
     for (int i = 0; i < models.size(); i++)
     {

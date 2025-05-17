@@ -17,7 +17,7 @@ public:
 	virtual void UpdateEntity(Model_BasicInfo baseInfo);
 	virtual void GetEntityByID(Model_BasicInfo &baseInfo);
 private:
-	
+	std::map<int, Model_BasicInfo> _emyityMap;
 public:
 	
 };

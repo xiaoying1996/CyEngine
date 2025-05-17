@@ -4,6 +4,7 @@
 #include "Components/ComponentBase/ComponentBase.h"
 #include "Service/ServiceInterface/ServiceInterface.h"
 #include "Service/BattleAdjustService/BattleAdjustService.h"
+#include "Service/EventForwardBaseService/EventForwardBaseService.h"
 #include "Tools/ECEF_LLA/ECEF_LLA.h"
 
 class CommonAttackComponent :public ComponentBase
@@ -13,10 +14,11 @@ public:
 	virtual ~CommonAttackComponent();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent(EventBase* event);
-	virtual void ReceiveEvent(EventBase *event);
+	virtual void PostEvent(shared_ptr<EventBase> event);
+	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 	virtual void Run(double t);
 	virtual void Destory();
+	virtual void RegisterPublishEvent();
 
 	Model_Position GetPos();
 
@@ -29,6 +31,7 @@ private:
 	LLA _lla_targetTemp;
 	vector<Model_BasicInfo> entityListDetect;//本组件已知的情报信息
 	ServiceBase* battleAdjustService = nullptr;
+	EventForwardBaseService* _EventForwardService = nullptr;
 };
 
 #endif // !_CommonUavMoveComponent_

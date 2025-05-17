@@ -47,21 +47,10 @@ void ModelRunner(void* arg)
             //遍历当前暂存的事件数据，推给模型
             Model_BasicInfo info;
             model->GetBasicInfo(info);
-            vector<EventBase*> events = MyEngine::GetInstance()->GetEvents(info._id);
+            vector<shared_ptr<EventBase>> events = MyEngine::GetInstance()->GetEvents(info._id);
             for (int i = 0; i < events.size(); i++)
             {
                 model->AddEvent(events[i]);
-            }
-            if (events.size() > 1)
-            {
-                for (int i = 0; i < events.size(); i++)
-                {
-                    delete events[i];
-                }
-            }
-            else if (events.size() == 1)
-            {
-                delete events[0];
             }
 
             model->Run(0);
@@ -387,23 +376,23 @@ void MyEngine::BattleTimeAdvance()
     m_Mutex.unlock();
 }
 
-void MyEngine::PutEvent(EventBase* event)
+void MyEngine::PutEvent(shared_ptr<EventBase> event)
 {
     m_Mutex.lock();
     m_eventList.push_back(event);
     m_Mutex.unlock();
 }
 
-vector<EventBase*> MyEngine::GetEvents(int id)
+vector<shared_ptr<EventBase>> MyEngine::GetEvents(int id)
 {
-    vector<EventBase*> ret;
+    vector<shared_ptr<EventBase>> ret;
     m_Mutex.lock();
     for (auto iter = m_eventList.begin(); iter != m_eventList.end(); iter++)
     {
-        EventBase *event = *iter;
+        shared_ptr<EventBase> event = *iter;
         if (event->receicerID == id || event->receicerID == 0)
         {
-            ret.push_back(std::move(event));
+            ret.push_back(event);
             iter = m_eventList.erase(iter);
             if (iter == m_eventList.end())
             {

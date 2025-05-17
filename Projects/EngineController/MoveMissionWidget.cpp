@@ -42,7 +42,7 @@ void MoveMissionWidget::SetExecuter()
 
 void MoveMissionWidget::on_SendBtn_clicked()
 {
-    Mission_Move* mission = new Mission_Move();
+    auto mission = std::make_shared<Mission_Move>();
     for (int i = 0; i < ui.MoveListWidget->rowCount(); i++) {
         Model_Position point;
         for (int j = 0; j < ui.MoveListWidget->columnCount(); j++) 

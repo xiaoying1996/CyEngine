@@ -42,7 +42,7 @@ void ModelManagerBaseService::Destory()
 
 void ModelManagerBaseService::PublishRegister()
 {
-	ModelManagerBaseService::PublishRegister();
+	ServiceBase::PublishRegister();
 }
 
 void ModelManagerBaseService::GetAllEntity(std::vector<Model_BasicInfo>& entitys)

@@ -16,6 +16,8 @@ void CommonDetectComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
 	_detectDis = 10000.0;
+	_modelManagerService = dynamic_cast<ModelManagerBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("ModelManagerService"));
+	_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
 }
 
 void CommonDetectComponent::ReadScenario()
@@ -23,12 +25,17 @@ void CommonDetectComponent::ReadScenario()
 	ComponentBase::ReadScenario();
 }
 
-void CommonDetectComponent::PostEvent(EventBase* event)
+void CommonDetectComponent::PostEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::PostEvent(event);
+	//将该事件发送到事件转发服务
+	if (_EventForwardService)
+	{
+		_EventForwardService->HandleEventByComponent(_id, this, event);
+	}
 }
 
-void CommonDetectComponent::ReceiveEvent(EventBase *event)
+void CommonDetectComponent::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::ReceiveEvent(event);
 }
@@ -37,11 +44,10 @@ void CommonDetectComponent::Run(double t)
 {
 	ComponentBase::Run(t);
 	Model_Position pos = GetPos();
-	if (_serviceInterface)
+	if (_modelManagerService)
 	{
-		ServiceBase* service =  _serviceInterface->GetServiceByName("ModelManagerService");
 		std::vector<Model_BasicInfo> entitys;
-		service->GetAllEntity(entitys);
+		_modelManagerService->GetAllEntity(entitys);
 		for (int i = 0; i < entitys.size(); i++)
 		{
 			if (entitys[i]._camp != _camp && entitys[i]._id != _id)
@@ -80,15 +86,25 @@ void CommonDetectComponent::Run(double t)
 			}
 		}
 	}
-	Message_ModelsDetect *modelsDetect = new Message_ModelsDetect();
-	modelsDetect->receicerID = _id;
-	modelsDetect->modelsInfoList = _TargetList;
-	PostEvent(modelsDetect);
+	auto ptr = std::make_shared<Message_ModelsDetect>();
+	ptr->receicerID = _id;
+	ptr->modelsInfoList = _TargetList;
+	PostEvent(ptr);
 }
 
 void CommonDetectComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+void CommonDetectComponent::RegisterPublishEvent()
+{
+	std::vector<EventCategory> RegisterEventsVec;
+	std::vector<EventCategory> PublishEventsVec = { EVENT_MESSAGE_MODELSDETECT };
+	if (_EventForwardService)
+	{
+		_EventForwardService->AddPublishRegisterByComponent(_id,this, RegisterEventsVec, PublishEventsVec);
+	}
 }
 
 Model_Position CommonDetectComponent::GetPos()

@@ -48,10 +48,15 @@ void ModelManagerService::PublishRegister()
 void ModelManagerService::GetAllEntity(std::vector<Model_BasicInfo>& entitys)
 {
 	ModelManagerBaseService::GetAllEntity(entitys);
+	for (auto iter = _emyityMap.begin(); iter != _emyityMap.end(); iter++)
+	{
+		entitys.push_back(iter->second);
+	}
 }
 void ModelManagerService::UpdateEntity(Model_BasicInfo baseInfo)
 {
 	ModelManagerBaseService::UpdateEntity(baseInfo);
+	_emyityMap[baseInfo._id] = baseInfo;
 }
 
 void ModelManagerService::GetEntityByID(Model_BasicInfo& baseInfo)

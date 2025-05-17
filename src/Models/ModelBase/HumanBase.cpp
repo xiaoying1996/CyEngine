@@ -26,7 +26,7 @@ void HumanBase::PostEvent()
 	ModelBase::PostEvent();
 }
 
-void HumanBase::ReceiveEvent(EventBase *event)
+void HumanBase::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	ModelBase::ReceiveEvent(event);
 }

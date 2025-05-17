@@ -4,7 +4,8 @@
 #include "Components/ComponentBase/ComponentBase.h"
 #include "Tools/XML_Utils/XML_Utils.h"
 #include "Service/ServiceInterface/ServiceInterface.h"
-#include "Service/ModelManagerService/ModelManagerService.h"
+#include "Service/ModelManagerBaseService/ModelManagerBaseService.h"
+#include "Service/EventForwardBaseService/EventForwardBaseService.h"
 
 class CommonDetectComponent :public ComponentBase
 {
@@ -13,16 +14,17 @@ public:
 	virtual ~CommonDetectComponent();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent(EventBase* event);
-	virtual void ReceiveEvent(EventBase *event);
+	virtual void PostEvent(shared_ptr<EventBase> event);
+	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 	virtual void Run(double t);
 	virtual void Destory();
-
+	virtual void RegisterPublishEvent();
 
 	Model_Position GetPos();
 private:
 	double _detectDis;
-	ModelManagerService* _modelManagerService = nullptr;
+	ModelManagerBaseService* _modelManagerService = nullptr;
+	EventForwardBaseService* _EventForwardService = nullptr;
 	std::vector<Model_BasicInfo> _TargetList;
 };
 

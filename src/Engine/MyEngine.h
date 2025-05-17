@@ -20,11 +20,11 @@ public:
     void SetAdvanceStu(TimeAdvanceStu stu);
     void SetLogStu(bool stu);
     void BattleTimeAdvance();
-    void PutEvent(EventBase * event);
+    void PutEvent(shared_ptr<EventBase> event);
     double GetBattleTime();
     void GetAllModels(std::vector<Model_BasicInfo> &modelsList);
     void GetModelByID(Model_BasicInfo & model,int id);
-    vector<EventBase*> GetEvents(int id);
+    vector<shared_ptr<EventBase>> GetEvents(int id);
 
 private:
     MyEngine();
@@ -41,5 +41,5 @@ private:
     bool m_isStart;
     double m_battleTime;
     TimeAdvanceStu m_canAdvance;
-    vector<EventBase*> m_eventList;
+    vector<shared_ptr<EventBase>> m_eventList;
 };

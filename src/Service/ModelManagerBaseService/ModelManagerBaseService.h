@@ -16,8 +16,8 @@ public:
 	virtual void GetAllEntity(std::vector<Model_BasicInfo>& entitys);
 	virtual void UpdateEntity(Model_BasicInfo baseInfo);
 	virtual void GetEntityByID(Model_BasicInfo& baseInfo);
-private:
-	std::vector<Model_BasicInfo> _emyityList;
+protected:
+
 public:
 	
 };

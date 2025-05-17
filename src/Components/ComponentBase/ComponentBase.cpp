@@ -22,19 +22,19 @@ void ComponentBase::ReadScenario()
 	_isReadScenario = true;
 }
 
-void ComponentBase::PostEvent(EventBase* event)
+void ComponentBase::PostEvent(shared_ptr<EventBase> event)
 {
 	_EventListToSend.push_back(event);
 }
 
-std::vector<EventBase*> ComponentBase::HandleEvent()
+std::vector<shared_ptr<EventBase>> ComponentBase::HandleEvent()
 {
-	std::vector<EventBase*> ret = _EventListToSend;
+	std::vector<shared_ptr<EventBase>> ret = _EventListToSend;
 	_EventListToSend.clear();
 	return ret;
 }
 
-void ComponentBase::ReceiveEvent(EventBase *event)
+void ComponentBase::ReceiveEvent(shared_ptr<EventBase> event)
 {
 }
 
@@ -45,6 +45,11 @@ void ComponentBase::Run(double t)
 
 void ComponentBase::Destory()
 {
+}
+
+void ComponentBase::RegisterPublishEvent()
+{
+
 }
 
 void ComponentBase::SetBasicInfo(Model_BasicInfo info, SMStruct* pData, HANDLE hMapFile)

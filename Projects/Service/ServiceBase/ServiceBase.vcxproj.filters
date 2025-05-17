@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\..\src\Service\ModelManagerBaseService\ModelManagerBaseService.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Service\EventForwardBaseService\EventForwardBaseService.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\src\Service\ServiceBase\ServiceBase.h">
@@ -30,6 +33,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\Service\ModelManagerBaseService\ModelManagerBaseService.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Service\EventForwardBaseService\EventForwardBaseService.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

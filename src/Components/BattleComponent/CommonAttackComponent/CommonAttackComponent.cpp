@@ -25,6 +25,7 @@ void CommonAttackComponent::Init(TiXmlElement* unitElement)
 	{
 		battleAdjustService  =_serviceInterface->GetServiceByName("BattleAdjustService");
 	}
+	_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
 }
 
 void CommonAttackComponent::ReadScenario()
@@ -32,18 +33,18 @@ void CommonAttackComponent::ReadScenario()
 	ComponentBase::ReadScenario();
 }
 
-void CommonAttackComponent::PostEvent(EventBase* event)
+void CommonAttackComponent::PostEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::PostEvent(event);
 }
 
-void CommonAttackComponent::ReceiveEvent(EventBase *event)
+void CommonAttackComponent::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	//模型和组件的事件接收还没有做公布订购，这样很消耗性能
 	ComponentBase::ReceiveEvent(event);
 	if (event->category == EVENT_MISSION_ATTACK)
 	{
-		Mission_Attack* mission = dynamic_cast<Mission_Attack*>(event);
+		shared_ptr<Mission_Attack> mission = std::dynamic_pointer_cast<Mission_Attack>(event);
 		if (mission->attackMode == 0)
 		{
 			_attackMode = ATTACKNO;
@@ -67,7 +68,7 @@ void CommonAttackComponent::ReceiveEvent(EventBase *event)
 	}
 	else if (event->category == EVENT_MESSAGE_MODELSDETECT)
 	{
-		Message_ModelsDetect* message = dynamic_cast<Message_ModelsDetect*>(event);
+		shared_ptr<Message_ModelsDetect> message = std::dynamic_pointer_cast<Message_ModelsDetect>(event);
 		entityListDetect.clear();
 		entityListDetect = message->modelsInfoList;
 	}
@@ -223,7 +224,7 @@ void CommonAttackComponent::Run(double t)
 				if (targetDis > _attackDis)
 				{
 					//推送机动事件   其实在组件里面下发机动指令逻辑是不对的，应该由模型自己决定要不要机动，所以这里选择目标并机动的指令后面要改到模型中去而不是在组件中
-					Mission_Move* mission = new Mission_Move();
+					auto mission = std::make_shared<Mission_Move>();
 					mission->receicerID = _id;;
 					Model_Position targetPos;
 					targetPos._lon= _lla_targetTemp.lon;
@@ -265,6 +266,16 @@ void CommonAttackComponent::Run(double t)
 void CommonAttackComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+void CommonAttackComponent::RegisterPublishEvent()
+{
+	std::vector<EventCategory> RegisterEventsVec = { EVENT_MESSAGE_MODELSDETECT };
+	std::vector<EventCategory> PublishEventsVec;
+	if (_EventForwardService)
+	{
+		_EventForwardService->AddPublishRegisterByComponent(_id, this, RegisterEventsVec, PublishEventsVec);
+	}
 }
 
 Model_Position CommonAttackComponent::GetPos()

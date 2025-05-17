@@ -16,18 +16,19 @@ public:
 	virtual ~ComponentBase();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
-	virtual void PostEvent(EventBase *event);
-	virtual void ReceiveEvent(EventBase *event);
+	virtual void PostEvent(shared_ptr<EventBase> event);
+	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 	virtual void Run(double t);
 	virtual void Destory();
+	virtual void RegisterPublishEvent();
 
-	std::vector<EventBase*> HandleEvent();
+	std::vector<shared_ptr<EventBase>> HandleEvent();
 	void SetBasicInfo(Model_BasicInfo info, SMStruct* pData, HANDLE hMapFile);
 	void SetServiceInterface(ServiceInterface *inter);
 private:
 	bool _isInit;
 	bool _isReadScenario;
-	std::vector<EventBase*> _EventListToSend;
+	std::vector<shared_ptr<EventBase>> _EventListToSend;
 	
 public:
 	ComType _type;

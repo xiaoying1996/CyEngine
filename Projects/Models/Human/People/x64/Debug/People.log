@@ -7,6 +7,7 @@ D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(42,38): warning C4251: “ServiceInterface::m_ServiceMap”: class“std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>”需要有 dll 接口由 class“ServiceInterface”的客户端使用
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(42,7): message : 参见“std::map<std::string,std::string,std::less<std::string>,std::allocator<std::pair<const std::string,std::string>>>”的声明
 D:\chen\Pro\CPP\MyEngine\CyEngine\src\Components\ComponentBase\ComponentBase.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+    正在创建库 D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\Peopled.lib 和对象 D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\Peopled.exp
   People.vcxproj -> D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\Peopled.dll
   'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
   或批处理文件。

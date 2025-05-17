@@ -23,19 +23,19 @@ void CommonUavMoveComponent::ReadScenario()
 	ComponentBase::ReadScenario();
 }
 
-void CommonUavMoveComponent::PostEvent(EventBase* event)
+void CommonUavMoveComponent::PostEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::PostEvent(event);
 }
 
-void CommonUavMoveComponent::ReceiveEvent(EventBase *event)
+void CommonUavMoveComponent::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::ReceiveEvent(event);
 	switch (event->category)
 	{
 	case EventCategory::EVENT_MISSION_MOVE:
 	{
-		Mission_Move* missionMove = dynamic_cast<Mission_Move*>(event);
+		shared_ptr<Mission_Move> missionMove = std::dynamic_pointer_cast<Mission_Move>(event);
 		_wayList_LLA.clear();
 		_wayList_LLA = missionMove->moveList;
 		if (_wayList_LLA.size())

@@ -3,6 +3,7 @@
 #include <Components/ComponentBase/ComponentBase.h>
 #include"Service/ServiceInterface/ServiceInterface.h"
 #include"Service/ServiceBase/ServiceBase.h"
+#include"Service/ModelManagerBaseService/ModelManagerBaseService.h"
 using namespace std;
 class ModelBase {
 public:
@@ -54,16 +55,15 @@ public:
 	* * * 陈颖 2025.05.15
 	* 向模型内部推送事件
 	* 对外接口
-	*注意:切记执行完该函数之后要对参数对象进行销毁，一般情况下开发者不会在模型内部对外部数据进行销毁,除非忍不住
 	*/
-	void AddEvent(EventBase* event);
+	void AddEvent(shared_ptr<EventBase> event);
 	/*
 	* * * 陈颖 2025.05.15
 	* 从模型中获取模型当前产生的事件
 	* 对外接口
 	* 事件对象指针采用智能指针方式存储，不需要外部手动销毁
 	*/
-	vector<EventBase*> HandleEvent();
+	vector<shared_ptr<EventBase>> HandleEvent();
 
 	//-----以下函数非对外开放------
 	/*
@@ -78,7 +78,7 @@ public:
 	* 该函数由事件处理服务调用
 	* 未完善
 	*/
-	virtual void ReceiveEvent(EventBase* event);
+	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 
 	//以下为模型内部使用接口，不对外开放
 protected:
@@ -93,12 +93,13 @@ protected:
 	ServiceInterface* _serviceInter = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;
+	ModelManagerBaseService* _modelManagerService = nullptr;
 	bool _isInit;
 	bool _isReadScenario;
 	int _id;
 	int _type;
 	string _shareMemoryID;
-	vector<EventBase*> _eventsToSend;
+	vector<shared_ptr<EventBase>> _eventsToSend;
 	SMStruct* pData;
 	HANDLE hMapFile;
 };

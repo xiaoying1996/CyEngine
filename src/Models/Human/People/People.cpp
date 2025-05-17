@@ -25,12 +25,12 @@ void People::PostEvent()
 	HumanBase::PostEvent();
 }
 
-void People::ReceiveEvent(EventBase *event)
+void People::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	HumanBase::ReceiveEvent(event);
 	if (event->category == EventCategory::EVENT_MESSAGE_ATTACK)
 	{
-		Message_Attack* msg = dynamic_cast<Message_Attack*>(event);
+		shared_ptr<Message_Attack> msg = std::dynamic_pointer_cast<Message_Attack>(event);
 		//SetHurt(msg->attackRes._hurt);
 	}
 }
