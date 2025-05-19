@@ -79,6 +79,11 @@ public:
 	* 未完善
 	*/
 	virtual void ReceiveEvent(shared_ptr<EventBase> event);
+	/*
+	* 陈颖 2025.05.19
+	* 向事件转发服务注册和公布事件类型
+	*/
+	virtual void RegisterPublishEvent();
 
 	//以下为模型内部使用接口，不对外开放
 protected:
@@ -89,6 +94,7 @@ protected:
 	void SetType(int type);
 	Model_Position GetPos();
 	int GetType();
+	int GetID();
 	void SetHurt(double hurt);
 	ServiceInterface* _serviceInter = nullptr;
 private:

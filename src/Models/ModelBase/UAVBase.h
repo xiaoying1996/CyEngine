@@ -12,6 +12,7 @@ public:
 	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 	virtual void Run(double t);
 	virtual void Destory();
+	virtual void RegisterPublishEvent();
 private:
 	double _flySpeed = 0;
 };

@@ -16,6 +16,7 @@ void CommonUavMoveComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
 	_moveState = MOVE_STOP;
+	_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
 }
 
 void CommonUavMoveComponent::ReadScenario()
@@ -113,6 +114,16 @@ void CommonUavMoveComponent::Run(double t)
 void CommonUavMoveComponent::Destory()
 {
 	ComponentBase::Destory();
+}
+
+void CommonUavMoveComponent::RegisterPublishEvent()
+{
+	std::vector<EventCategory> RegisterEventsVec = { EVENT_MISSION_MOVE };
+	std::vector<EventCategory> PublishEventsVec;
+	if (_EventForwardService)
+	{
+		_EventForwardService->AddPublishRegisterByComponent(_id, this, RegisterEventsVec, PublishEventsVec);
+	}
 }
 
 void CommonUavMoveComponent::SetPos(Model_Position pos)

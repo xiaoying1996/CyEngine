@@ -39,3 +39,8 @@ void UAVBase::Destory()
 {
 	ModelBase::Destory();
 }
+
+void UAVBase::RegisterPublishEvent()
+{
+	ModelBase::RegisterPublishEvent();
+}

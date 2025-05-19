@@ -40,3 +40,8 @@ void HumanBase::Destory()
 {
 	ModelBase::Destory();
 }
+
+void HumanBase::RegisterPublishEvent()
+{
+	ModelBase::RegisterPublishEvent();
+}

@@ -13,6 +13,7 @@ enum EventCategory {
 	EVENT_MESSAGE_MODELSINFOALL=500,
 	EVENT_MESSAGE_MODELSDETECT,
 	EVENT_MESSAGE_ATTACK,
+	EVENT_MESSAGE_ATTACKED,
 };
 
 struct EventBase {
@@ -90,6 +91,19 @@ struct Message_Attack : public EventBase
 	Message_Attack()
 	{
 		category = EventCategory::EVENT_MESSAGE_ATTACK;
+	}
+};
+
+struct Message_Attacked : public EventBase
+{
+	AttackResult attackRes;
+	virtual void GetData()
+	{
+
+	}
+	Message_Attacked()
+	{
+		category = EventCategory::EVENT_MESSAGE_ATTACKED;
 	}
 };
 #endif // !_PUBLIC_STRUCT_

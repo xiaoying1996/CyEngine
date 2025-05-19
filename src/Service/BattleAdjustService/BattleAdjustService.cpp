@@ -2,67 +2,59 @@
 
 BattleAdjustService::BattleAdjustService()
 {
-	ServiceBase::ServiceBase();
+	BattleAdjustBaseService::BattleAdjustBaseService();
 }
 
 BattleAdjustService::~BattleAdjustService()
 {
-	ServiceBase::~ServiceBase();
+	BattleAdjustBaseService::~BattleAdjustBaseService();
 }
 
 void BattleAdjustService::Init(TiXmlElement* unitElement)
 {
-	ServiceBase::Init(unitElement);
+	BattleAdjustBaseService::Init(unitElement);
 }
 
 void BattleAdjustService::ReadScenario()
 {
-	ServiceBase::ReadScenario();
-}
-
-
-void BattleAdjustService::HandleEvent()
-{
-	ServiceBase::HandleEvent();
+	BattleAdjustBaseService::ReadScenario();
 }
 
 void BattleAdjustService::ReceiveEvent(EventBase* event)
 {
-	ServiceBase::ReadScenario();
+	BattleAdjustBaseService::ReadScenario();
 }
 
 void BattleAdjustService::Run(double t)
 {
-	ServiceBase::Run(t);
+	BattleAdjustBaseService::Run(t);
 }
 
 void BattleAdjustService::Destory()
 {
-	ServiceBase::Destory();
-}
-
-void BattleAdjustService::PublishRegister()
-{
-	ServiceBase::PublishRegister();
-	std::vector<ModelType> modelsForRegister;
-	AddModelRegister(modelsForRegister);
-	std::vector<EventCategory> events = { EVENT_MESSAGE_ATTACK };
-	AddEventPublic(events);
+	BattleAdjustBaseService::Destory();
 }
 
 void BattleAdjustService::AddAttackEvent(AttackBase* attack)
 {
+	if(_EventForwardService == nullptr)
+		_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
+	BattleAdjustBaseService::AddAttackEvent(attack);
 	switch (attack->category)
 	{
 	case ATTACK_PHYSICAL:
 	{
 		Attack_Physical* a = dynamic_cast<Attack_Physical*>(attack);
-		Message_Attack msg;
-		msg.receicerID = attack->effectID;
-		msg.attackRes._agentID = attack->agentID;
-		msg.attackRes._effectID = attack->effectID;
-		msg.attackRes._hurt = a->hurt;
-		_EventListToSend.push_back(msg);
+		auto message = std::make_shared<Message_Attacked>();
+		message->receicerID = a->effectID;
+		message->attackRes._agentID = a->agentID;
+		message->attackRes._effectID = a->effectID;
+		message->attackRes._category = ATTACK_PHYSICAL;
+		message->attackRes._hurt = a->hurt;
+		if (_EventForwardService)
+		{
+			_EventForwardService->HandleEventByService(message);
+		}
 		break;
 	}
 	default:

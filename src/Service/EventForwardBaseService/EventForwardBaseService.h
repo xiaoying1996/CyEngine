@@ -2,6 +2,7 @@
 #define _EVENTFORWARDBASESERVICE_
 #include "Service/ServiceBase/ServiceBase.h"
 #include "Components/ComponentBase/ComponentBase.h"
+#include "Models/ModelBase/ModelBase.h"
 
 class EventForwardBaseService :public ServiceBase{
 public:
@@ -14,7 +15,9 @@ public:
 	virtual void Run(double t);
 	virtual void Destory();
 	virtual void AddPublishRegisterByComponent(int id, ComponentBase* com, std::vector<EventCategory> eventsRegister, std::vector<EventCategory> eventsPublish);
+	virtual void AddPublishRegisterByModel(int id, ModelBase* model, std::vector<EventCategory> eventsRegister, std::vector<EventCategory> eventsPublish);
 	virtual void HandleEventByComponent(int id, ComponentBase* com,shared_ptr<EventBase> event);
+	virtual void HandleEventByService(shared_ptr<EventBase> event);
 protected:
 
 public:

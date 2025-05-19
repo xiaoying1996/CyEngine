@@ -59,7 +59,6 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	SetServiceInterFace();
 	InitComponent();
 	_isInit = true;
-
 }
 
 void ModelBase::InitByBasicInfo(Model_BasicInfo basicInfo)
@@ -137,6 +136,11 @@ void ModelBase::ReceiveEvent(shared_ptr<EventBase> event)
 	//对接收到的事件进行处理，并推送给组件
 }
 
+void ModelBase::RegisterPublishEvent()
+{
+
+}
+
 void ModelBase::Run(double t)
 {
 	//判断生命值，如果小于等于0，不执行
@@ -155,32 +159,6 @@ void ModelBase::Run(double t)
 				_eventsToSend.push_back(events[i]);
 			}
 	}
-	//GetAllEventByID(std::vector<Message_Attack>& events,int id)
-	//从服务获取自己所受的毁伤
-	//将被打击的事件写在被攻击着身上是不合理的，应该写在攻击者身上
-	//ServiceBase* service = _serviceInter->GetServiceByName("BattleAdjustService");
-	//if (service)
-	//{
-	//	std::vector<Message_Attack> events;
-	//	//service->GetAllEventByID(events, _id);//***在修改完共享内存后重写***
-	//	if (events.size())
-	//	{
-	//		for (int i = 0; i < events.size(); i++)
-	//		{
-	//			SetHurt(events[i].attackRes._hurt);
-	//			AttackResult result;
-	//			result._agentID = events[i].attackRes._agentID;
-	//			result._effectID = events[i].attackRes._effectID;
-	//			result._category = events[i].attackRes._category;
-	//			result._hurt = events[i].attackRes._hurt;
-	//			//在这里推送事件到相应的实体
-	//			auto msg = std::make_shared<Message_Attack>(); // 避免显式 new
-	//			msg->receicerID = result._effectID;
-	//			msg->attackRes = result;
-	//			_eventsToSend.push_back(msg);
-	//		}
-	//	}
-	//}
 	//在执行完周期函数以后，应当向ModelManager更新自身状态
 	if (_modelManagerService)
 	{
@@ -347,4 +325,9 @@ Model_Position ModelBase::GetPos()
 int ModelBase::GetType()
 {
 	return GetSMData(hMapFile, pData).basicInfo._type;
+}
+
+int ModelBase::GetID()
+{
+	return _id;
 }

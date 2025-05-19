@@ -99,10 +99,10 @@ void CommonDetectComponent::Destory()
 
 void CommonDetectComponent::RegisterPublishEvent()
 {
-	std::vector<EventCategory> RegisterEventsVec;
-	std::vector<EventCategory> PublishEventsVec = { EVENT_MESSAGE_MODELSDETECT };
 	if (_EventForwardService)
 	{
+		std::vector<EventCategory> RegisterEventsVec;
+		std::vector<EventCategory> PublishEventsVec = { EVENT_MESSAGE_MODELSDETECT };
 		_EventForwardService->AddPublishRegisterByComponent(_id,this, RegisterEventsVec, PublishEventsVec);
 	}
 }

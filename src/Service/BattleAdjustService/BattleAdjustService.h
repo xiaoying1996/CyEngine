@@ -1,8 +1,9 @@
 #ifndef _BATTLEADJUSTSERVICE_
 #define _BATTLEADJUSTSERVICE_
-#include "Service/ServiceBase/ServiceBase.h"
+#include "Service/BattleAdjustBaseService/BattleAdjustBaseService.h"
+#include "Service/EventForwardBaseService/EventForwardBaseService.h"
 
-class BattleAdjustService :public ServiceBase{
+class BattleAdjustService :public BattleAdjustBaseService{
 public:
 	BattleAdjustService();
 	virtual ~BattleAdjustService();
@@ -11,10 +12,10 @@ public:
 	virtual void ReceiveEvent(EventBase *event);
 	virtual void Run(double t);
 	virtual void Destory();
-	virtual void PublishRegister();
-	void HandleEvent();
 	virtual void AddAttackEvent(AttackBase* attack);
 private:
+	EventForwardBaseService* _EventForwardService = nullptr;
+
 public:
 	
 };

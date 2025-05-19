@@ -32,5 +32,17 @@ enum TimeAdvanceStu
 	ADV_READY ,
 	ADV_RUNNING,
 };
+
+//人员职责枚举类型
+enum JobType
+{
+	JOB_UNKNOW=0,
+	JOB_SOLDIER = 1,
+	JOB_GROUP_LEADER,//组长
+	JOB_SQUAD_LEADER,//班长
+	JOB_PLATOON_LEADER,//排长
+	JOB_COMPANY_LEADER,//连长
+};
+
 #endif // !_PUBLIC_ENUM
 

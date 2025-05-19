@@ -132,11 +132,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\Service\BattleAdjustBaseService\BattleAdjustBaseService.cpp" />
     <ClCompile Include="..\..\..\src\Service\EventForwardBaseService\EventForwardBaseService.cpp" />
     <ClCompile Include="..\..\..\src\Service\ModelManagerBaseService\ModelManagerBaseService.cpp" />
     <ClCompile Include="..\..\..\src\Service\ServiceBase\ServiceBase.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\Service\BattleAdjustBaseService\BattleAdjustBaseService.h" />
     <ClInclude Include="..\..\..\src\Service\EventForwardBaseService\EventForwardBaseService.h" />
     <ClInclude Include="..\..\..\src\Service\ModelManagerBaseService\ModelManagerBaseService.h" />
     <ClInclude Include="..\..\..\src\Service\ServiceBase\ServiceBase.h" />

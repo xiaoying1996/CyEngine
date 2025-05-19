@@ -30,6 +30,9 @@
     <ClCompile Include="..\..\src\Models\ModelBase\UAVBase.cpp">
       <Filter>源文件\Model</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Models\ModelBase\VehucleBase.cpp">
+      <Filter>源文件\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Models\ModelBase\PublicStruct.h">
@@ -45,6 +48,9 @@
       <Filter>头文件\Model</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Models\ModelBase\UAVBase.h">
+      <Filter>头文件\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Models\ModelBase\VehicleBase.h">
       <Filter>头文件\Model</Filter>
     </ClInclude>
   </ItemGroup>

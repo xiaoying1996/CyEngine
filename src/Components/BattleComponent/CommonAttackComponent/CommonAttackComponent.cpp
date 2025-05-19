@@ -21,10 +21,8 @@ CommonAttackComponent::~CommonAttackComponent()
 void CommonAttackComponent::Init(TiXmlElement* unitElement)
 {
 	ComponentBase::Init(unitElement);
-	if (_serviceInterface)
-	{
-		battleAdjustService  =_serviceInterface->GetServiceByName("BattleAdjustService");
-	}
+	
+	battleAdjustService  = dynamic_cast<BattleAdjustBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("BattleAdjustService"));
 	_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
 }
 
@@ -36,6 +34,10 @@ void CommonAttackComponent::ReadScenario()
 void CommonAttackComponent::PostEvent(shared_ptr<EventBase> event)
 {
 	ComponentBase::PostEvent(event);
+	if (_EventForwardService)
+	{
+		_EventForwardService->HandleEventByComponent(_id, this, event);
+	}
 }
 
 void CommonAttackComponent::ReceiveEvent(shared_ptr<EventBase> event)
@@ -123,6 +125,13 @@ void CommonAttackComponent::Run(double t)
 			attack->hurt = 30;
 			battleAdjustService->AddAttackEvent(attack);
 			delete attack;
+
+			auto message = std::make_shared<Message_Attack>();
+			message->receicerID = _targetLock;
+			message->attackRes._agentID = _id;
+			message->attackRes._effectID = _targetLock;
+			message->attackRes._category = ATTACK_PHYSICAL;
+			PostEvent(message);
 		}
 	}
 	else if (_attackMode == ATTACKSELECT)//选定攻击，攻击列表中离自己最近的一个,如果在已得知的情报中没有该目标就无法进行攻击
@@ -177,6 +186,13 @@ void CommonAttackComponent::Run(double t)
 			attack->hurt = 30;
 			battleAdjustService->AddAttackEvent(attack);
 			delete attack;
+
+			auto message = std::make_shared<Message_Attack>();
+			message->receicerID = _targetLock;
+			message->attackRes._agentID = _id;
+			message->attackRes._effectID = _targetLock;
+			message->attackRes._category = ATTACK_PHYSICAL;
+			PostEvent(message);
 		}
 	}
 	else if (_attackMode == ATTACKFOLLOW)//追踪攻击，攻击列表中离自己最近的一个,如果不在攻击范围就进入攻击范围在进行攻击
@@ -257,6 +273,13 @@ void CommonAttackComponent::Run(double t)
 					attack->hurt = 30;
 					battleAdjustService->AddAttackEvent(attack);
 					delete attack;
+					
+					auto message = std::make_shared<Message_Attack>();
+					message->receicerID = _targetLock;
+					message->attackRes._agentID = _id;
+					message->attackRes._effectID = _targetLock;
+					message->attackRes._category = ATTACK_PHYSICAL;
+					PostEvent(message);
 				}
 			}
 		}
@@ -271,7 +294,7 @@ void CommonAttackComponent::Destory()
 void CommonAttackComponent::RegisterPublishEvent()
 {
 	std::vector<EventCategory> RegisterEventsVec = { EVENT_MESSAGE_MODELSDETECT };
-	std::vector<EventCategory> PublishEventsVec;
+	std::vector<EventCategory> PublishEventsVec = { EVENT_MISSION_MOVE };
 	if (_EventForwardService)
 	{
 		_EventForwardService->AddPublishRegisterByComponent(_id, this, RegisterEventsVec, PublishEventsVec);

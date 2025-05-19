@@ -45,7 +45,17 @@ void EventForwardBaseService::AddPublishRegisterByComponent(int id,ComponentBase
 	
 }
 
+void EventForwardBaseService::AddPublishRegisterByModel(int id, ModelBase* model, std::vector<EventCategory> eventsRegister, std::vector<EventCategory> eventsPublish)
+{
+
+}
+
 void EventForwardBaseService::HandleEventByComponent(int id, ComponentBase* com, shared_ptr<EventBase> event)
+{
+
+}
+
+void EventForwardBaseService::HandleEventByService(shared_ptr<EventBase> event)
 {
 
 }

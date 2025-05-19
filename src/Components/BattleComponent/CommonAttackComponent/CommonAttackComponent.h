@@ -30,7 +30,7 @@ private:
 	int _targetLock;
 	LLA _lla_targetTemp;
 	vector<Model_BasicInfo> entityListDetect;//本组件已知的情报信息
-	ServiceBase* battleAdjustService = nullptr;
+	BattleAdjustBaseService* battleAdjustService = nullptr;
 	EventForwardBaseService* _EventForwardService = nullptr;
 };
 

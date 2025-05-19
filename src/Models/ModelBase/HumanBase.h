@@ -12,8 +12,10 @@ public:
 	virtual void ReceiveEvent(shared_ptr<EventBase> event);
 	virtual void Run(double t);
 	virtual void Destory();
+	virtual void RegisterPublishEvent();
 private:
 	double _runSpeed = 0;
+	JobType _job;
 };
 
 #endif // !_MODEL_BASE_

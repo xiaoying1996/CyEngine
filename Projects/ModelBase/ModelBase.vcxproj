@@ -22,6 +22,7 @@
     <ClCompile Include="..\..\src\Models\ModelBase\HumanBase.cpp" />
     <ClCompile Include="..\..\src\Models\ModelBase\ModelBase.cpp" />
     <ClCompile Include="..\..\src\Models\ModelBase\UAVBase.cpp" />
+    <ClCompile Include="..\..\src\Models\ModelBase\VehucleBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Models\ModelBase\EventStruct.h" />
@@ -29,6 +30,7 @@
     <ClInclude Include="..\..\src\Models\ModelBase\ModelBase.h" />
     <ClInclude Include="..\..\src\Models\ModelBase\PublicStruct.h" />
     <ClInclude Include="..\..\src\Models\ModelBase\UAVBase.h" />
+    <ClInclude Include="..\..\src\Models\ModelBase\VehicleBase.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
