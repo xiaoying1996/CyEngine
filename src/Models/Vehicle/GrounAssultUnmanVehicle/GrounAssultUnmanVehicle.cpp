@@ -1,33 +1,33 @@
-#include "OpticalAttackUav.h"
+#include "GrounAssultUnmanVehicle.h"
 
-OpticalAttackUav::OpticalAttackUav()
+GrounAssultUnmanVehicle::GrounAssultUnmanVehicle()
 {
 }
 
-OpticalAttackUav::~OpticalAttackUav()
+GrounAssultUnmanVehicle::~GrounAssultUnmanVehicle()
 {
-	UAVBase::~UAVBase();
+	VehicleBase::~VehicleBase();
 }
 
-void OpticalAttackUav::Init(TiXmlElement* unitElement)
+void GrounAssultUnmanVehicle::Init(TiXmlElement* unitElement)
 {
-	UAVBase::Init(unitElement);
-	SetType(M_OPTICALATTACKUAV);
+	VehicleBase::Init(unitElement);
+	SetType(M_GROUNDASSULTUNMANVEHICLE);
 }
 
-void OpticalAttackUav::ReadScenario()
+void GrounAssultUnmanVehicle::ReadScenario()
 {
-	UAVBase::ReadScenario();
+	VehicleBase::ReadScenario();
 }
 
-void OpticalAttackUav::PostEvent()
+void GrounAssultUnmanVehicle::PostEvent()
 {
-	UAVBase::PostEvent();
+	VehicleBase::PostEvent();
 }
 
-void OpticalAttackUav::ReceiveEvent(shared_ptr<EventBase> event)
+void GrounAssultUnmanVehicle::ReceiveEvent(shared_ptr<EventBase> event)
 {
-	UAVBase::ReceiveEvent(event);
+	VehicleBase::ReceiveEvent(event);
 	switch (event->category)
 	{
 	case EventCategory::EVENT_MISSION_MOVE:
@@ -40,17 +40,17 @@ void OpticalAttackUav::ReceiveEvent(shared_ptr<EventBase> event)
 	}
 }
 
-void OpticalAttackUav::Run(double t)
+void GrounAssultUnmanVehicle::Run(double t)
 {
-	UAVBase::Run(t);
+	VehicleBase::Run(t);
 }
 
-void OpticalAttackUav::Destory()
+void GrounAssultUnmanVehicle::Destory()
 {
-	UAVBase::Destory();
+	VehicleBase::Destory();
 }
 
-extern "C" _declspec(dllexport) OpticalAttackUav* CreateModel()
+extern "C" _declspec(dllexport) GrounAssultUnmanVehicle* CreateModel()
 {
-	return new OpticalAttackUav();
+	return new GrounAssultUnmanVehicle();
 }

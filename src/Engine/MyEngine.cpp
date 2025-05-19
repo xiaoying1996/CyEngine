@@ -317,6 +317,47 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             MM->AppendModel(model);
                         }
                     }
+                    else if (str == "Vehicle")
+                    {
+                        Element = childElement;
+                        for (TiXmlElement* unitElement = Element->FirstChildElement("unit");
+                            unitElement != nullptr; unitElement = unitElement->NextSiblingElement("unit"))
+                        {
+                            int id = 0;
+                            std::string type;
+                            GetTypeNameFromTiXmlElement(type, unitElement);
+
+                            HINSTANCE hDll;
+                            #if _DEBUG
+                            std::string dllPath = "dll\\Debug\\" + type + "d.dll";
+                            hDll = LoadLibrary(stringToLPCWSTR(dllPath));
+                            #endif
+                            #if NDEBUG
+                            std::string dllPath = "dll\\Release\\" + type + ".dll";
+                            hDll = LoadLibrary(stringToLPCWSTR(dllPath));
+                            #endif
+                            if (hDll == NULL)
+                            {
+                                std::cout << "Load dll failed!";
+                                return -1;
+                            }
+                            using functionPtr = ModelBase * (*)();
+                            functionPtr addFunction = (functionPtr)GetProcAddress(hDll, "CreateModel");
+                            if (addFunction == NULL)
+                            {
+                                std::cout << "cannot find target function!";
+                                return -1;
+                            }
+                            ModelBase* model = addFunction();
+                            model->Init(unitElement);
+                            model->ReadScenario();
+                            //初始化组件
+                            Model_BasicInfo modelInfo;
+                            model->GetBasicInfo(modelInfo);
+                            _LOG->AddModelToLog(modelInfo);
+                            MM->AppendModel(model);
+                        }
+                    }
                 }
             }
         }

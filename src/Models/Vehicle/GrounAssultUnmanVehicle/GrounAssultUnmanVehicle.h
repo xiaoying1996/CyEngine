@@ -1,12 +1,12 @@
-#ifndef _OPTICALATTACKUAV_
-#define _OPTICALATTACKUAV_
+#ifndef _GROUNDASSULTUNMANVEHICLE_
+#define _GROUNDASSULTUNMANVEHICLE_
 
-#include "../../ModelBase/UAVBase.h"
+#include "../../ModelBase/VehicleBase.h"
 
-class OpticalAttackUav :public UAVBase {
+class GrounAssultUnmanVehicle :public VehicleBase {
 public:
-	OpticalAttackUav();
-	virtual ~OpticalAttackUav();
+	GrounAssultUnmanVehicle();
+	virtual ~GrounAssultUnmanVehicle();
 	virtual void Init(TiXmlElement* unitElement);
 	virtual void ReadScenario();
 	virtual void PostEvent();

@@ -33,8 +33,11 @@ void EngineController::InitModelsTree()
     topItemhuman->setText(0, QString::fromLocal8Bit("人员"));
     QTreeWidgetItem* topItemuav = new QTreeWidgetItem();
     topItemuav->setText(0, QString::fromLocal8Bit("无人机"));
+    QTreeWidgetItem* topItemvehicle = new QTreeWidgetItem();
+    topItemvehicle->setText(0, QString::fromLocal8Bit("车辆"));
     ui.ModelsListTree->addTopLevelItem(topItemhuman);
     ui.ModelsListTree->addTopLevelItem(topItemuav);
+    ui.ModelsListTree->addTopLevelItem(topItemvehicle);
     int count = ui.ModelsListTree->topLevelItemCount();
 }
 
@@ -130,6 +133,7 @@ void EngineController::on_UpdateBtn_clicked()
     int count = ui.ModelsListTree->topLevelItemCount();
     QTreeWidgetItem* humanItem = nullptr;
     QTreeWidgetItem* uavItem = nullptr;
+    QTreeWidgetItem* vehicleItem = nullptr;
     for (int index = 0; index < count; index++)
     {
         QTreeWidgetItem *item = ui.ModelsListTree->topLevelItem(index);
@@ -147,6 +151,13 @@ void EngineController::on_UpdateBtn_clicked()
             uavItem->setExpanded(true);
             uavItem->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
             qDeleteAll(uavItem->takeChildren());
+        }
+        else if (item->text(0) == QString::fromLocal8Bit("车辆"))
+        {
+            vehicleItem = item;
+            vehicleItem->setExpanded(true);
+            vehicleItem->setChildIndicatorPolicy(QTreeWidgetItem::ShowIndicator);
+            qDeleteAll(vehicleItem->takeChildren());
         }
     }
 
@@ -180,7 +191,7 @@ void EngineController::on_UpdateBtn_clicked()
             }
             break;
         }
-        case ModelType::M_OPTICALATTACKUAV:
+        case ModelType::M_OPTICALATTACKUAV:case M_GRENADEDRONE:case M_MISSILEDRONE:case M_OPTICALINFRAREDDRONE:
         {
             if (uavItem != nullptr)
             {
@@ -189,7 +200,7 @@ void EngineController::on_UpdateBtn_clicked()
                 uavItem->addChild(uavItemSub);
                 //类型、坐标、id
                 QTreeWidgetItem* uavItemSub_Type = new QTreeWidgetItem(uavItemSub);
-                uavItemSub_Type->setText(0, QString::fromLocal8Bit("类型:可见光打击无人机"));
+                uavItemSub_Type->setText(0, QString::fromLocal8Bit("类型:无人机"));
                 uavItemSub->addChild(uavItemSub_Type);
                 QTreeWidgetItem* uavItemSub_Pos = new QTreeWidgetItem(uavItemSub);
                 uavItemSub_Pos->setText(0, QString::fromLocal8Bit("位置"));
@@ -203,6 +214,32 @@ void EngineController::on_UpdateBtn_clicked()
                 QTreeWidgetItem* uavItemSub_Pos_Z = new QTreeWidgetItem(uavItemSub_Pos);
                 uavItemSub_Pos_Z->setText(0, QString::fromLocal8Bit("Z:") + QString::number(models[i]._pos._alt));
                 uavItemSub_Pos->addChild(uavItemSub_Pos_Z);
+            }
+            break;
+        }
+        case ModelType::M_GROUNDASSULTUNMANVEHICLE:case M_JEEP:case M_CM33:
+        {
+            if (vehicleItem != nullptr)
+            {
+                QTreeWidgetItem* vehicleItemSub = new QTreeWidgetItem(vehicleItem);
+                vehicleItemSub->setText(0, QString::fromLocal8Bit(models[i]._name));
+                vehicleItem->addChild(vehicleItemSub);
+                //类型、坐标、id
+                QTreeWidgetItem* vehicleItemSub_Type = new QTreeWidgetItem(vehicleItemSub);
+                vehicleItemSub_Type->setText(0, QString::fromLocal8Bit("类型:可见光打击无人机"));
+                vehicleItemSub->addChild(vehicleItemSub_Type);
+                QTreeWidgetItem* vehicleItemSub_Pos = new QTreeWidgetItem(vehicleItemSub);
+                vehicleItemSub_Pos->setText(0, QString::fromLocal8Bit("位置"));
+                vehicleItemSub->addChild(vehicleItemSub_Pos);
+                QTreeWidgetItem* vehicleItemSub_Pos_X = new QTreeWidgetItem(vehicleItemSub_Pos);
+                vehicleItemSub_Pos_X->setText(0, QString::fromLocal8Bit("X:") + QString::number(models[i]._pos._lon));
+                vehicleItemSub_Pos->addChild(vehicleItemSub_Pos_X);
+                QTreeWidgetItem* vehicleItemSub_Pos_Y = new QTreeWidgetItem(vehicleItemSub_Pos);
+                vehicleItemSub_Pos_Y->setText(0, QString::fromLocal8Bit("Y:") + QString::number(models[i]._pos._lat));
+                vehicleItemSub_Pos->addChild(vehicleItemSub_Pos_Y);
+                QTreeWidgetItem* vehicleItemSub_Pos_Z = new QTreeWidgetItem(vehicleItemSub_Pos);
+                vehicleItemSub_Pos_Z->setText(0, QString::fromLocal8Bit("Z:") + QString::number(models[i]._pos._alt));
+                vehicleItemSub_Pos->addChild(vehicleItemSub_Pos_Z);
             }
             break;
         }

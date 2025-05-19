@@ -8,7 +8,7 @@
                 <type>People</type>
                 <typeEnum>1</typeEnum>
                 <id>1</id>
-                <name>群众-1</name>
+                <name>暴徒-1</name>
                 <camp>2</camp>
                 <position>
                     <lon>115.0000</lon>
@@ -20,7 +20,7 @@
                 <type>People</type>
                 <typeEnum>1</typeEnum>
                 <id>2</id>
-                <name>群众-2</name>
+                <name>暴徒-2</name>
                 <camp>2</camp>
                 <position>
                     <lon>115.00001</lon>
@@ -32,7 +32,7 @@
                 <type>People</type>
                 <typeEnum>1</typeEnum>
                 <id>3</id>
-                <name>群众-3</name>
+                <name>暴徒-3</name>
                 <camp>2</camp>
                 <position>
                     <lon>115.10002</lon>
@@ -44,7 +44,7 @@
                 <type>People</type>
                 <typeEnum>1</typeEnum>
                 <id>4</id>
-                <name>群众-4</name>
+                <name>暴徒-4</name>
                 <camp>2</camp>
                 <position>
                     <lon>115.00003</lon>
@@ -56,7 +56,7 @@
                 <type>People</type>
                 <typeEnum>1</typeEnum>
                 <id>5</id>
-                <name>群众-5</name>
+                <name>暴徒-5</name>
                 <camp>2</camp>
                 <position>
                     <lon>115.30004</lon>
@@ -78,6 +78,80 @@
                     <alt>15.0000</alt>
                 </position>
             </unit>
+            <unit>
+                <type>GrenadeDrone</type>
+                <typeEnum>102</typeEnum>
+                <id>8</id>
+                <name>榴弹无人机-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00007</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>MissileDrone</type>
+                <typeEnum>103</typeEnum>
+                <id>9</id>
+                <name>机弹一体无人机-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00008</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>OpticalInfraredDrone</type>
+                <typeEnum>104</typeEnum>
+                <id>10</id>
+                <name>可见光红外无人机-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00009</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
         </UAV>
+        <Vehicle>
+            <unit>
+                <type>GroundAssultUnmanVehicle</type>
+                <typeEnum>201</typeEnum>
+                <id>7</id>
+                <name>地面突击无人车-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00006</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>Jeep</type>
+                <typeEnum>202</typeEnum>
+                <id>11</id>
+                <name>吉普车-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00010</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>CM33</type>
+                <typeEnum>203</typeEnum>
+                <id>12</id>
+                <name>云豹装甲车-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00011</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+        </Vehicle>
     </Models>
 </scenario>
