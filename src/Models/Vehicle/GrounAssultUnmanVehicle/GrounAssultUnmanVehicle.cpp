@@ -13,6 +13,8 @@ void GrounAssultUnmanVehicle::Init(TiXmlElement* unitElement)
 {
 	VehicleBase::Init(unitElement);
 	SetType(M_GROUNDASSULTUNMANVEHICLE);
+	vector<ModelFunction> mfuns = { F_ATTACK ,F_COVER};
+	SetModelFunction(mfuns);
 }
 
 void GrounAssultUnmanVehicle::ReadScenario()

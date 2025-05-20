@@ -13,6 +13,8 @@ void OpticalInfraredDrone::Init(TiXmlElement* unitElement)
 {
 	UAVBase::Init(unitElement);
 	SetType(M_OPTICALINFRAREDDRONE);
+	vector<ModelFunction> mfuns = { F_DTTECT };
+	SetModelFunction(mfuns);
 }
 
 void OpticalInfraredDrone::ReadScenario()

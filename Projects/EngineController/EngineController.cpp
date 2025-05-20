@@ -165,7 +165,7 @@ void EngineController::on_UpdateBtn_clicked()
     {
         switch (models[i]._type)
         {
-        case ModelType::M_PEOPLE:
+        case ModelType::M_PEOPLE:case M_ASSULTMAN:case M_SNIPER:
         {
             if (humanItem != nullptr)
             {
@@ -174,7 +174,7 @@ void EngineController::on_UpdateBtn_clicked()
                 humanItem->addChild(humanItemSub);
                 //类型、坐标、id
                 QTreeWidgetItem* humanItemSub_Type = new QTreeWidgetItem(humanItemSub);
-                humanItemSub_Type->setText(0,QString::fromLocal8Bit("类型:群众"));
+                humanItemSub_Type->setText(0,QString::fromLocal8Bit("类型:人员"));
                 humanItemSub->addChild(humanItemSub_Type);
                 QTreeWidgetItem* humanItemSub_Pos = new QTreeWidgetItem(humanItemSub);
                 humanItemSub_Pos->setText(0, QString::fromLocal8Bit("位置"));
@@ -191,7 +191,7 @@ void EngineController::on_UpdateBtn_clicked()
             }
             break;
         }
-        case ModelType::M_OPTICALATTACKUAV:case M_GRENADEDRONE:case M_MISSILEDRONE:case M_OPTICALINFRAREDDRONE:
+        case ModelType::M_OPTICALATTACKUAV:case M_GRENADEDRONE:case M_MISSILEDRONE:case M_OPTICALINFRAREDDRONE:case M_COMPOSITEWINGDRONE:
         {
             if (uavItem != nullptr)
             {
@@ -217,7 +217,7 @@ void EngineController::on_UpdateBtn_clicked()
             }
             break;
         }
-        case ModelType::M_GROUNDASSULTUNMANVEHICLE:case M_JEEP:case M_CM33:
+        case ModelType::M_GROUNDASSULTUNMANVEHICLE:case M_JEEP:case M_CM33:case M_GUARANTEEVEHICLE:
         {
             if (vehicleItem != nullptr)
             {
@@ -226,7 +226,7 @@ void EngineController::on_UpdateBtn_clicked()
                 vehicleItem->addChild(vehicleItemSub);
                 //类型、坐标、id
                 QTreeWidgetItem* vehicleItemSub_Type = new QTreeWidgetItem(vehicleItemSub);
-                vehicleItemSub_Type->setText(0, QString::fromLocal8Bit("类型:可见光打击无人机"));
+                vehicleItemSub_Type->setText(0, QString::fromLocal8Bit("类型:车辆"));
                 vehicleItemSub->addChild(vehicleItemSub_Type);
                 QTreeWidgetItem* vehicleItemSub_Pos = new QTreeWidgetItem(vehicleItemSub);
                 vehicleItemSub_Pos->setText(0, QString::fromLocal8Bit("位置"));

@@ -64,6 +64,72 @@
                     <alt>15.0000</alt>
                 </position>
             </unit>
+            <unit>
+                <type>AssultMan</type>
+                <typeEnum>2</typeEnum>
+                <id>15</id>
+                <name>突击手-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.30004</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+                <authorize>
+                    <job>3</job>
+                    <authname>突击1班</authname>
+                    <subordinate>
+                        <member>16</member>
+                        <member>17</member>
+                        <member>18</member>
+                        <member>6</member>
+                        <member>8</member>
+                        <member>9</member>
+                        <member>10</member>
+                        <member>14</member>
+                        <member>7</member>
+                        <member>11</member>
+                        <member>12</member>
+                        <member>13</member>
+                    </subordinate>
+                </authorize>
+            </unit>
+            <unit>
+                <type>AssultMan</type>
+                <typeEnum>2</typeEnum>
+                <id>16</id>
+                <name>突击手-2</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.30004</lon>
+                    <lat>31.0003</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>AssultMan</type>
+                <typeEnum>2</typeEnum>
+                <id>17</id>
+                <name>突击手-3</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.30004</lon>
+                    <lat>31.0004</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>Sniper</type>
+                <typeEnum>3</typeEnum>
+                <id>18</id>
+                <name>狙击手-3</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.30004</lon>
+                    <lat>31.0005</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
         </Human>
         <UAV>
             <unit>
@@ -114,6 +180,18 @@
                     <alt>15.0000</alt>
                 </position>
             </unit>
+             <unit>
+                <type>CompositeWingDrone</type>
+                <typeEnum>105</typeEnum>
+                <id>14</id>
+                <name>复合翼无人机-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00009</lon>
+                    <lat>31.0002</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
         </UAV>
         <Vehicle>
             <unit>
@@ -148,6 +226,18 @@
                 <camp>1</camp>
                 <position>
                     <lon>115.00011</lon>
+                    <lat>31.0001</lat>
+                    <alt>15.0000</alt>
+                </position>
+            </unit>
+            <unit>
+                <type>GuaranteeVehicle</type>
+                <typeEnum>204</typeEnum>
+                <id>13</id>
+                <name>保障车-1</name>
+                <camp>1</camp>
+                <position>
+                    <lon>115.00012</lon>
                     <lat>31.0001</lat>
                     <alt>15.0000</alt>
                 </position>

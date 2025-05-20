@@ -13,6 +13,8 @@ void People::Init(TiXmlElement* unitElement)
 {
 	HumanBase::Init(unitElement);
 	SetType(M_PEOPLE);
+	vector<ModelFunction> mfuns = { F_SUPPLY };
+	SetModelFunction(mfuns);
 	_EventForwardService = dynamic_cast<EventForwardBaseService*>(ServiceInterface::GetInstance()->GetServiceByName("EventForwardService"));
 	RegisterPublishEvent();
 }

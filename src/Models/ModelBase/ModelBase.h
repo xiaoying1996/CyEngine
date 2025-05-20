@@ -4,6 +4,7 @@
 #include"Service/ServiceInterface/ServiceInterface.h"
 #include"Service/ServiceBase/ServiceBase.h"
 #include"Service/ModelManagerBaseService/ModelManagerBaseService.h"
+#include "DecisionAlgo/DecisionBaseAlgo/DecisionBaseAlgo.h"
 using namespace std;
 class ModelBase {
 public:
@@ -24,7 +25,14 @@ public:
 	* 外部接口同上面的Init函数可选择调用
 	* 与上面的Init函数只需调用一个即可
 	*/
-	virtual void InitByBasicInfo(Model_BasicInfo basicInfo);
+	virtual void InitByBasicInfo(Model_BasicInfo basicInfo, int jobType, string authname, std::vector<int> subordinates);
+	/*
+	* * 陈颖 2025.05.20
+	* 运行前的准备函数
+	* 在所有模型Init结束以后必须调用
+	* 可按需求重写
+	*/
+	virtual void Prepare();
 	/*
 	* * 陈颖 2025.05.15
 	* 通过想定文件或其他数据来源读取相关数据
@@ -39,11 +47,6 @@ public:
 	* 可按需求重写
 	*/
 	virtual void Run(double t);
-	/*
-	* * 陈颖 2025.05.15
-	* 模型销毁
-	*/
-	virtual void Destory();
 	/*
 	* * * 陈颖 2025.05.15
 	* 从模型中获取模型当前的基础信息
@@ -66,6 +69,11 @@ public:
 	vector<shared_ptr<EventBase>> HandleEvent();
 
 	//-----以下函数非对外开放------
+	/*
+	* * 陈颖 2025.05.15
+	* 模型销毁
+	*/
+	virtual void Destory();
 	/*
 	* 陈颖 2025.05.15
 	* 推送事件至事件管理服务
@@ -96,18 +104,27 @@ protected:
 	int GetType();
 	int GetID();
 	void SetHurt(double hurt);
+	void SetModelFunction(vector<ModelFunction> f);
+	vector<ModelFunction> GettModelFunction();
 	ServiceInterface* _serviceInter = nullptr;
+	ModelManagerBaseService* _modelManagerService = nullptr;
 private:
 	std::vector<ComponentBase*> _myComponents;
-	ModelManagerBaseService* _modelManagerService = nullptr;
 	bool _isInit;
 	bool _isReadScenario;
 	int _id;
 	int _type;
+	vector<ModelFunction> _modelFun;//模型可执行功能
 	string _shareMemoryID;
 	vector<shared_ptr<EventBase>> _eventsToSend;
 	SMStruct* pData;
 	HANDLE hMapFile;
+
+public:
+	JobType _job;
+	vector<int> _subordinates;
+	string _authName;
+	vector<FormationStu> _subordinateStus;
 };
 
 #endif // !_MODEL_BASE_

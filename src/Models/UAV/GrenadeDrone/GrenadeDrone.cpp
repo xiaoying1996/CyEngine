@@ -12,6 +12,8 @@ GrenadeDrone::~GrenadeDrone()
 void GrenadeDrone::Init(TiXmlElement* unitElement)
 {
 	UAVBase::Init(unitElement);
+	vector<ModelFunction> mfuns = { F_ATTACK ,F_COVER};
+	SetModelFunction(mfuns);
 	SetType(M_GRENADEDRONE);
 }
 

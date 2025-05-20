@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Rule>
+	<formation>
+		<type>1</type>
+	</formation>
+	<place>
+	</place>
+	<Group>
+	</Group>
+	<Soldier>
+	</Soldier>
+	<UAV>
+	</UAV>
+	<Vehicle>
+	</Vehicle>
+</Rule>

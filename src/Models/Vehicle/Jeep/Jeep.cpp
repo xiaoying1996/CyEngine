@@ -13,6 +13,8 @@ void Jeep::Init(TiXmlElement* unitElement)
 {
 	VehicleBase::Init(unitElement);
 	SetType(M_JEEP);
+	vector<ModelFunction> mfuns = { F_SUPPLY };
+	SetModelFunction(mfuns);
 }
 
 void Jeep::ReadScenario()

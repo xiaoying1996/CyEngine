@@ -143,6 +143,16 @@ void ModelManager::GetAllModels(std::vector<Model_BasicInfo>& models)
     m_Mutex_Model.unlock();
 }
 
+void ModelManager::GetAllModels(std::vector<ModelBase*>& models)
+{
+    m_Mutex_Model.lock();
+    for (int i = 0; i < m_model_Vec.size(); i++)
+    {
+        models.push_back(m_model_Vec[i]);
+    }
+    m_Mutex_Model.unlock();
+}
+
 void ModelManager::GetModelByID(Model_BasicInfo& model, int id)
 {
     m_Mutex_Model.lock();

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Rule>
+	<formation>
+		<type>1</type>
+	</formation>
+	<orientation>
+		<angle>0</angle>
+	</orientation>
+	<place>
+		<Group>
+			<level>1</level>
+		</Group>
+		<Soldier>
+			<D_ATTACK>1</D_ATTACK>
+			<D_DEFEND>1</D_DEFEND>
+		</Soldier>
+		<UAV>
+			<D_ATTACK>2</D_ATTACK>
+			<D_DEFEND>2</D_DEFEND>
+		</UAV>
+		<Vehicle>
+			<D_ATTACK>2</D_ATTACK>
+			<D_DEFEND>2</D_DEFEND>
+		</Vehicle>
+	</place>
+	<statu>
+		<Soldier>1</Soldier>
+		<UAV>2</UAV>
+		<Vehicle>1</Vehicle>
+	<statu>
+	<interval>
+		<Group>20</Group>
+		<Soldier>7</Soldier>
+		<Vehicle>12</Vehicle>
+	</interval>
+</Rule>

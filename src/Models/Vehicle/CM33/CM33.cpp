@@ -13,6 +13,8 @@ void CM33::Init(TiXmlElement* unitElement)
 {
 	VehicleBase::Init(unitElement);
 	SetType(M_CM33);
+	vector<ModelFunction> mfuns = { F_SUPPLY };
+	SetModelFunction(mfuns);
 }
 
 void CM33::ReadScenario()

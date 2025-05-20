@@ -59,9 +59,15 @@ void ModelBase::Init(TiXmlElement* unitElement)
 	SetServiceInterFace();
 	InitComponent();
 	_isInit = true;
+	if (_modelManagerService)
+	{
+		Model_BasicInfo info;
+		GetBasicInfo(info);
+		_modelManagerService->UpdateEntity(info);
+	}
 }
 
-void ModelBase::InitByBasicInfo(Model_BasicInfo basicInfo)
+void ModelBase::InitByBasicInfo(Model_BasicInfo basicInfo, int jobType, string authname, std::vector<int> subordinates)
 {
 	if (_isInit)
 	{
@@ -76,6 +82,19 @@ void ModelBase::InitByBasicInfo(Model_BasicInfo basicInfo)
 	_id = basicInfo._id;
 	_type = basicInfo._type;
 	_isInit = true;
+	_job = (JobType)jobType;
+	_subordinates = subordinates;
+	_authName = authname;
+	if (_modelManagerService)
+	{
+		Model_BasicInfo info;
+		GetBasicInfo(info);
+		_modelManagerService->UpdateEntity(info);
+	}
+}
+
+void ModelBase::Prepare()
+{
 }
 
 void ModelBase::ReadScenario()
@@ -122,6 +141,20 @@ void ModelBase::SetHurt(double hurt)
 		health = health - hurt;
 	}
 	SetHealth(health);
+}
+
+void ModelBase::SetModelFunction(vector<ModelFunction> f)
+{
+	_modelFun = f;
+	if (_modelManagerService)
+	{
+		_modelManagerService->UpdateModelFunction(GetID(), f);
+	}
+}
+
+vector<ModelFunction> ModelBase::GettModelFunction()
+{
+	return _modelFun;
 }
 
 vector<shared_ptr<EventBase>> ModelBase::HandleEvent()

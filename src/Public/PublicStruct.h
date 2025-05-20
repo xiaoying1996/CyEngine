@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <map>
+#include <vector>
+#include "PublicEnum.h"
 using namespace std;
 
 struct Model_Position {
@@ -106,6 +108,19 @@ struct SMStruct
 {
 	Model_BasicInfo basicInfo;
 	std::string otherInfo;
+};
+
+//记录在当前编组中各个成员的信息及状态
+struct FormationStu
+{
+	int _id;
+	double _ability;//成员能力评估
+	JobType _job;//成员职责
+	ModelType _type;//下级类型
+	vector<ModelFunction> _f;//成员作战功能
+	Model_Position _currpos;//成员当前位置
+	Model_Position _aimpos;//成员应前往位置
+	Duty _duty;//成员职责
 };
 
 #endif // !_PUBLIC_STRUCT_

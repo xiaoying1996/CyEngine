@@ -115,6 +115,49 @@ void GetCampFromTiXmlElement(int& camp, TiXmlElement* unitElement)
     }
 }
 
+void GetAuthorizedFromXmlElement(int& jobType, string& authname, std::vector<int>& subordinates, TiXmlElement* unitElement)
+{
+    jobType = 0;
+    authname = "";
+    subordinates.clear();
+    for (TiXmlElement* valElement = unitElement->FirstChildElement();
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "authorize")
+        {
+            for (TiXmlElement* authElement = valElement->FirstChildElement();
+                authElement != nullptr; authElement = authElement->NextSiblingElement())
+            {
+                key = authElement->Value();
+                if (key == "job")
+                {
+                    jobType = atoi(authElement->FirstChild()->Value());
+                }
+                if (key == "authname")
+                {
+                    authname = authElement->FirstChild()->Value();
+                    authname = UTF8ToString(authname);
+                }
+                if (key == "subordinate")
+                {
+                    for (TiXmlElement* memberElement = authElement->FirstChildElement();
+                        memberElement != nullptr; memberElement = memberElement->NextSiblingElement())
+                    {
+                        key = memberElement->Value();
+                        {
+                            if (key == "member")
+                            {
+                                subordinates.push_back(atoi(memberElement->FirstChild()->Value()));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 time_t GetCurrentTimeMsec() 
 {
     auto time = chrono::time_point_cast<chrono::milliseconds>(chrono::system_clock::now());

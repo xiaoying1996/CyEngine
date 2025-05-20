@@ -31,6 +31,7 @@ public:
 	bool Is_model_Finish_Vec_Empty();
 	bool Is_model_Running_Vec_Empty();
 	void GetAllModels(std::vector<Model_BasicInfo> &models);
+	void GetAllModels(std::vector<ModelBase*>& models);
 	void GetModelByID(Model_BasicInfo & model,int id);
 
 	ModelBase* GetModelForRunn();

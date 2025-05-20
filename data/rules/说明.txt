@@ -1,0 +1,17 @@
+<formation>
+		<type>1</type>
+</formation>
+
+type 为1代表正常的列队模式
+
+<orientation>
+	<angle>0</angle>
+</orientation>
+角度以正北为0
+
+<level>1</level>
+代表朝向敌人的优先级，越小代表越靠近敌人
+
+<statu>
+1站立
+2盘旋

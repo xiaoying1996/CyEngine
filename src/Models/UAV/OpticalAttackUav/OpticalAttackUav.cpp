@@ -13,6 +13,8 @@ void OpticalAttackUav::Init(TiXmlElement* unitElement)
 {
 	UAVBase::Init(unitElement);
 	SetType(M_OPTICALATTACKUAV);
+	vector<ModelFunction> mfuns = { F_ATTACK ,F_COVER ,F_DTTECT };
+	SetModelFunction(mfuns);
 }
 
 void OpticalAttackUav::ReadScenario()

@@ -5,6 +5,8 @@ MyEngine* MyEngine::m_MyEngine = nullptr;
 std::mutex MyEngine::m_Mutex;
 std::mutex MyEngine::m_Mutex_Advance;
 
+double T = 0.0;
+
 void ModelRunner(void* arg)
 {
     static time_t tickStart;
@@ -52,8 +54,7 @@ void ModelRunner(void* arg)
             {
                 model->AddEvent(events[i]);
             }
-
-            model->Run(0);
+            model->Run(T);
 
             //执行结束后，将其从RunningVec转移到FinishVec
             ModelManager::GetInstance()->MoveModelFromRunningToFinish(model);
@@ -76,6 +77,7 @@ void TimeAdvanceManager(void* arg)
             //2.将时间状态设置为Ready
             MyEngine::GetInstance()->SetAdvanceStu(ADV_READY);
             MyEngine::GetInstance()->BattleTimeAdvance();
+            T += 0.1;
         }
         else
         {
@@ -350,7 +352,6 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
                             }
                             ModelBase* model = addFunction();
                             model->Init(unitElement);
-                            model->ReadScenario();
                             //初始化组件
                             Model_BasicInfo modelInfo;
                             model->GetBasicInfo(modelInfo);
@@ -365,6 +366,12 @@ bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
     #if _DEBUG
         _LOG->GetInstance()->PrintError("读取想定成功");
     #endif // NDEBUG
+    std::vector<ModelBase*> models;
+    MM->GetAllModels(models);
+    for (int i = 0; i < models.size(); i++)
+    {
+        models[i]->Prepare();
+    }
     m_Mutex.lock();
     m_isScenarioRead = true;
     m_Mutex.unlock();
