@@ -205,9 +205,9 @@ bool MyEngine::GetStartStu()
 bool MyEngine::ReadScenario(std::string filename, std::string &errStr)
 {
     errStr = "no error";
-#if _DEBUG
+    #if _DEBUG
     _LOG->GetInstance()->PrintError("Read Scenario File: " + filename);
-#endif // NDEBUG
+    #endif // NDEBUG
 
     TiXmlDocument* xmlDocument = new TiXmlDocument();
     if (!xmlDocument->LoadFile(filename.c_str())) //没有test.xml文件

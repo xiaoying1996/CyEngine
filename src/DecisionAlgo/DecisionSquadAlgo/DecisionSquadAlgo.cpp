@@ -2,6 +2,7 @@
 
 DecisionSquadAlgo::DecisionSquadAlgo()
 {
+    _SqStu = SQ_IDLE;
 }
 
 DecisionSquadAlgo::~DecisionSquadAlgo()
@@ -21,7 +22,8 @@ void DecisionSquadAlgo::UpdateEnemy(vector<Model_BasicInfo> enemyList)
 }
 void DecisionSquadAlgo::GetDecision(vector<FormationStu>& subordinateStus)
 {
-	int i = 0;
+	int t =ReadSquadFormationFile(_SqStu,_FormationType, _FormationOrientation, _GroupLevel, _StaStu,_IntStu, _PlaceStu);
+	int y = 0;
 }
 
 extern "C" _declspec(dllexport) DecisionSquadAlgo* CreateAlgo()

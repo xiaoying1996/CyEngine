@@ -158,6 +158,166 @@ void GetAuthorizedFromXmlElement(int& jobType, string& authname, std::vector<int
     }
 }
 
+int ReadSquadFormationFile(SquadStatu SqStu, int& FormationType, double& FormationOrientation, int& GroupLevel, StatusStruct StaStu, IntervalStruct& IntStu, vector<PlaceStruct>& PlaceStu)
+{
+    int i = 0;
+    string filename = "data\\rules\\formation\\squad\\idle.xml";
+    TiXmlDocument* xmlDocument = new TiXmlDocument();
+    if (!xmlDocument->LoadFile(filename.c_str())) //没有test.xml文件
+    {
+        delete xmlDocument;
+        return 1;
+    }
+    TiXmlElement* rootElement = xmlDocument->FirstChildElement("Rule");
+    if (rootElement == nullptr) //节点不存在
+    {
+        delete xmlDocument;
+        return 2;
+    }
+    for (TiXmlElement* valElement = rootElement->FirstChildElement();
+        valElement != nullptr; valElement = valElement->NextSiblingElement())
+    {
+        std::string key = valElement->Value();
+        if (key == "formation")
+        {
+            for (TiXmlElement* Element = valElement->FirstChildElement();
+                Element != nullptr; Element = Element->NextSiblingElement())
+            {
+                string key1 = Element->Value();
+                if ("type" == key1)
+                {
+                    FormationType = atoi(Element->FirstChild()->Value());
+                }
+            }
+        }
+        else if (key == "orientation")
+        {
+            for (TiXmlElement* Element = valElement->FirstChildElement();
+                Element != nullptr; Element = Element->NextSiblingElement())
+            {
+                string key1 = Element->Value();
+                if ("angle" == key1)
+                {
+                    FormationOrientation = atoi(Element->FirstChild()->Value());
+                }
+            }
+        }
+        else if (key == "place")
+        {
+            for (TiXmlElement* Element = valElement->FirstChildElement();
+                Element != nullptr; Element = Element->NextSiblingElement())
+            {
+                string key1 = Element->Value();
+                if ("Group" == key1)
+                {
+                    for (TiXmlElement* levelElement = Element->FirstChildElement();
+                        levelElement != nullptr; levelElement = levelElement->NextSiblingElement())
+                    {
+                        string key2 = levelElement->Value();
+                        if ("level" == key2)
+                        {
+                            GroupLevel = atoi(levelElement->FirstChild()->Value());
+                        }
+                    }
+                }
+                else if ("Soldier" == key1)
+                {
+                    for (TiXmlElement* levelElement = Element->FirstChildElement();
+                        levelElement != nullptr; levelElement = levelElement->NextSiblingElement())
+                    {
+                        string key2 = levelElement->Value();
+                        if ("F_ATTACK" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_HUMAN;
+                            ps._fun = F_ATTACK;
+                            PlaceStu.push_back(ps);
+                        }
+                        else if ("F_COVER" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_HUMAN;
+                            ps._fun = F_COVER;
+                            PlaceStu.push_back(ps);
+                        }
+                    }
+                }
+                else if ("UAV" == key1)
+                {
+                    for (TiXmlElement* levelElement = Element->FirstChildElement();
+                        levelElement != nullptr; levelElement = levelElement->NextSiblingElement())
+                    {
+                        string key2 = levelElement->Value();
+                        if ("F_ATTACK" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_UAV;
+                            ps._fun = F_ATTACK;
+                            PlaceStu.push_back(ps);
+                        }
+                        else if ("F_COVER" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_UAV;
+                            ps._fun = F_COVER;
+                            PlaceStu.push_back(ps);
+                        }
+                    }
+                }
+                else if ("Vehicle" == key1)
+                {
+                    for (TiXmlElement* levelElement = Element->FirstChildElement();
+                        levelElement != nullptr; levelElement = levelElement->NextSiblingElement())
+                    {
+                        string key2 = levelElement->Value();
+                        if ("F_ATTACK" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_VEHICLE;
+                            ps._fun = F_ATTACK;
+                            PlaceStu.push_back(ps);
+                        }
+                        else if ("F_COVER" == key2)
+                        {
+                            PlaceStruct ps;
+                            ps.level = atoi(levelElement->FirstChild()->Value());
+                            ps._type = M_VEHICLE;
+                            ps._fun = F_COVER;
+                            PlaceStu.push_back(ps);
+                        }
+                    }
+                }
+            }
+        }
+        else if (key == "statu")
+        {
+            for (TiXmlElement* Element = valElement->FirstChildElement();
+                Element != nullptr; Element = Element->NextSiblingElement())
+            {
+                string key1 = Element->Value();
+                if ("Soldier" == key1)
+                {
+                    StaStu._SoldierStu = atoi(Element->FirstChild()->Value());
+                }
+                else if ("UAV" == key1)
+                {
+                    StaStu._UAVStu = atoi(Element->FirstChild()->Value());
+                }
+                else if ("Vehicle" == key1)
+                {
+                    StaStu._VehicleStu = atoi(Element->FirstChild()->Value());
+                }
+            }
+        }
+    }
+    return 0;
+}
+
 time_t GetCurrentTimeMsec() 
 {
     auto time = chrono::time_point_cast<chrono::milliseconds>(chrono::system_clock::now());

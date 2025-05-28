@@ -12,23 +12,23 @@
 			<level>1</level>
 		</Group>
 		<Soldier>
-			<D_ATTACK>1</D_ATTACK>
-			<D_DEFEND>1</D_DEFEND>
+			<F_ATTACK>1</F_ATTACK>
+			<F_COVER>1</F_COVER>
 		</Soldier>
 		<UAV>
-			<D_ATTACK>2</D_ATTACK>
-			<D_DEFEND>2</D_DEFEND>
+			<F_ATTACK>2</F_ATTACK>
+			<F_COVER>2</F_COVER>
 		</UAV>
 		<Vehicle>
-			<D_ATTACK>2</D_ATTACK>
-			<D_DEFEND>2</D_DEFEND>
+			<F_ATTACK>2</F_ATTACK>
+			<F_COVER>2</F_COVER>
 		</Vehicle>
 	</place>
 	<statu>
 		<Soldier>1</Soldier>
 		<UAV>2</UAV>
 		<Vehicle>1</Vehicle>
-	<statu>
+	</statu>
 	<interval>
 		<Group>20</Group>
 		<Soldier>7</Soldier>

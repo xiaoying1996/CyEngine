@@ -11,6 +11,7 @@
 #include <time.h>
 #include "tinyxml/tinyxml.h"
 #include "tinyxml/tinystr.h"
+#include "Public/FormationStruct.h"
 
 using namespace std;
 
@@ -23,6 +24,9 @@ void GetPositionFromTiXmlElement(std::vector<double>& pos, TiXmlElement* unitEle
 void GetNameFromTiXmlElement(std::string &name, TiXmlElement* unitElement);
 void GetCampFromTiXmlElement(int & camp, TiXmlElement* unitElement);
 void GetAuthorizedFromXmlElement(int & jobType,string & authname,std::vector<int> & subordinates, TiXmlElement* unitElement);
+
+int ReadSquadFormationFile(SquadStatu SqStu, int &FormationType,double &FormationOrientation,int &GroupLevel, StatusStruct StaStu, IntervalStruct &IntStu, vector<PlaceStruct> &PlaceStu);
+
 std::string UTF8ToString(const std::string& utf8Data);
 LPCWSTR stringToLPCWSTR(string orig);
 time_t GetCurrentTimeMsec();
