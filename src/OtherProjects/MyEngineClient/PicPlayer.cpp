@@ -1,4 +1,5 @@
 #include "PicPlayer.h"
+#include <QHeaderView>
 
 PicPlayer::PicPlayer(QWidget *parent)
 	: QMainWindow(parent), m_currentDrawImageIndx(0)

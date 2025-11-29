@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\chen\Pro\CPP\MyEngine\CyEngine\dll\Debug\CommonAttackComponentd.dll</FullPath>
+      <FullPath>C:\chen\Pro\CyEngine\dll\Debug\CommonAttackComponentd.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
