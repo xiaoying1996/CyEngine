@@ -60,13 +60,6 @@ public:
 	* 对外接口
 	*/
 	void AddEvent(shared_ptr<EventBase> event);
-	/*
-	* * * 陈颖 2025.05.15
-	* 从模型中获取模型当前产生的事件
-	* 对外接口
-	* 事件对象指针采用智能指针方式存储，不需要外部手动销毁
-	*/
-	vector<shared_ptr<EventBase>> HandleEvent();
 
 	//-----以下函数非对外开放------
 	/*
@@ -116,7 +109,6 @@ private:
 	int _type;
 	vector<ModelFunction> _modelFun;//模型可执行功能
 	string _shareMemoryID;
-	vector<shared_ptr<EventBase>> _eventsToSend;
 	SMStruct* pData;
 	HANDLE hMapFile;
 

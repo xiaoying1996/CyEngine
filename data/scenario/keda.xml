@@ -180,18 +180,6 @@
                     <alt>15.0000</alt>
                 </position>
             </unit>
-             <unit>
-                <type>CompositeWingDrone</type>
-                <typeEnum>105</typeEnum>
-                <id>14</id>
-                <name>复合翼无人机-1</name>
-                <camp>1</camp>
-                <position>
-                    <lon>115.00009</lon>
-                    <lat>31.0002</lat>
-                    <alt>15.0000</alt>
-                </position>
-            </unit>
         </UAV>
         <Vehicle>
             <unit>

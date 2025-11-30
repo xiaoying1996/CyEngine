@@ -157,13 +157,6 @@ vector<ModelFunction> ModelBase::GettModelFunction()
 	return _modelFun;
 }
 
-vector<shared_ptr<EventBase>> ModelBase::HandleEvent()
-{
-	std::vector<shared_ptr<EventBase>> ret = _eventsToSend;
-	_eventsToSend.clear();
-	return ret;
-}
-
 void ModelBase::ReceiveEvent(shared_ptr<EventBase> event)
 {
 	//对接收到的事件进行处理，并推送给组件
@@ -184,13 +177,8 @@ void ModelBase::Run(double t)
 	//在运行的基类里面,先执行所有组件的Run函数
 	for (int i = 0; i < _myComponents.size(); i++)
 	{
-			_myComponents[i]->Run(t);
-			//在这里通过组件的handleEvent函数读取组件产生的事件
-			std::vector<shared_ptr<EventBase>> events = _myComponents[i]->HandleEvent();
-			for (int i = 0; i < events.size(); i++)
-			{
-				_eventsToSend.push_back(events[i]);
-			}
+		_myComponents[i]->Run(t);
+		//在这里通过组件的handleEvent函数读取组件产生的事件
 	}
 	//在执行完周期函数以后，应当向ModelManager更新自身状态
 	if (_modelManagerService)

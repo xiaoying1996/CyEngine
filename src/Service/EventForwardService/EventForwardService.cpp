@@ -85,15 +85,12 @@ void EventForwardService::HandleEventByComponent(int id, ComponentBase* com, sha
 						for (int x = 0; x < comCateRegister.size(); x++)
 						{
 							ComponentBase* comReceive = comCateRegister[x].com;
-							if (comReceive == comCateRegister[x].com)
+							std::vector<EventCategory> c = comCateRegister[x].category;
+							for (int y = 0; y < comCateRegister[x].category.size(); y++)
 							{
-								std::vector<EventCategory> c = comCateRegister[x].category;
-								for (int y = 0; y < comCateRegister[x].category.size(); y++)
+								if (comCateRegister[x].category[y] == event->category)
 								{
-									if (comCateRegister[x].category[y] == event->category)
-									{
-										comReceive->ReceiveEvent(event);
-									}
+									comReceive->ReceiveEvent(event);
 								}
 							}
 						}
@@ -104,6 +101,9 @@ void EventForwardService::HandleEventByComponent(int id, ComponentBase* com, sha
 			}
 		}
 	}
+	std::weak_ptr<EventBase> wp = event;
+	event.reset();
+	wp.reset();
 }
 
 void EventForwardService::HandleEventByService(shared_ptr<EventBase> event)

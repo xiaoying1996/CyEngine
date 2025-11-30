@@ -385,7 +385,7 @@ bool MyEngine::Init_ThreadPool(int min, int max)
         m_pool = new ThreadPool(min,max);
         for (int i = 0; i < max; i++)
         {
-            //m_pool->Add(ModelRunner, (void*)5);//参数5，暂时没有用，先留着，后面有用的话就不要临时加
+            m_pool->Add(ModelRunner, (void*)5);//参数5，暂时没有用，先留着，后面有用的话就不要临时加
         }
     }
     #if _DEBUG

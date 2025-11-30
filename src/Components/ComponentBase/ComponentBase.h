@@ -22,13 +22,11 @@ public:
 	virtual void Destory();
 	virtual void RegisterPublishEvent();
 
-	std::vector<shared_ptr<EventBase>> HandleEvent();
 	void SetBasicInfo(Model_BasicInfo info, SMStruct* pData, HANDLE hMapFile);
 	void SetServiceInterface(ServiceInterface *inter);
 private:
 	bool _isInit;
 	bool _isReadScenario;
-	std::vector<shared_ptr<EventBase>> _EventListToSend;
 	
 public:
 	ComType _type;

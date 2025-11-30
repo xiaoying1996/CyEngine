@@ -89,6 +89,7 @@ void CommonDetectComponent::Run(double t)
 	auto ptr = std::make_shared<Message_ModelsDetect>();
 	ptr->receicerID = _id;
 	ptr->modelsInfoList = _TargetList;
+	_TargetList.clear();
 	PostEvent(ptr);
 }
 

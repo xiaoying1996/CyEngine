@@ -24,14 +24,6 @@ void ComponentBase::ReadScenario()
 
 void ComponentBase::PostEvent(shared_ptr<EventBase> event)
 {
-	_EventListToSend.push_back(event);
-}
-
-std::vector<shared_ptr<EventBase>> ComponentBase::HandleEvent()
-{
-	std::vector<shared_ptr<EventBase>> ret = _EventListToSend;
-	_EventListToSend.clear();
-	return ret;
 }
 
 void ComponentBase::ReceiveEvent(shared_ptr<EventBase> event)
