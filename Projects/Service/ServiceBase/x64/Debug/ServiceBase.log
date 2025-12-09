@@ -1,5 +1,4 @@
 ﻿C:\Program Files\Microsoft Visual Studio\18\Insiders\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(534,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
-  BattleAdjustBaseService.cpp
   EventForwardBaseService.cpp
 C:\chen\Pro\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(39,20): warning C4251: “ServiceInterface::m_Mutex”:“std::mutex”需要有 dll 接口以供“ServiceInterface”的客户端使用
   (编译源文件“../../../src/Service/EventForwardBaseService/EventForwardBaseService.cpp”)
@@ -19,7 +18,4 @@ C:\chen\Pro\CyEngine\src\Service\ServiceInterface\ServiceInterface.h(42,38): war
 C:\chen\Pro\CyEngine\src\Components\ComponentBase\ComponentBase.h(9,10): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
   (编译源文件“../../../src/Service/EventForwardBaseService/EventForwardBaseService.cpp”)
   
-  ModelManagerBaseService.cpp
-  ServiceBase.cpp
-  正在生成代码...
   ServiceBase.vcxproj -> C:\chen\Pro\CyEngine\lib\Debug\ServiceBased.lib

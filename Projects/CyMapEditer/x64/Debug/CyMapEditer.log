@@ -1,0 +1,709 @@
+﻿   Qt/MSBuild: 3.4.1.0
+   Qt: 6.10.1
+  moc ..\..\src\OtherProjects\CyMapEditer\CyMapEditer.h
+  moc GraphicsViewExample.h
+  CyMapEditer.cpp
+  main.cpp
+  GraphicsViewExample.cpp
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0xf5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0xf6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0xf8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0xf9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0xfd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1c7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1c9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1cc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1cd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x1d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x20a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x20c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x20d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x246 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x248 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x24b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x24c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x24d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x24e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x87 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x24f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x88 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x251 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x89 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x252 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x8a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x253 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x8b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x254 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x8c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x255 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x8d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x257 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x8e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x258 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x113 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x259 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x115 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x287 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x117 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x289 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x11b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x28a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x11d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x45f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2b0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x464 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2b2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x465 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2b3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2b6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x466 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x469 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2b8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x46a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2ba 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x46b 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\GraphicsViewExample.cpp(1,1): warning C4828: 文件包含在偏移 0x2bb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x46c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4d6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4da 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x4db 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x51c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x51e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x520 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x522 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x523 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x52c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x52e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x52f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x530 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x532 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x533 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x540 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x542 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x544 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x545 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x58d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x58f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x591 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x592 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x595 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x597 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x598 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x599 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x59a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x59d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x59e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5b6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5b7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5b8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5dc 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5dd 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5de 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5e9 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5ea 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5ec 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x5ed 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x68a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x68e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x68f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x690 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x691 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x694 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x696 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6e6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6e7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6e8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6eb 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\src\OtherProjects\CyMapEditer\CyMapEditer.cpp(1,1): warning C4828: 文件包含在偏移 0x6ec 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x350 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x352 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x353 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x355 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x356 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x362 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x364 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x365 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x369 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x370 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x371 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x350 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x352 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x353 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x355 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x356 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x362 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x364 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x365 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x369 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x370 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x371 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x350 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x352 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x353 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x355 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x356 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x362 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x364 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x365 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x369 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x370 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x371 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“../../src/OtherProjects/CyMapEditer/main.cpp”)
+  
+  moc_CyMapEditer.cpp
+  moc_GraphicsViewExample.cpp
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x350 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x352 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x353 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x355 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x356 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x362 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x364 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x365 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x369 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x370 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x371 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_CyMapEditer.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2ce 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2cf 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d0 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d7 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2d8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2df 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e2 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x2e5 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x34f 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x350 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x352 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x353 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x355 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x356 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35a 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35d 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x35e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x362 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x364 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x365 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x369 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36c 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x36e 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x370 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x371 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a1 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a3 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a4 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a6 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+C:\chen\Pro\CyEngine\Projects\CyMapEditer\Shapes\CubeItem.h(1,1): warning C4828: 文件包含在偏移 0x3a8 处开始的字符，该字符在当前源字符集中无效(代码页 65001)。
+  (编译源文件“x64/Debug/qt/moc/moc_GraphicsViewExample.cpp”)
+  
+  CyMapEditer.vcxproj -> C:\chen\Pro\CyEngine\x64\Debug\CyMapEditer.exe
